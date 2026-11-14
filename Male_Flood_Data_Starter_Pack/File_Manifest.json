@@ -1,0 +1,275 @@
+{
+  "checked": "2026-11-14",
+  "files": [
+    {
+      "path": "Data_Request_Specification.md",
+      "bytes": 2779,
+      "sha256": "ba4326967565f89c4eef8255bfc772cfab4c1491ebeb5320168bd2b543da5358"
+    },
+    {
+      "path": "Dataset_Catalogue.json",
+      "bytes": 17504,
+      "sha256": "8061bb9f679934eb261dde26a2b5f35eb3611b0381b9a916e553cb30d38db8bb"
+    },
+    {
+      "path": "Dataset_Catalogue.md",
+      "bytes": 17275,
+      "sha256": "f6e361bb9908361ec636979dcf6479d38968c435e14ffdd6c9a09dc7c5345752"
+    },
+    {
+      "path": "Male_Data_Coverage.png",
+      "bytes": 681681,
+      "sha256": "04f8d43bf647587b2ec236e6efedfc7bba9174451dbf7f70c1465e734fddbbc7"
+    },
+    {
+      "path": "Male_Flood_Data_Research.pdf",
+      "bytes": 739508,
+      "sha256": "f19fe7b405ec56f01c33fb52d726e401e31f02211d09f2895a95adb7ff6c2137"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3860,
+      "sha256": "9f692128be76b89a01cbc538e617538a0dd999fa1c50dcaab613c834ad765f9d"
+    },
+    {
+      "path": "Research_Report.md",
+      "bytes": 17663,
+      "sha256": "bb2e0aca9cf8d2555f090a8326a483d1bc56588ef9cb7a164fe7c4b9090d6bf2"
+    },
+    {
+      "path": "boundary/OneMap_Hulhule_Context.geojson",
+      "bytes": 43255,
+      "sha256": "c5709c0fb593be726a2e63fb6c1e0abe59e536ed42b7690a3e56a79b448d4f98"
+    },
+    {
+      "path": "boundary/OneMap_Hulhule_Context_Source.json",
+      "bytes": 614,
+      "sha256": "2cc94922d567918742a68ddb771d909009f0725eb83b7043c4516edb8fb08f6b"
+    },
+    {
+      "path": "boundary/OneMap_Island_Layer_Metadata.json",
+      "bytes": 13611,
+      "sha256": "ae52aa9665c1afba5449936dd825a2df95c47796a945e3a9eecd5dbe126f57b1"
+    },
+    {
+      "path": "boundary/OneMap_Male_Island.geojson",
+      "bytes": 21075,
+      "sha256": "3da6164798cb162c11096a08b523babc8d1e31ee7de8b162d596d43d10e8e3c8"
+    },
+    {
+      "path": "boundary/OneMap_Male_Island_Source.json",
+      "bytes": 614,
+      "sha256": "838d74c1cf923fdf873f1dd5ba1436075d8319d058c48517b7d035318e691c26"
+    },
+    {
+      "path": "elevation/FABDEM_Male_QA.json",
+      "bytes": 2218,
+      "sha256": "6f5bae03f4e4bad0ab3bf85a7d0410276f870ed47f46afd01bc6ca3bf0c39f89"
+    },
+    {
+      "path": "elevation/FABDEM_Male_tile_index.json",
+      "bytes": 710,
+      "sha256": "14dd9da0cb9151a8dec3d4e3a46694975497be937b3204ce0f9e9d32050750c5"
+    },
+    {
+      "path": "elevation/FABDEM_license.txt",
+      "bytes": 21286,
+      "sha256": "047d2259741a3ebb30d8c8a43d4ba79b5b229a069acd1d2bea49f22b297d8e98"
+    },
+    {
+      "path": "elevation/FABDEM_readme.txt",
+      "bytes": 18866,
+      "sha256": "5035c8bc614af0de7ae78f7ef16d19191039e55ff1129a778582c4395c68454e"
+    },
+    {
+      "path": "elevation/Male_FABDEM_30m_masked.tif",
+      "bytes": 6102,
+      "sha256": "7b32e1bc103a7279089e5a56b12c2bc3f417acb2772cbeed202f147024e2f242"
+    },
+    {
+      "path": "elevation/N04E073_FABDEM_V1-2.tif",
+      "bytes": 123266,
+      "sha256": "697866d2ce87f6f09353ba06bb5afe34636f9c897c7c7bfe2a409a2bef262b06"
+    },
+    {
+      "path": "elevation/elevation_drains_findings.json",
+      "bytes": 2712,
+      "sha256": "3aa09299a6a5b1e6156442b1a194d2eb46a3af53f2884b2d3baf7eef72291e10"
+    },
+    {
+      "path": "flood/event_candidates.csv",
+      "bytes": 781,
+      "sha256": "0ef040df8f0b3acfeb172591d5d2ce3f6ffd9f3e6f6620d939da5a71175fbeaa"
+    },
+    {
+      "path": "flood/results.json",
+      "bytes": 7862,
+      "sha256": "f15fc50f3db8eb36fbd274407303689d62b634a9db8c70f60759df6ca772c122"
+    },
+    {
+      "path": "mapping/README.md",
+      "bytes": 6773,
+      "sha256": "6d154d1ccf892e35837bc6683546bd2edaf9df9a81766cee403d2b65a1398afc"
+    },
+    {
+      "path": "mapping/male_google_buildings.geojson",
+      "bytes": 3999507,
+      "sha256": "cc99429439d97dc02277d15628e4c2450975a6d5f449aef4b5421b85dc7c4660"
+    },
+    {
+      "path": "mapping/male_google_buildings_conf075.geojson",
+      "bytes": 2308440,
+      "sha256": "409fce474d070f4f9d3be41b4863a87b072810118c152026390f21df2a9003da"
+    },
+    {
+      "path": "mapping/male_microsoft_buildings.geojson",
+      "bytes": 1940773,
+      "sha256": "97e32e636eca29502643aa7acfc35436036dc965003d51b6ea71baaf4217f24a"
+    },
+    {
+      "path": "mapping/male_osm_buildings.geojson",
+      "bytes": 306596,
+      "sha256": "ddbc19520a69d173fd363f6eb6ba4b9d07d495d7f80d4f523d9579afbd3dba51"
+    },
+    {
+      "path": "mapping/male_osm_island_boundary.geojson",
+      "bytes": 8030,
+      "sha256": "1d89977e510307abe9d7c040e9589cc2f667a4c276f67ed837dad6e8deb679ab"
+    },
+    {
+      "path": "mapping/male_osm_landuse.geojson",
+      "bytes": 21137,
+      "sha256": "b559cda6bd7c17e91b5ea82e03d97c0ff4cc63a0c2513e790a8f4a3c3de9a555"
+    },
+    {
+      "path": "mapping/male_osm_roads.geojson",
+      "bytes": 223650,
+      "sha256": "aa4fec4e3da01dc50c11bcb3c30e925f6c569712708dc181f64dc527798978ea"
+    },
+    {
+      "path": "mapping/male_worldcover_2021_10m.tif",
+      "bytes": 13393,
+      "sha256": "8bf7672cbeb6f5583c97b59559629d21eb05dc3b6e0e86bcb1f85cbc0e4a8a7a"
+    },
+    {
+      "path": "mapping/male_worldcover_2021_10m.tif.aux.xml",
+      "bytes": 358,
+      "sha256": "12a46335b61585e0395d95bf19505f3131a88f35540bef3945c0acdf4a0d159a"
+    },
+    {
+      "path": "mapping/male_worldpop_2025_100m.tif",
+      "bytes": 1893,
+      "sha256": "3701b847ebe3864f58e28fb65d157f8021d6fbdc3f86a111045e23d6bbb7d0a7"
+    },
+    {
+      "path": "mapping/male_worldpop_2025_100m.tif.aux.xml",
+      "bytes": 434,
+      "sha256": "dcb976eeeed57a8b1ca9099b9b5368816e7226f408fca4e190ef3b6fee3c70f3"
+    },
+    {
+      "path": "mapping/results.json",
+      "bytes": 13281,
+      "sha256": "8ca2743383565865cb2270c7ddac4a80a21d42cf9da2b3afec21ad663d58328f"
+    },
+    {
+      "path": "mapping/worldpop_MDV_files_2025.json",
+      "bytes": 16243,
+      "sha256": "18256dafbe868ec4f5e598366c9ff3a0f616cc20ee0e37f4b3318ff489758051"
+    },
+    {
+      "path": "rainfall/README_RAINFALL.md",
+      "bytes": 2758,
+      "sha256": "634ac9b01e1dbd8c96532b95ce5d0dd456119957221df95841fbd4b930075b4b"
+    },
+    {
+      "path": "rainfall/chirpsv3_sample_verification.json",
+      "bytes": 1045,
+      "sha256": "93ba4306eb6139dfc1eb544e94a8877b1542aee5c482b5682fe24383de9b458d"
+    },
+    {
+      "path": "rainfall/chirpsv3_sat_20250103_male_context.tif",
+      "bytes": 654,
+      "sha256": "d8691c8a80f36ee0bf8fd92d0f1a8fe12a3142041f08bf567392d48f0c672d97"
+    },
+    {
+      "path": "rainfall/nasa_power_male_hourly_precipitation_20250101_20250105.csv",
+      "bytes": 12456,
+      "sha256": "d3a8a53a87a7c5146ac861b98547ce3c9e4e6d841082ce50885425825729a115"
+    },
+    {
+      "path": "rainfall/nasa_power_male_hourly_precipitation_20250101_20250105.json",
+      "bytes": 2639,
+      "sha256": "30a987a42418ac4bc04a2560d69120ff14b55ec50dbfe8e5750fe70fe519bcee"
+    },
+    {
+      "path": "rainfall/nasa_power_request_url.txt",
+      "bytes": 179,
+      "sha256": "e1584a3605ce4c3578d56b4d60193844c1ede1672354459e5394d654afa04719"
+    },
+    {
+      "path": "rainfall/noaa_global_hourly_2024_43555099999.csv",
+      "bytes": 4533735,
+      "sha256": "1f8e04dbc3dbd7bd6fbd8bfe03a50af09fed85d64ddd3ac54a5606f602a4a195"
+    },
+    {
+      "path": "rainfall/noaa_global_hourly_2024_qa.json",
+      "bytes": 1158,
+      "sha256": "617f5db37e980b16332aff75cec4f75d88bfd55ff04af467f32ec7a31d264f2a"
+    },
+    {
+      "path": "rainfall/noaa_global_hourly_2025_43555099999.csv",
+      "bytes": 3174070,
+      "sha256": "77ec9cb6d6863a5283c7479f498b80550c5fba642f12caf3e8f0d822c0bcf40a"
+    },
+    {
+      "path": "rainfall/noaa_global_hourly_2025_qa.json",
+      "bytes": 1155,
+      "sha256": "d492d256887ed7efc0b415f5b2784cbefb35df0df24bd17216357af282267d98"
+    },
+    {
+      "path": "rainfall/noaa_gsod_2024_43555099999.csv",
+      "bytes": 83379,
+      "sha256": "4e7d9d18ab3ec309b7de77c995a0dd4e17ae712e2666a1cc2afc0822d69df8e8"
+    },
+    {
+      "path": "rainfall/noaa_gsod_2025_43555099999.csv",
+      "bytes": 60489,
+      "sha256": "308db41eaa3f1824287f2d3535a647d660bce579bc1be6beb829d1b435f99815"
+    },
+    {
+      "path": "rainfall/noaa_precipitation_accumulations_2024.csv",
+      "bytes": 187828,
+      "sha256": "61c5412f40348ff53581b3d99e2166dc85da11ff0a7b91e631c489f54d1da8bc"
+    },
+    {
+      "path": "rainfall/noaa_precipitation_accumulations_2025.csv",
+      "bytes": 150882,
+      "sha256": "19375ee2b3e2aac84e457b64cfc9982c55ce2139526b0c4e8d63639e75681e7f"
+    },
+    {
+      "path": "rainfall/noaa_station_435550_99999_metadata.json",
+      "bytes": 536,
+      "sha256": "b7eb85dc23d8dd49ec20e9d11ccc53ccbb4b9225209ea7f898b26e923a33f8ac"
+    },
+    {
+      "path": "rainfall/rainfall_findings.json",
+      "bytes": 6803,
+      "sha256": "ee520ce119e9102e5a1ce4159576d6a0e4bbf8de275b33f60c1952cc1cdbede3"
+    },
+    {
+      "path": "tides/UHSLC_Male_Record1082_Hourly_2024.csv",
+      "bytes": 562179,
+      "sha256": "7f8249749519696e702208c5fc2a9ffa607df70a80159d714ce27020893a7992"
+    },
+    {
+      "path": "tides/qa.json",
+      "bytes": 236,
+      "sha256": "e58a95499a2a806dd29c102aa2db9bd7fc06197130a55219d553b84ce1daa991"
+    },
+    {
+      "path": "tides/source_metadata.json",
+      "bytes": 759,
+      "sha256": "f7bc734b4c72102ad0b71a27e0317510fa2ec07adbd2dc5c9554ad81049e99b8"
+    }
+  ]
+}

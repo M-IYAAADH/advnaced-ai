@@ -1,0 +1,1 @@
+https://power.larc.nasa.gov/api/temporal/hourly/point?parameters=PRECTOTCORR&community=AG&longitude=73.510&latitude=4.175&start=20250101&end=20250105&format=JSON&time-standard=UTC

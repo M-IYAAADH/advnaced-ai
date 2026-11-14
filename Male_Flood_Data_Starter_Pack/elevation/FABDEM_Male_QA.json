@@ -1,0 +1,54 @@
+{
+  "checked": "2026-11-14",
+  "source": "https://data.bris.ac.uk/datasets/s5hqmjcdj8yo2ibzi9b4ew3sn/N00E070-N10E080_FABDEM_V1-2.zip",
+  "source_member": "N04E073_FABDEM_V1-2.tif",
+  "source_bytes": 123266,
+  "source_sha256": "697866d2ce87f6f09353ba06bb5afe34636f9c897c7c7bfe2a409a2bef262b06",
+  "source_shape": [
+    3600,
+    3600
+  ],
+  "source_spacing_degrees": [
+    0.0002777777777777778,
+    0.0002777777777777778
+  ],
+  "source_nodata": -9999.0,
+  "horizontal_crs": "EPSG:4326",
+  "vertical_crs": "EGM2008 EPSG:3855 per official readme",
+  "pixel_interpretation": "RasterPixelIsPoint; sample coordinates from tiepoint and spacing",
+  "boundary_source": "Official OneMap Male island GeoJSON fetched by parent agent",
+  "boundary_bbox": [
+    73.5004555958173,
+    4.16827393194473,
+    73.5193579801617,
+    4.18106507997101
+  ],
+  "clip_shape": [
+    48,
+    70
+  ],
+  "island_centres_total": 2169,
+  "valid_island_samples": 2169,
+  "nodata_inside_island": 0,
+  "min_elevation_m": 0.0,
+  "max_elevation_m": 15.149999618530273,
+  "median_elevation_m": 5.039999961853027,
+  "percentiles_m": {
+    "p05": 0.38799999952316294,
+    "p25": 1.6799999475479126,
+    "p75": 6.309999942779541,
+    "p95": 8.221999740600584
+  },
+  "clip_file": "Male_FABDEM_30m_masked.tif",
+  "mask_method": "point-in-polygon sample centres against OneMap polygon with holes; original 1arcsec grid retained; outside island set to -9999",
+  "licence": "CC BY-NC-SA 4.0 (official Bristol readme)",
+  "limitations": [
+    "Coverage and file integrity checked, not validated against local surveyed ground elevations.",
+    "30m ML-corrected global DEM does not resolve curbs, drains, buildings or street inundation depths.",
+    "Current island boundary may include reclamation absent from source-era elevation.",
+    "Elevation values are surface-estimate/corrected terrain estimates, not locally observed flood depths.",
+    "Within-island median5.04m and maximum15.15m raise concern about residual urban/elevation bias; do not interpret as validated bare-earth height. Zero-valued pixels may be ocean/water fills or reclamation mismatch, not proven sea-level ground."
+  ],
+  "zero_valued_island_samples": 65,
+  "zip_crc32_verified": true
+}

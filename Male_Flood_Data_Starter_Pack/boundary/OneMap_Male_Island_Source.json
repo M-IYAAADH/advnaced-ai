@@ -1,0 +1,9 @@
+{
+  "source_url": "https://services7.arcgis.com/yvCbn3q8PPtPLZIM/arcgis/rest/services/island_20240509/FeatureServer/0/query?where=OBJECTID%3D1442&outFields=%2A&returnGeometry=true&outSR=4326&f=geojson",
+  "download_date": "2026-11-14",
+  "source": "OneMap / Maldives Geomatics Department",
+  "service": "island_20240509",
+  "coordinate_reference_system": "EPSG:4326",
+  "licence": "Public access/download advertised; no explicit open-reuse licence identified in service metadata. Confirm reuse terms.",
+  "limitation": "Service name suggests a2024 dataset; current coast/reclamation boundaries must be verified."
+}

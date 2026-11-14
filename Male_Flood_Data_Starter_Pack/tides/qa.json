@@ -1,0 +1,9 @@
+{
+  "n_timestamp_rows": 8784,
+  "valid_waterlevel_rows": 8659,
+  "missing_rows": 125,
+  "start": "2024-01-01T00:00:00Z",
+  "end": "2024-12-31T23:00:00Z",
+  "min_mm_relative_stationzero": 1372.0,
+  "max_mm_relative_stationzero": 2610.0
+}

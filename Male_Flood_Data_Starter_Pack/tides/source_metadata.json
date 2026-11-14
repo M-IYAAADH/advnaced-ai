@@ -1,0 +1,12 @@
+{
+  "source_url": "https://uhslc.soest.hawaii.edu/erddap/tabledap/global_hourly_rqds.csv?time,sea_level,quality,station_name,latitude,longitude,record_id,reference_datum&record_id=1082&time%3E=2024-01-01T00%3A00%3A00Z&time%3C=2024-12-31T23%3A00%3A00Z",
+  "dataset": "JASL/UHSLC Research Quality Tide Gauge Data (hourly)",
+  "record_id": 1082,
+  "station_id": 108,
+  "version": "B",
+  "requested_year": 2024,
+  "download_date": "2026-11-14",
+  "format": "CSV with a units row after the header; timeUTC; sea_levelmm relative stationzero",
+  "purpose": "Optional event covariate; not flood depth. Must reconcile tide and DEM datums; data gaps remain possible.",
+  "licence": "UHSLC ERDDAP metadata permits free use and redistribution; cite DOI10.7289/V5V40S7W"
+}

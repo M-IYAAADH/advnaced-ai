@@ -1,0 +1,97 @@
+{
+  "checked_date": "2026-11-14",
+  "scope": "Rainfall-driven flood labels and event history for Male island proper",
+  "conclusion": "No public street-level geocoded multi-event flood/dry training inventory was verified. Official incident tables, aggregate statistics and reports can seed an event catalogue, while detailed local observation records remain a data request.",
+  "rows": [
+    {
+      "name": "NDMA Male City incident table",
+      "url": "https://ndma.gov.mv/en/statistics/atoll/21/incident",
+      "citation_ref": "turn15view2",
+      "format": "Public HTML table",
+      "access_status": "Public page verified through web retrieval; no CSV link or coordinate fields shown",
+      "coverage": "A visible rainwater entry is dated 2023-10-01; the page also lists other hazards and other Greater Male islands",
+      "grain": "Incident record with location text and date, not a comprehensive event footprint",
+      "use": "Seed event catalogue and trace the agency record",
+      "limitation": "One visible rainwater record is insufficient; no observed dry examples; exact household/location text should be restricted or aggregated in outputs",
+      "recommended_action": "Request complete rainwater-flood event inventory for Male proper with geocodable locations, event times, flood verification and observation coverage"
+    },
+    {
+      "name": "DALA downloadable disaster statistics",
+      "url": "https://stats.ndma.gov.mv/download-statistics",
+      "citation_ref": "turn14search1; turn15view0",
+      "format": "CSV products advertised; dynamic frontend",
+      "access_status": "Page and public frontend verified; CSV bytes not obtained. Official frontend requests https://dala-api.ndma.gov.mv/api/public/downloads and downloads /api/public/downloads/{id}?year={year}; API returned HTTP 403 in this environment",
+      "coverage": "Year-selectable aggregates; indexed examples include monthly timelines, type counts, affected islands, atoll totals and demographic/financial aggregates",
+      "grain": "Monthly/island/atoll aggregate, not a per-location inundation label",
+      "use": "Background statistics, event context and reporting trends",
+      "limitation": "Advertised downloads must not be presented as successfully fetched data; aggregate counts cannot train a street flood classifier",
+      "recommended_action": "Try the normal public CSV buttons manually or ask NDMA for an approved aggregate export; separately request de-identified event-location observations"
+    },
+    {
+      "name": "NDMA Disaster Statistics of Maldives 2024",
+      "url": "https://ndma.gov.mv/storage/uploads/50wN1EoA/r3dbykmg.pdf",
+      "citation_ref": "turn30view0",
+      "format": "Public 22-page PDF report",
+      "access_status": "Full report readable by web retrieval; direct local byte download returned HTTP 403",
+      "coverage": "December 2023 to December 2024; national, atoll and island statistics; Greater Male summary",
+      "grain": "Aggregate incident and impact counts",
+      "use": "Context and verification of reporting definitions",
+      "limitation": "Greater Male differs from Male island proper; reported incidents differ from affected households; no street geocoding or verified dry observations",
+      "recommended_action": "Request the underlying non-identifying event register, with island code and event-date definitions"
+    },
+    {
+      "name": "Male City Council Voluntary Local Review 2025",
+      "url": "https://cdn.malecity.gov.mv/website/documents/6zqnEssfa8YfgaNZkf_I0-VLR_Male_Small%20file%20size.pdf",
+      "citation_ref": "turn15view3; turn17view0",
+      "format": "Public 144-page PDF",
+      "access_status": "Report verified through web retrieval; direct local PDF download returned HTTP 403",
+      "coverage": "City background, 2019-2024 major hazard summary and 2023-2024 affected-person/household aggregates",
+      "grain": "City/ward summary and selected event dates",
+      "use": "Strong local rationale; identifies 8 major surface-water flood events for 2019-2024, with selected dates and ward-level drainage issues",
+      "limitation": "Not a geospatial training inventory; definitions and station attribution must be reconciled with primary records",
+      "recommended_action": "Ask Council for the underlying Draft Male City Disaster Management Plan 2025 event and hazard maps cited by the VLR"
+    },
+    {
+      "name": "MMS Severe Weather Report 2024",
+      "url": "https://www.meteorology.gov.mv/downloads/319/view",
+      "citation_ref": "turn37search7",
+      "format": "Indexed official report; current URL redirects to MMS homepage",
+      "access_status": "Official indexed contents verified; current direct report delivery not verified",
+      "coverage": "Severe weather events during 2024, including 12-13 January",
+      "grain": "Weather-event summary and station rainfall; flood counts from NDMA",
+      "use": "Identify event windows and pair them to local rainfall observations",
+      "limitation": "No published street-by-street labels. Indexed report distinguishes Male AWS from Hulhule and Hulhumale stations; Council summary appears to mix station rainfall values",
+      "recommended_action": "Request current report copy and event observation files from MMS; verify UTC/local time and the rainfall accumulation period"
+    },
+    {
+      "name": "Global Flood Database v1",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/GLOBAL_FLOOD_DB_MODIS_EVENTS_V1",
+      "citation_ref": "turn46view0",
+      "format": "Earth Engine ImageCollection GLOBAL_FLOOD_DB/MODIS_EVENTS/V1",
+      "access_status": "Public catalogue verified; exact Male event coverage not verified",
+      "coverage": "913 mapped global events, 2000-2018; effective MODIS flood observations at 250 m",
+      "grain": "Coarse flood extent/duration raster",
+      "use": "Regional context only if an overlapping event is found",
+      "limitation": "Do not infer actual 30 m flood detail from catalogue band spacing; 250 m effective observations are unsuitable as unquestioned street-level Male waterlogging truth",
+      "recommended_action": "Check AOI/event intersections before using; do not use as the primary local training labels"
+    },
+    {
+      "name": "JRC Global River Flood Hazard Maps v2.1",
+      "url": "https://developers.google.com/earth-engine/datasets/catalog/JRC_CEMS_GLOFAS_FloodHazard_v2_1",
+      "citation_ref": "turn30view1",
+      "format": "90 m modelled river hazard rasters",
+      "access_status": "Public catalogue verified",
+      "coverage": "River basins; explicitly excludes small islands with basins smaller than 500 square kilometres",
+      "grain": "Modelled river inundation at return periods",
+      "use": "Reject for Male rainfall-waterlogging labels",
+      "limitation": "Wrong flood mechanism and documented coverage exclusions; not observed local floods",
+      "recommended_action": "Do not use for this project's supervised labels"
+    }
+  ],
+  "download_attempts": [
+    {"url": "https://dala-api.ndma.gov.mv/api/public/downloads", "result": "HTTP 403; no bytes saved"},
+    {"url": "https://ndma.gov.mv/storage/uploads/50wN1EoA/r3dbykmg.pdf", "result": "HTTP 403 for direct download; report text verified by web retrieval"},
+    {"url": "https://cdn.malecity.gov.mv/website/documents/6zqnEssfa8YfgaNZkf_I0-VLR_Male_Small%20file%20size.pdf", "result": "HTTP 403 for direct download; report text verified by web retrieval"}
+  ],
+  "request_fields": ["event_id", "island_code", "event_date", "observation_time_and_timezone", "deidentified_location_id", "street_or_coordinates_or_grid", "observed_flooded_dry_unknown", "flood_source_rainwater_coastal_other", "observed_depth_if_measured", "observed_duration_if_measured", "evidence_type", "location_precision", "observation_coverage", "verification_status"]
+}

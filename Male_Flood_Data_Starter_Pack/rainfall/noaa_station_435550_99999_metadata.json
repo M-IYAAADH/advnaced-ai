@@ -1,0 +1,17 @@
+{
+  "USAF": "435550",
+  "WBAN": "99999",
+  "STATION NAME": "MALE INTL / VELANA INTL",
+  "CTRY": "MV",
+  "STATE": "",
+  "ICAO": "VRMM",
+  "LAT": "+04.192",
+  "LON": "+073.529",
+  "ELEV(M)": "+0001.8",
+  "BEGIN": "19810101",
+  "END": "20250824",
+  "metadata_source_url": "https://www.ncei.noaa.gov/pub/data/noaa/isd-history.csv",
+  "retrieved_date": "2026-11-14",
+  "metadata_header_snapshot": "August2025",
+  "caution": "Station history period is not precipitation completeness; nearby Hulhule airport gauge is not Male island proper."
+}

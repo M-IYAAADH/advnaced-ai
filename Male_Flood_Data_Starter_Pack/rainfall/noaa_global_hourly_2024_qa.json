@@ -1,0 +1,55 @@
+{
+  "url": "https://noaa-global-hourly-pds.s3.amazonaws.com/2024/43555099999.csv",
+  "rows": 10784,
+  "bytes": 4533735,
+  "date_first": "2024-01-01T00:00:00",
+  "date_last": "2024-12-31T23:00:00",
+  "AA1": {
+    "nonempty": 1342,
+    "nonmissing_depth": 1315,
+    "accumulation_period_hours": {
+      "12": 654,
+      "06": 649,
+      "24": 7,
+      "99": 5
+    },
+    "sample": [
+      "12,0050,3,1",
+      "06,0000,9,1",
+      "12,0000,9,1",
+      "06,0000,9,1",
+      "12,0000,9,1",
+      "06,0003,3,1",
+      "12,0003,3,1",
+      "06,0000,9,1"
+    ]
+  },
+  "AA2": {
+    "nonempty": 324,
+    "nonmissing_depth": 321,
+    "accumulation_period_hours": {
+      "24": 317,
+      "99": 4
+    },
+    "sample": [
+      "24,0189,3,1",
+      "24,0000,9,1",
+      "24,0000,2,1",
+      "99,0010,3,1",
+      "24,0000,9,1",
+      "24,0000,9,1",
+      "24,0000,9,1",
+      "24,0000,2,2"
+    ]
+  },
+  "precipitation_groups_total": 1666,
+  "precipitation_groups_missing_depth": 30,
+  "precipitation_groups_quality_codes": {
+    "1": 1600,
+    "9": 30,
+    "2": 36
+  },
+  "GSOD_rows": 355,
+  "GSOD_nonmissing_precipitation": 354,
+  "hourly_precipitation_verified": false
+}

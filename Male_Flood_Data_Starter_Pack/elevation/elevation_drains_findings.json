@@ -1,0 +1,34 @@
+{
+  "checked": "2026-11-14",
+  "cancelled_dem_procurement": {
+    "url": "https://www.gazette.gov.mv/iulaan/303525",
+    "status": "Request for expression of interest cancelled 12 Aug 2024; not evidence of a completed DEM"
+  },
+  "stormwater_detailed_designs": {
+    "url": "https://documents1.worldbank.org/curated/en/099091525210068111/pdf/P163957-77b14dbd-a852-42ea-a7fe-e284010060fe.pdf",
+    "status": "September 2025 ISR says detailed designs final outputs delivered; public underlying GIS/drawings not found; scope and permission require request",
+    "male_scope_evidence": "World Bank July2024 MTR says Male stormwater designs/tender docs completedMay2024: https://documents1.worldbank.org/curated/en/099110624015517827/pdf/P163957-b07c3d4e-8d19-42d6-922e-85953c240e40.pdf"
+  },
+  "control_points": {
+    "url": "https://readme.onemap.mv/Datashare/ControlPoints.rar",
+    "status": "Downloaded official national archive 1032 survey marks; 0 within approximate Male bbox. Not a terrain DEM."
+  },
+  "copernicus_glo30": {
+    "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+    "resolution": "1 arcsec approx30m; DSM including buildings/vegetation; official global absolute vertical accuracy spec<4m(90%linear error), EGM2008",
+    "status": "Open global fallback; do not claim locally accurate street depths"
+  },
+  "fabdem": {
+    "url": "https://data.bris.ac.uk/datasets/s5hqmjcdj8yo2ibzi9b4ew3sn/",
+    "tile": "N04E073_FABDEM_V1-2.tif (index uses N004E073 spelling)",
+    "bundle": "N00E070-N10E080_FABDEM_V1-2.zip",
+    "resolution": "1 arcsec approx30m; ML-corrected GLO30 forest/buildings; EGM2008",
+    "license": "CC BY-NC-SA4.0 from official Bristol readme, despite third-party sites sometimes mislabelling. Academic noncommercial suitable subject attribution/sharealike.",
+    "status": "Downloaded original N04E073 tile and OneMap boundary-masked clip; QA in FABDEM_Male_QA.json. Coverage full but local accuracy unvalidated."
+  },
+  "drainage": "No open GIS drains/pumps/outfalls dataset located from authoritative sources in this search. Do not infer absence of agency data. Request asset GIS/CAD, inverts, pumps capacities, status, dated maintenance; records ownership may involve multiple custodians.",
+  "jica_equipment_project": {
+    "url": "https://www.jica.go.jp/english/information/press/2025/20250904_12.html",
+    "status": "Sept2025 grant agreement: Male seawall rehabilitation and stormwater drainage equipment, executing agency MinistryConstructionHousingInfrastructure, planned45months; candidate further request route for design/survey/pump assets, no open GIS download verified."
+  }
+}

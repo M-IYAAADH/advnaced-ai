@@ -1,0 +1,91 @@
+{
+  "checked_date": "2026-11-14",
+  "datasets": [
+    {
+      "dataset": "MMS historical rainfall",
+      "access": "Request required",
+      "url": "https://www.meteorology.gov.mv/climate-data",
+      "frequency": "Hourly offered in the request form; subhourly availability unverified.",
+      "coverage": "Request Male island gauges and the nearest available Hulhule station; require station metadata.",
+      "format": "CSV option in form",
+      "cost_licence": "Complementary to Maldivian nationals and qualifying research; application purpose only; no third-party redistribution without written MMS permission",
+      "verification": "Official form indexed; no data requested or obtained; current website may redirect.",
+      "recommendation": "Primary source for short-duration local rainfall"
+    },
+    {
+      "dataset": "NOAA ISD Global Hourly / Velana Intl",
+      "access": "Open download verified",
+      "url": "https://noaa-global-hourly-pds.s3.amazonaws.com/2024/43555099999.csv",
+      "url_2025": "https://noaa-global-hourly-pds.s3.amazonaws.com/2025/43555099999.csv",
+      "frequency": "Hourly/synoptic meteorological reports; precipitation groups in the tested years are 6-, 12- and 24-hour totals, not hourly rainfall.",
+      "coverage": "2024 calendar year and 2025 Jan 1-Aug 24 downloaded. Station-history metadata spans 1981 Jan 1-2025 Aug 24 with possible gaps.",
+      "format": "CSV; originalfixed-widthGZ also saved",
+      "cost_licence": "Free download without login; cite NOAA and station source.",
+      "verification": "2024: 10,784 meteorological rows; 1,666 nonempty AA groups, including 30 missing depths. 2025: 7,198 rows; 1,128 AA groups, including 21 missing depths. No 1-hour AA precipitation group found in either year. Quality and condition flags retained.",
+      "recommendation": "Measured nearby-station context at 6-hour/daily scale. Obtain MMS data for hourly/subhourly rainfall bursts."
+    },
+    {
+      "dataset": "NOAA GSOD / Velana Intl",
+      "access": "Open download verified",
+      "url": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2024/43555099999.csv",
+      "url_2025": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2025/43555099999.csv",
+      "frequency": "Daily derived summaries.",
+      "coverage": "2024: 355 dates, 354 nonmissing PRCP. 2025: 236 dates through Aug 24, all 236 with PRCP. Hulhule airport is not Male island proper.",
+      "format": "CSV",
+      "cost_licence": "Free download without login.",
+      "verification": "PRCP units are inches; raw attributes retained. 2024 is not complete. Missing dates and sentinel values are not zero.",
+      "recommendation": "Screen event dates and broad daily context; unsuitable for peak short-duration intensity or within-city rainfall variation."
+    },
+    {
+      "dataset": "NASA GPM IMERG Final V07",
+      "access": "Free registration / Earthdata or PPS download route; files not downloaded",
+      "url": "https://disc.gsfc.nasa.gov/datasets/GPM_3IMERGHH_07/summary",
+      "documentation": "https://gpm.nasa.gov/data/directory",
+      "frequency": "30 minutes; 0.1 degree grid (about 11 km).",
+      "coverage": "Official directory: Jan 1998-present, with about 3.5 months latency for Final. Global ocean/land coverage includes Male latitude; actual Male values have not been extracted here.",
+      "format": "HDF5, NetCDF and GeoTIFF/subsets, depending on access route.",
+      "cost_licence": "Free NASA data; Earthdata or PPS registration for common download routes.",
+      "verification": "Official directory and product documentation checked.",
+      "recommendation": "Best gridded subdaily fallback for regional event timing. Validate against gauges; not street-scale precipitation. Convert rate (mm/hour) to half-hour depth by multiplying by 0.5."
+    },
+    {
+      "dataset": "ERA5 hourly time-series single levels",
+      "access": "CDSaccount/licenceacceptance/APIrequired;notdownloaded",
+      "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries",
+      "frequency": "Hourly; 0.25 degree grid (about 28 km).",
+      "coverage": "1940-present global atmosphere. A nearby grid point is returned for an off-grid request. Male island is not resolved.",
+      "format": "CSV/NetCDF",
+      "cost_licence": "CC-BY; free CDS registration and licence acceptance required.",
+      "verification": "Official dataset and download form checked; data not downloaded.",
+      "recommendation": "Secondary reanalysis baseline; a large marine grid cell does not measure local convective rainfall peaks."
+    },
+    {
+      "dataset": "ERA5-Land hourly",
+      "access": "CDSaccount/APIrequired;notdownloaded",
+      "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land",
+      "frequency": "Hourly; 0.1 degree delivery grid, about 9 km native.",
+      "coverage": "1950-present land component. Valid Male grid-cell coverage has not been verified.",
+      "format": "GRIB and other CDS service formats.",
+      "cost_licence": "CC-BY",
+      "verification": "Official catalogue checked; no actual Male valid-pixel test.",
+      "recommendation": "Do not treat global extent as proof of valid values on a tiny island. ERA5 atmosphere avoids this land-mask issue but remains coarse."
+    },
+    {
+      "dataset": "CHIRPS v3 daily final",
+      "access": "OpenHTTPGeoTIFF/COG/NetCDF",
+      "url": "https://www.chc.ucsb.edu/data/chirps3",
+      "download_root": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/",
+      "frequency": "Daily values derived from pentads; 0.05 degree grid (about 5.6 km), not subdaily.",
+      "coverage": "Land, 60 N-60 S. At 4.175 N, 73.510 E the 2025 Jan 3 final-sat COG contains a valid estimate of 108.274635314941 mm. One pixel/date is verified, not the complete historical record.",
+      "format": "GeoTIFF,COG,NetCDF",
+      "cost_licence": "Publicdomain",
+      "verification": "Official v3 description and daily README checked. Actual COG sampled using GDAL; a 3-by-3-cell context GeoTIFF is saved. CHIRPS v2 ends after Dec 2026.",
+      "recommendation": "Useful for daily/climate context, not short-duration waterlogging intensity. Daily v3 inherits pentad totals and ERA5/IMERG timing; do not use agreement with those inputs as independent validation.",
+      "verified_sample_url": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/final/sat/cogs/2025/chirps-v3.0.sat.2025.01.03.cog",
+      "sample_latitude": 4.175,
+      "sample_longitude": 73.51,
+      "sample_value_mm": 108.274635314941
+    }
+  ],
+  "local_files_status": "QA and examples only. NOAA Global Hourly CSV files are meteorological reports, not 1-hour rainfall. Derived AA rows retain flags and need further QC. The NASA POWER sample is MERRA2 reanalysis."
+}

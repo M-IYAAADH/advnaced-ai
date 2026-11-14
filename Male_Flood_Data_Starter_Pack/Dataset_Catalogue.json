@@ -1,0 +1,334 @@
+[
+  {
+    "id": "B1",
+    "name": "Official OneMap Male island polygon",
+    "role": "Study boundary",
+    "status": "Downloaded and inspected",
+    "resolution": "Vector island outline; EPSG:4326",
+    "coverage": "One Male polygon, OBJECTID1442, FCODE LD0442; service island_20240509",
+    "url": "https://readme.onemap.mv/",
+    "files": [
+      "boundary/OneMap_Male_Island.geojson"
+    ],
+    "limitation": "Verify current reclamation/coastline and observation-era boundary. Service date is not proof of a current survey.",
+    "licence": "Public access/download advertised; no explicit open-reuse licence identified in layer metadata; confirm terms.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "M1",
+    "name": "OpenStreetMap roads and land use",
+    "role": "Road geometry / urban context",
+    "status": "Downloaded, clipped and geometry-checked",
+    "resolution": "571 road features;51 land-use features",
+    "coverage": "OSM snapshot2026-11-13; Male OSM island clip",
+    "url": "https://download.geofabrik.de/asia/maldives.html",
+    "files": [
+      "mapping/male_osm_roads.geojson",
+      "mapping/male_osm_landuse.geojson"
+    ],
+    "limitation": "Road centre-lines are not drain locations or capacity. Mapping completeness varies.",
+    "licence": "ODbL 1.0",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "M2",
+    "name": "OpenStreetMap building footprints",
+    "role": "Building-footprint alternative",
+    "status": "Downloaded, cleaned and geometry-checked",
+    "resolution": "933 polygons after removing2 building=no records",
+    "coverage": "Same OSM boundary and source snapshot",
+    "url": "https://download.geofabrik.de/asia/maldives.html",
+    "files": [
+      "mapping/male_osm_buildings.geojson"
+    ],
+    "limitation": "Incomplete coverage; compare visually with other alternatives. No validated height or household count.",
+    "licence": "ODbL 1.0",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "M3",
+    "name": "Microsoft Global ML Building Footprints",
+    "role": "Building-footprint alternative",
+    "status": "Downloaded, clipped and geometry-checked",
+    "resolution": "4,677 candidate footprint polygons",
+    "coverage": "Release index2026-08-13; capture dates for local imagery not established",
+    "url": "https://github.com/microsoft/GlobalMLBuildingFootprints",
+    "files": [
+      "mapping/male_microsoft_buildings.geojson"
+    ],
+    "limitation": "Model detections, not surveyed truth. Placeholder height/confidence values must not be used as real measurements.",
+    "licence": "CDLA Permissive 2.0 (current official repository)",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "M4",
+    "name": "Google Open Buildings v3",
+    "role": "Building-footprint alternative",
+    "status": "Downloaded, clipped, filtered and geometry-checked",
+    "resolution": "5,773 detections at confidence>=0.75;10,077 in full audit file",
+    "coverage": "InferenceMay2023; tile3b3; imagery dates not established",
+    "url": "https://sites.research.google/gr/open-buildings/",
+    "files": [
+      "mapping/male_google_buildings_conf075.geojson",
+      "mapping/male_google_buildings.geojson"
+    ],
+    "limitation": "Chosen0.75 threshold is not a promised precision. Do not add counts across Google,Microsoft andOSM; duplicates and different segmentation.",
+    "licence": "CC BY 4.0 or ODbL1.0 (provider offers choice)",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "M5",
+    "name": "ESA WorldCover2021v200",
+    "role": "Land-cover predictor",
+    "status": "Actual pixels downloaded and masked",
+    "resolution": "Nominal10m;227x153 bounding grid;24,188 valid cells",
+    "coverage": "Observation year2021",
+    "url": "https://developers.google.com/earth-engine/datasets/catalog/ESA_WorldCover_v200",
+    "files": [
+      "mapping/male_worldcover_2021_10m.tif"
+    ],
+    "limitation": "Built-up class is not measured imperviousness. Narrow streets are mixed pixels; date-match to events.",
+    "licence": "CC BY4.0",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "M6",
+    "name": "WorldPop Global2 R2025A population2025",
+    "role": "Optional exposure layer",
+    "status": "Actual country TIFF downloaded; Male crop supplied",
+    "resolution": "Nominal100m;23x15 bounding grid;233 valid cells",
+    "coverage": "2025 modelled population per cell; alpha-release product",
+    "url": "https://api.worldpop.org/v3/countries/MDV/files?year=2025",
+    "files": [
+      "mapping/male_worldpop_2025_100m.tif"
+    ],
+    "limitation": "Use broad exposure, not household locations or flood labels. Boundary masking changes totals. Do not quote clipped sum as official census.",
+    "licence": "CC BY4.0",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "E1",
+    "name": "FABDEM V1-2",
+    "role": "Coarse exploratory elevation comparator",
+    "status": "Original tile downloaded; official-boundary clip checked",
+    "resolution": "1arcsecond(~30m);48x70 bounding crop;2,169 inside-island samples",
+    "coverage": "N04E073; WGS84/EGM2008; original Copernicus source-era terrain",
+    "url": "https://data.bris.ac.uk/datasets/s5hqmjcdj8yo2ibzi9b4ew3sn/",
+    "files": [
+      "elevation/Male_FABDEM_30m_masked.tif",
+      "elevation/N04E073_FABDEM_V1-2.tif"
+    ],
+    "limitation": "Not validated against local survey. Median5.04m,max15.15m and65zeros warrant urban-bias/reclamation checks. Cannot establish street flood depth.",
+    "licence": "CC BY-NC-SA4.0; retain official attribution and ShareAlike for adapted FABDEM.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "E2",
+    "name": "Copernicus GLO-30",
+    "role": "Alternative global surface model",
+    "status": "Catalogue verified; no second raster downloaded",
+    "resolution": "1arcsecond(~30m)DSM",
+    "coverage": "Global product; source-era coast and surface",
+    "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+    "files": [],
+    "limitation": "Includes buildings/vegetation; global vertical specification does not establish Male accuracy.",
+    "licence": "Copernicus DEM licence; attribution required.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "E3",
+    "name": "Local ground survey / DEM",
+    "role": "Preferred elevation input",
+    "status": "Request required; public high-resolution Male DEM not located",
+    "resolution": "Ask for actual resolution, vertical accuracy, datum and survey dates",
+    "coverage": "Male island proper; current and historical reclamation",
+    "url": "https://www.gazette.gov.mv/iulaan/303525",
+    "files": [],
+    "limitation": "The2023 DEM/masterplan EOI was cancelled12Aug2024. Do not infer delivery from that notice. Ask separately about survey inputs behind completed stormwater designs.",
+    "licence": "Agency permission and dataset-specific terms.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "D1",
+    "name": "Completed Male stormwater designs and surveys",
+    "role": "Drainage network / capacity / survey inputs",
+    "status": "Completion documented; underlying files request-only",
+    "resolution": "Ask for GIS/CAD, survey points, inverts, capacities, pumps, outfalls and model inputs",
+    "coverage": "WorldBank July2024 report says Male detailed designs/tender docs completedMay2024",
+    "url": "https://documents1.worldbank.org/curated/en/099110624015517827/pdf/P163957-b07c3d4e-8d19-42d6-922e-85953c240e40.pdf",
+    "files": [],
+    "limitation": "Design completion is not proof of a downloadable asset database or installed/current network. Scope and custodian access must be confirmed.",
+    "licence": "Agency permission and consultant/client terms.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "F1",
+    "name": "NDMA Male rainwater incident table",
+    "role": "Candidate event dates / source records",
+    "status": "Public HTML inspected; complete spatial inventory not found",
+    "resolution": "Incident date and location text; no full flood footprint",
+    "coverage": "Visible2023-10-01 Male rainwater record",
+    "url": "https://ndma.gov.mv/en/statistics/atoll/21/incident",
+    "files": [
+      "flood/event_candidates.csv"
+    ],
+    "limitation": "Three deidentified city-level candidates supplied across sources are not street training labels; unreported is not observed dry.",
+    "licence": "Public report use with attribution; request permission for detailed records.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "F2",
+    "name": "NDMA DALA statistics",
+    "role": "Aggregate event context",
+    "status": "Download products advertised; CSV bytes not fetched",
+    "resolution": "Monthly/island/atoll and impact aggregates",
+    "coverage": "Dynamic public portal; actual year/product coverage to confirm",
+    "url": "https://stats.ndma.gov.mv/download-statistics",
+    "files": [],
+    "limitation": "Public API attempt returned403. Do not claim downloads verified or use aggregate counts as per-street labels.",
+    "licence": "Confirm download terms with provider.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "F3",
+    "name": "Council VLR2025 and underlying disaster plan",
+    "role": "Local hazard context / data-request lead",
+    "status": "Official report inspected; underlying event maps request-only",
+    "resolution": "City/ward summaries; selected event dates",
+    "coverage": "2019-2024 major surface-water summary in2025 report",
+    "url": "https://cdn.malecity.gov.mv/website/documents/6zqnEssfa8YfgaNZkf_I0-VLR_Male_Small%20file%20size.pdf",
+    "files": [],
+    "limitation": "Ask for underlying Draft Male City Disaster Management Plan2025 event/hazard maps, deidentified observations and coverage. Do not copy entire report into data pack.",
+    "licence": "Council report copyright; underlying-data permission required.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "R1",
+    "name": "MMS historical rainfall",
+    "role": "Rainfall / weather",
+    "status": "Request required",
+    "resolution": "Hourly offered in the request form; subhourly availability unverified.",
+    "coverage": "Request Male island gauges and the nearest available Hulhule station; require station metadata.",
+    "url": "https://www.meteorology.gov.mv/climate-data",
+    "files": [],
+    "limitation": "Primary source for short-duration local rainfall Official form indexed; no data requested or obtained; current website may redirect.",
+    "licence": "Complementary to Maldivian nationals and qualifying research; application purpose only; no third-party redistribution without written MMS permission",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "R2",
+    "name": "NOAA ISD Global Hourly / Velana Intl",
+    "role": "Rainfall / weather",
+    "status": "Open download verified",
+    "resolution": "Hourly/synoptic meteorological reports; precipitation groups in the tested years are 6-, 12- and 24-hour totals, not hourly rainfall.",
+    "coverage": "2024 calendar year and 2025 Jan 1-Aug 24 downloaded. Station-history metadata spans 1981 Jan 1-2025 Aug 24 with possible gaps.",
+    "url": "https://noaa-global-hourly-pds.s3.amazonaws.com/2024/43555099999.csv",
+    "files": [
+      "rainfall/noaa_global_hourly_2024_43555099999.csv",
+      "rainfall/noaa_global_hourly_2025_43555099999.csv",
+      "rainfall/noaa_precipitation_accumulations_2024.csv",
+      "rainfall/noaa_precipitation_accumulations_2025.csv"
+    ],
+    "limitation": "Measured nearby-station context at 6-hour/daily scale. Obtain MMS data for hourly/subhourly rainfall bursts. 2024: 10,784 meteorological rows; 1,666 nonempty AA groups, including 30 missing depths. 2025: 7,198 rows; 1,128 AA groups, including 21 missing depths. No 1-hour AA precipitation group found in either year. Quality and condition flags retained.",
+    "licence": "Free download without login; cite NOAA and station source.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "R3",
+    "name": "NOAA GSOD / Velana Intl",
+    "role": "Rainfall / weather",
+    "status": "Open download verified",
+    "resolution": "Daily derived summaries.",
+    "coverage": "2024: 355 dates, 354 nonmissing PRCP. 2025: 236 dates through Aug 24, all 236 with PRCP. Hulhule airport is not Male island proper.",
+    "url": "https://www.ncei.noaa.gov/data/global-summary-of-the-day/access/2024/43555099999.csv",
+    "files": [
+      "rainfall/noaa_gsod_2024_43555099999.csv",
+      "rainfall/noaa_gsod_2025_43555099999.csv"
+    ],
+    "limitation": "Screen event dates and broad daily context; unsuitable for peak short-duration intensity or within-city rainfall variation. PRCP units are inches; raw attributes retained. 2024 is not complete. Missing dates and sentinel values are not zero.",
+    "licence": "Free download without login.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "R4",
+    "name": "NASA GPM IMERG Final V07",
+    "role": "Rainfall / weather",
+    "status": "Free registration / Earthdata or PPS download route; files not downloaded",
+    "resolution": "30 minutes; 0.1 degree grid (about 11 km).",
+    "coverage": "Official directory: Jan 1998-present, with about 3.5 months latency for Final. Global ocean/land coverage includes Male latitude; actual Male values have not been extracted here.",
+    "url": "https://disc.gsfc.nasa.gov/datasets/GPM_3IMERGHH_07/summary",
+    "files": [],
+    "limitation": "Best gridded subdaily fallback for regional event timing. Validate against gauges; not street-scale precipitation. Convert rate (mm/hour) to half-hour depth by multiplying by 0.5. Official directory and product documentation checked.",
+    "licence": "Free NASA data; Earthdata or PPS registration for common download routes.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "R5",
+    "name": "ERA5 hourly time-series single levels",
+    "role": "Rainfall / weather",
+    "status": "CDSaccount/licenceacceptance/APIrequired;notdownloaded",
+    "resolution": "Hourly; 0.25 degree grid (about 28 km).",
+    "coverage": "1940-present global atmosphere. A nearby grid point is returned for an off-grid request. Male island is not resolved.",
+    "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels-timeseries",
+    "files": [],
+    "limitation": "Secondary reanalysis baseline; a large marine grid cell does not measure local convective rainfall peaks. Official dataset and download form checked; data not downloaded.",
+    "licence": "CC-BY; free CDS registration and licence acceptance required.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "R6",
+    "name": "ERA5-Land hourly",
+    "role": "Rainfall / weather",
+    "status": "CDSaccount/APIrequired;notdownloaded",
+    "resolution": "Hourly; 0.1 degree delivery grid, about 9 km native.",
+    "coverage": "1950-present land component. Valid Male grid-cell coverage has not been verified.",
+    "url": "https://cds.climate.copernicus.eu/datasets/reanalysis-era5-land",
+    "files": [],
+    "limitation": "Do not treat global extent as proof of valid values on a tiny island. ERA5 atmosphere avoids this land-mask issue but remains coarse. Official catalogue checked; no actual Male valid-pixel test.",
+    "licence": "CC-BY",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "R7",
+    "name": "CHIRPS v3 daily final",
+    "role": "Rainfall / weather",
+    "status": "OpenHTTPGeoTIFF/COG/NetCDF",
+    "resolution": "Daily values derived from pentads; 0.05 degree grid (about 5.6 km), not subdaily.",
+    "coverage": "Land, 60 N-60 S. At 4.175 N, 73.510 E the 2025 Jan 3 final-sat COG contains a valid estimate of 108.274635314941 mm. One pixel/date is verified, not the complete historical record.",
+    "url": "https://www.chc.ucsb.edu/data/chirps3",
+    "files": [
+      "rainfall/chirpsv3_sat_20250103_male_context.tif"
+    ],
+    "limitation": "Useful for daily/climate context, not short-duration waterlogging intensity. Daily v3 inherits pentad totals and ERA5/IMERG timing; do not use agreement with those inputs as independent validation. Official v3 description and daily README checked. Actual COG sampled using GDAL; a 3-by-3-cell context GeoTIFF is saved. CHIRPS v2 ends after Dec 2026.",
+    "licence": "Publicdomain",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "T1",
+    "name": "JASL/UHSLC Male record1082, versionB",
+    "role": "Optional tide/water-level covariate",
+    "status": "Actual CSV downloaded and inspected",
+    "resolution": "Hourly;8,784 timestamps;8,659 valid,125 missing",
+    "coverage": "2024-01-01 to2024-12-31 UTC; station4.19N,73.5267E",
+    "url": "https://uhslc.soest.hawaii.edu/erddap/tabledap/global_hourly_rqds.html",
+    "files": [
+      "tides/UHSLC_Male_Record1082_Hourly_2024.csv"
+    ],
+    "limitation": "Water levels are mm relative station zero, not flood depth or automatically MSL. Reconcile vertical datums before combining with elevation. Includes a units row after header.",
+    "licence": "Free use/redistribution per ERDDAP metadata; cite DOI10.7289/V5V40S7W.",
+    "checked": "2026-11-14"
+  },
+  {
+    "id": "M7",
+    "name": "Dynamic World V1",
+    "role": "Optional time-matched land cover",
+    "status": "Catalogue only; Male samples not extracted",
+    "resolution": "10m class probabilities",
+    "coverage": "2015 onward, cloud-filtered Sentinel2",
+    "url": "https://developers.google.com/earth-engine/datasets/catalog/GOOGLE_DYNAMICWORLD_V1",
+    "files": [],
+    "limitation": "Use pre-event images. flooded_vegetation class is not urban flood ground truth.",
+    "licence": "CC BY4.0 plus required source attribution.",
+    "checked": "2026-11-14"
+  }
+]

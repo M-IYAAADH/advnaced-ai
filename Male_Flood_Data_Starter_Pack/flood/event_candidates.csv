@@ -1,0 +1,4 @@
+event_or_record_date,island,record_type,spatial_precision,source_url,limitation
+2023-10-01,Male,NDMA public rainwater incident record,City only in this deidentified extract,https://ndma.gov.mv/en/statistics/atoll/21/incident,Not a complete event or street label inventory; location text intentionally omitted
+2023-12-31,Male,Council VLR selected major surface-water flood date,City,https://cdn.malecity.gov.mv/website/documents/6zqnEssfa8YfgaNZkf_I0-VLR_Male_Small%20file%20size.pdf,Event candidate only; station rainfall attribution requires reconciliation
+2024-01-12,Male,MMS severe weather event with NDMA flood summary,City,https://www.meteorology.gov.mv/downloads/319/view,Current link redirects; report describes 12-13 January event window; no individual flood/dry locations

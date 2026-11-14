@@ -1,0 +1,16 @@
+{
+  "dataset": "CHIRPS v3 daily final",
+  "access": "OpenHTTPGeoTIFF/COG/NetCDF",
+  "url": "https://www.chc.ucsb.edu/data/chirps3",
+  "download_root": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/",
+  "frequency": "Dailyderivedfrompentads;0.05degree(~5.6km),NOTsubdaily",
+  "coverage": "Land60N-60S. Actual2025-Jan3satCOG pointat4.175N73.510Econtainsvalid108.274635314941mm dailyestimate;thisverifiedonepixel/date,notwholehistoricalcoverage.",
+  "format": "GeoTIFF,COG,NetCDF",
+  "cost_licence": "Publicdomain",
+  "verification": "OfficialCHIRPSv3dailyreadmechecked;actualCOGsamplequeriedwithGDALatMalepoint. v2endsDec2026. Onepixel/datechecked,notallrecord.",
+  "recommendation": "Climatologyratherthanshort-durationurbanwaterlogging;dailyv3isnotindependentdailygaugeblend;donotmistakeresamplingforfinerphysics",
+  "verified_sample_url": "https://data.chc.ucsb.edu/products/CHIRPS/v3.0/daily/final/sat/cogs/2025/chirps-v3.0.sat.2025.01.03.cog",
+  "sample_latitude": 4.175,
+  "sample_longitude": 73.51,
+  "sample_value_mm": 108.274635314941
+}
