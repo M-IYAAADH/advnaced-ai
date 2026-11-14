@@ -1,0 +1,528 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Scrum sprint board for the Malé road-flood susceptibility project: sprints, backlog and task split for three members.">
+<title>Road-Flood Sprint Board</title>
+<style>
+:root{color-scheme:light;--ink:#172b2b;--muted:#586e62;--line:#dce5df;--paper:#f4f6f1;--card:#fff;--green:#176b51;--deep:#183a31;--amber:#d99b37;--blue:#5d82a1;--gray:#a6b4aa;--done:#62b580;--m1:#176b51;--m2:#5d82a1;--m3:#b5762a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 "Avenir Next",Avenir,"Segoe UI",sans-serif;font-feature-settings:"kern" 1,"liga" 1;text-rendering:optimizeLegibility}
+main{max-width:1240px;margin:auto;padding:46px 32px 70px}
+h1,h2,h3{font-family:Georgia,serif;font-weight:normal}
+header{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:34px}
+.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+h1{font-size:clamp(36px,5vw,58px);line-height:1;margin:10px 0 0}
+.date{color:var(--muted);font-size:13px;text-align:right;max-width:36ch}
+button,input,select{font:inherit;color:inherit}
+button{touch-action:manipulation}
+button:focus-visible,summary:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid #649982;outline-offset:3px}
+
+/* overview */
+.overview{background:var(--deep);color:#fff;border-radius:14px;padding:30px 34px;display:grid;grid-template-columns:1.1fr 1.6fr;gap:40px;align-items:center}
+.overview h2{font-size:29px;margin:4px 0 8px}
+.overview p{color:#bbcec2;margin:0;font-size:14px;max-width:52ch}
+.overview .eyebrow{color:#9fd1b9}
+.big{font:normal 48px Georgia,serif;line-height:1;font-variant-numeric:tabular-nums}
+.big small{font:14px "Avenir Next",sans-serif;color:#bbcec2}
+.stack{display:flex;height:18px;overflow:hidden;border-radius:20px;background:#345549;margin:17px 0}
+.stack span{height:100%}
+.legend{display:flex;gap:16px;flex-wrap:wrap;color:#d6e3da;font-size:12px}
+.legend i,.dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px}
+.facts{display:flex;gap:26px;flex-wrap:wrap;margin-top:16px;font-size:13px;color:#d6e3da}
+.facts b{display:block;font:normal 22px Georgia,serif;color:#fff;font-variant-numeric:tabular-nums}
+
+/* team */
+.members{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:26px 0 30px}
+.member{background:transparent;border:1px solid var(--line);border-radius:10px;padding:18px 20px;text-align:left;cursor:pointer;border-top:4px solid var(--c)}
+.member:hover,.member.active{background:#eaf0e7;border-color:var(--c)}
+.member h3{font-size:24px;margin:6px 0 2px}
+.member .role{font-size:12px;font-weight:700;color:var(--c);text-transform:uppercase;letter-spacing:.06em}
+.member p{font-size:13.5px;color:var(--muted);margin:8px 0 14px;min-height:40px}
+.member .meta{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.mini{height:5px;margin-top:10px;background:#dce5df;display:flex;overflow:hidden;border-radius:3px}
+.mini span{height:100%}
+
+/* tabs */
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:22px;overflow-x:auto}
+.tabs button{border:0;background:none;padding:12px 16px;font-size:15px;color:var(--muted);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--green);font-weight:600}
+.panel[hidden]{display:none}
+
+/* toolbar */
+.toolbar{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.toolbar h2{font-size:30px;margin:0}
+.toolbar p{margin:4px 0 0;color:var(--muted);font-size:13.5px;max-width:70ch}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font-size:13px;cursor:pointer;white-space:nowrap}
+.chip.on{background:var(--green);border-color:var(--green);color:#fff}
+.chip .now{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--amber);margin-left:6px;vertical-align:middle}
+.reset{padding:0;border:0;background:none;color:var(--green);cursor:pointer;font-size:13px;text-decoration:underline;text-underline-offset:3px}
+
+/* board */
+.board{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;align-items:start}
+.col{background:#eef2ec;border-radius:10px;padding:10px;min-height:120px}
+.col h3{font:700 13px "Avenir Next",sans-serif;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:4px 6px 10px;display:flex;justify-content:space-between}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:8px;padding:12px 13px;margin-bottom:9px}
+.card .top{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.card .t{font-size:14.5px;font-weight:600;margin:6px 0 8px;line-height:1.35}
+.tags{display:flex;gap:5px;flex-wrap:wrap}
+.tag{font-size:11.5px;font-weight:700;padding:3px 7px;border-radius:5px;background:#f0f3f0;color:#526a5b}
+.tag.owner{background:color-mix(in srgb,var(--c) 14%,#fff);color:var(--c)}
+.tag.cond{background:#fff3dc;color:#80520b}
+.tag.wait{background:#fbe9e3;color:#8b371f}
+.card details{font-size:13px;color:var(--muted);margin-top:8px}
+.card summary{cursor:pointer;width:fit-content}
+.card details p{margin:6px 0}
+.empty{color:var(--muted);font-size:13px;padding:10px 6px}
+
+/* sprint plan */
+.sprints{display:grid;gap:12px}
+.sprint{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 20px;display:grid;grid-template-columns:150px 1fr 260px;gap:20px;align-items:center}
+.sprint.current{border-color:var(--green);box-shadow:0 0 0 1px var(--green)}
+.sprint .sn{font:normal 22px Georgia,serif}
+.sprint .sd{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.sprint .goal{font-size:14.5px}
+.sprint .goal small{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
+.load{display:grid;gap:5px;font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.load .ln{display:grid;grid-template-columns:62px 1fr 34px;gap:8px;align-items:center}
+.load .tr{height:7px;background:#edf1ed;border-radius:4px;overflow:hidden}
+.load .tr span{display:block;height:100%;border-radius:4px}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:5px;margin-left:6px;vertical-align:middle}
+.badge.now{background:#e5f3e9;color:#287146}
+.badge.done{background:#eef2ec;color:#526a5b}
+
+/* lists */
+.list{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.row{display:grid;grid-template-columns:80px 1fr 120px;gap:16px;align-items:start;padding:14px 20px;border-bottom:1px solid #edf1ee}
+.row:last-child{border:0}
+.row .id{color:#596f61;font-size:12.5px;font-variant-numeric:tabular-nums}
+.row .t{font-weight:600;font-size:14.5px;margin:0}
+.row .d{font-size:13px;color:var(--muted);margin:4px 0 0}
+
+/* guide */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:20px 22px}
+.box h3{font-size:21px;margin:0 0 10px}
+.box ul,.box ol{margin:0;padding-left:20px;font-size:14px}
+.box li{margin:5px 0}
+.box p{font-size:14px;margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:13.5px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid #edf1ee;vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+code{font-size:12.5px;background:#eef2ec;padding:1px 5px;border-radius:4px}
+.foot{color:var(--muted);font-size:13px;margin-top:22px;max-width:90ch}
+
+/* source bar */
+.sourcebar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:-14px 0 22px}
+.action{display:inline-flex;align-items:center;padding:8px 13px;background:#fff;border:1px solid var(--line);border-radius:7px;color:var(--ink);font-size:13px;cursor:pointer;text-decoration:none}
+.action:hover{border-color:var(--green)}
+.source{flex-basis:100%;margin:4px 0 0;font-size:13px;color:var(--muted);max-width:95ch}
+.source.error{color:#8b371f;font-weight:600}
+[hidden]{display:none!important}
+
+@media(max-width:900px){.board{grid-template-columns:repeat(2,minmax(0,1fr))}.sprint{grid-template-columns:1fr}.grid2{grid-template-columns:1fr}}
+@media(max-width:700px){main{padding:28px 16px 50px}header{flex-direction:column;align-items:start;margin-bottom:22px}.date{text-align:left}.overview{grid-template-columns:1fr;gap:20px;padding:24px}.members{grid-template-columns:1fr;gap:10px}.member p{min-height:0}.board{grid-template-columns:1fr}.row{grid-template-columns:62px 1fr}.row .st{grid-column:2}.big{font-size:42px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div><div class="eyebrow">Malé road-flood susceptibility · Scrum</div><h1>Sprint board</h1></div>
+  <div class="date" id="today">Three members · two-week sprints<br>Working deadline 30 May 2027 (time unconfirmed)</div>
+</header>
+
+<div class="sourcebar">
+  <button class="action" type="button" id="refresh">Refresh</button>
+  <button class="action" type="button" id="load-file">Load sprint.md</button>
+  <a class="action" href="sprint.md">Open sprint.md</a>
+  <input type="file" id="file" accept=".md,text/markdown,text/plain" aria-label="Choose sprint.md" hidden>
+  <p class="source" id="source-status" role="status" aria-live="polite">Reading sprint.md…</p>
+</div>
+
+<div id="app" hidden>
+<section class="overview" aria-label="Current sprint">
+  <div>
+    <div class="eyebrow" id="ov-label">Current sprint</div>
+    <h2 id="ov-name">—</h2>
+    <p id="ov-goal"></p>
+  </div>
+  <div>
+    <div class="big" id="ov-pct">—</div>
+    <div class="stack" id="ov-stack" aria-hidden="true"></div>
+    <div class="legend" id="ov-legend"></div>
+    <div class="facts" id="ov-facts"></div>
+  </div>
+</section>
+
+<section aria-label="Team"><div class="members" id="members"></div></section>
+
+<nav class="tabs" role="tablist" aria-label="Views">
+  <button role="tab" aria-selected="true" aria-controls="p-board" id="t-board">Sprint board</button>
+  <button role="tab" aria-selected="false" aria-controls="p-plan" id="t-plan">Sprint plan</button>
+  <button role="tab" aria-selected="false" aria-controls="p-backlog" id="t-backlog">Product backlog</button>
+  <button role="tab" aria-selected="false" aria-controls="p-guide" id="t-guide">How we run Scrum</button>
+</nav>
+
+<section class="panel" id="p-board" role="tabpanel" aria-labelledby="t-board">
+  <div class="toolbar">
+    <div><h2 id="b-title">Sprint</h2><p id="b-goal"></p></div>
+    <button class="reset" id="clear" type="button">Show all members</button>
+  </div>
+  <div class="chips" id="sprint-chips" role="group" aria-label="Choose sprint" style="margin-bottom:16px"></div>
+  <div class="board" id="board"></div>
+</section>
+
+<section class="panel" id="p-plan" role="tabpanel" aria-labelledby="t-plan" hidden>
+  <div class="toolbar"><div><h2>Sprint plan</h2><p>Story points per member show whether work is balanced. Sprints 1–8 are planned; the rest is buffer, to be replanned once the lecturer confirms the requirements (MF-10).</p></div></div>
+  <div class="sprints" id="sprints"></div>
+</section>
+
+<section class="panel" id="p-backlog" role="tabpanel" aria-labelledby="t-backlog" hidden>
+  <div class="toolbar"><div><h2>Product backlog</h2><p>These items are not in a sprint yet. Those marked <em>pending confirmation</em> come from the older recipe-review brief and only enter a sprint if the lecturer confirms they apply to this project.</p></div></div>
+  <div class="list" id="backlog"></div>
+</section>
+
+<section class="panel" id="p-guide" role="tabpanel" aria-labelledby="t-guide" hidden>
+  <div class="grid2">
+    <div class="box">
+      <h3>Roles (proposed)</h3>
+      <table>
+        <thead><tr><th>Member</th><th>Scrum role</th><th>Focus</th></tr></thead>
+        <tbody id="roles"></tbody>
+      </table>
+      <p style="color:var(--muted);font-size:13px">The lecturer is the main stakeholder. Roles are a proposal; agree them at Sprint 1 planning.</p>
+    </div>
+    <div class="box">
+      <h3>Ceremonies</h3>
+      <table>
+        <thead><tr><th>Event</th><th>When</th><th>Length</th></tr></thead>
+        <tbody>
+          <tr><td>Sprint planning</td><td>First Sunday of the sprint</td><td>45 min</td></tr>
+          <tr><td>Daily stand-up</td><td>Sun, Tue, Thu (async message is fine)</td><td>10 min</td></tr>
+          <tr><td>Backlog refinement</td><td>Wednesday of week 2</td><td>30 min</td></tr>
+          <tr><td>Sprint review</td><td>Last Thursday of the sprint</td><td>30 min</td></tr>
+          <tr><td>Retrospective</td><td>Straight after review</td><td>20 min</td></tr>
+        </tbody>
+      </table>
+      <p>Stand-up questions: what I finished, what I'm doing next, what's blocking me.</p>
+    </div>
+    <div class="box">
+      <h3>Definition of Ready</h3>
+      <ul>
+        <li>Has one owner, story points and a clear acceptance check.</li>
+        <li>Its dependencies are done, or will be done early in the sprint.</li>
+        <li>It names the data issue IDs (from <code>data_issues.md</code>) it addresses.</li>
+      </ul>
+    </div>
+    <div class="box">
+      <h3>Definition of Done</h3>
+      <ul>
+        <li>The acceptance check is met, and another member has reviewed it.</li>
+        <li>Outputs are built by a script into <code>derived/</code>; raw files are untouched.</li>
+        <li>Every record traces to a source file and row. Unknown stays <code>unknown</code>.</li>
+        <li>No invented labels: a road with no report is unknown, not dry. A rainfall amount is never called a threshold.</li>
+        <li>Committed and pushed to GitHub; <code>data_issues.md</code> statuses updated.</li>
+      </ul>
+    </div>
+    <div class="box" style="grid-column:1/-1">
+      <h3>Updating this board</h3>
+      <p>Every task lives in <code>sprint.md</code> in the project root. To move a card, change its <strong>Status</strong> cell to <code>To do</code>, <code>In progress</code>, <code>Review</code> or <code>Done</code>, then commit and push. Teammates pull to see the update.</p>
+      <ol>
+        <li><code>git pull</code></li>
+        <li>Edit your row in <code>sprint.md</code> (keep the table headers, and don't type <code>|</code> inside a cell).</li>
+        <li><code>git commit -am "MF-11: In progress"</code>, then <code>git push</code>.</li>
+      </ol>
+      <p>Serve the folder (<code>python3 -m http.server 8080</code>) and open <code>http://localhost:8080/sprint_board.html</code>; the board re-reads <code>sprint.md</code> every 15 seconds. If you open the HTML file directly from disk, use <strong>Load sprint.md</strong>. If an edit breaks the table, the message at the top says which row, and the board keeps showing the last version that loaded correctly.</p>
+    </div>
+  </div>
+</section>
+</div>
+
+<p class="foot">Scope: which roads or road sections on Malé island proper are prone to rain flooding (mapping, not forecasting). See <code>agent.md</code>, <code>data_review.md</code> and <code>data_issues.md</code>. Sprint 0 work was done before tasks were split, and is recorded under Iyaadh; reassign it if teammates contributed.</p>
+<noscript>This board needs JavaScript. Open sprint.md to read the task list directly.</noscript>
+</main>
+
+<script>
+'use strict';
+const STATUSES = [
+  {name: 'To do', color: '#a6b4aa'},
+  {name: 'In progress', color: '#5d82a1'},
+  {name: 'Review', color: '#d99b37'},
+  {name: 'Done', color: '#62b580'}
+];
+const MEMBER_COLORS = {M1: '#176b51', M2: '#5d82a1', M3: '#b5762a'};
+const $ = s => document.querySelector(s);
+const el = (tag, cls, text) => {const n = document.createElement(tag); if (cls) n.className = cls; if (text !== undefined) n.textContent = text; return n;};
+const pts = list => list.reduce((s, t) => s + t.pts, 0);
+const fmt = iso => new Intl.DateTimeFormat('en-GB', {day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC'}).format(new Date(iso + 'T00:00:00Z'));
+const todayISO = new Intl.DateTimeFormat('en-CA', {timeZone: 'Indian/Maldives'}).format(new Date());
+
+// ---- sprint.md parser: reads only the documented Markdown tables, never renders Markdown as HTML.
+function parseSprintMd(markdown) {
+  const lines = markdown.replace(/\r/g, '').split('\n');
+  const split = line => line.trim().replace(/^\||\|$/g, '').split('|').map(c => c.trim());
+  function table(headers) {
+    const start = lines.findIndex(l => l.trim().startsWith('|') && headers.every((h, i) => split(l)[i] === h) && split(l).length === headers.length);
+    if (start < 0) throw new Error('Missing table with headers: ' + headers.join(', '));
+    const rows = [];
+    for (const line of lines.slice(start + 1)) {
+      if (!line.trim().startsWith('|')) break;
+      const row = split(line);
+      if (row.every(c => /^:?-+:?$/.test(c))) continue;
+      if (row.length !== headers.length) throw new Error(`Wrong number of columns in row "${row[0]}" (expected ${headers.length}, found ${row.length}). Check for a missing or extra "|".`);
+      rows.push(Object.fromEntries(headers.map((h, i) => [h, row[i]])));
+    }
+    return rows;
+  }
+  const list = v => (!v || v === 'None') ? [] : v.split(',').map(x => x.trim()).filter(Boolean);
+  const yes = v => /^yes$/i.test(v);
+
+  const members = table(['Member ID', 'Name', 'Scrum role', 'Focus']).map(r => ({id: r['Member ID'], name: r.Name, scrum: r['Scrum role'], focus: r.Focus, color: MEMBER_COLORS[r['Member ID']] || '#596f61'}));
+  if (members.length !== 3 || new Set(members.map(m => m.id)).size !== 3) throw new Error('The Team table must list three members with unique IDs.');
+
+  const sprints = table(['Sprint ID', 'Name', 'Start', 'End', 'Type', 'Goal']).map(r => ({id: r['Sprint ID'], name: r.Name, start: r.Start, end: r.End, goal: r.Goal, buffer: /^buffer$/i.test(r.Type)}));
+  for (const s of sprints) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(s.start) || !/^\d{4}-\d{2}-\d{2}$/.test(s.end)) throw new Error(`Sprint ${s.id}: dates must be YYYY-MM-DD.`);
+    if (s.end < s.start) throw new Error(`Sprint ${s.id}: end date is before start date.`);
+  }
+  if (!sprints.some(s => !s.buffer)) throw new Error('The Sprints table needs at least one sprint.');
+
+  const tasks = table(['ID', 'Sprint', 'Owner', 'Points', 'Status', 'Task', 'Depends on', 'Issues', 'Conditional', 'Acceptance']).map(r => ({
+    id: r.ID, sprint: r.Sprint, owner: r.Owner, pts: Number(r.Points), status: r.Status, title: r.Task,
+    deps: list(r['Depends on']), issues: list(r.Issues), conditional: yes(r.Conditional), accept: r.Acceptance
+  }));
+  const ids = new Set();
+  for (const t of tasks) {
+    if (!t.id || !t.title) throw new Error('A task row is missing its ID or Task text.');
+    if (ids.has(t.id)) throw new Error('Duplicate task ID: ' + t.id);
+    ids.add(t.id);
+    if (!sprints.some(s => s.id === t.sprint)) throw new Error(`${t.id}: unknown sprint "${t.sprint}".`);
+    if (!members.some(m => m.id === t.owner)) throw new Error(`${t.id}: unknown owner "${t.owner}" (use M1, M2 or M3).`);
+    if (!STATUSES.some(s => s.name === t.status)) throw new Error(`${t.id}: unknown status "${t.status}" (use To do, In progress, Review or Done).`);
+    if (!Number.isInteger(t.pts) || t.pts < 0) throw new Error(`${t.id}: Points must be a whole number.`);
+  }
+  for (const t of tasks) for (const d of t.deps) if (!ids.has(d)) throw new Error(`${t.id}: depends on unknown task ${d}.`);
+
+  const backlog = table(['ID', 'Owner', 'Item', 'Pending confirmation', 'Note']).map(r => ({id: r.ID, owner: r.Owner, title: r.Item, pending: yes(r['Pending confirmation']), note: r.Note}));
+  for (const b of backlog) if (!members.some(m => m.id === b.owner)) throw new Error(`${b.id}: unknown owner "${b.owner}".`);
+  return {members, sprints, tasks, backlog};
+}
+
+let DATA = null, byId = new Map(), planned = [], current = null;
+let selSprint = null, selMember = 'All';
+const member = id => DATA.members.find(m => m.id === id);
+
+function setData(d) {
+  const first = DATA === null;
+  DATA = d;
+  byId = new Map(DATA.tasks.map(t => [t.id, t]));
+  planned = DATA.sprints.filter(s => !s.buffer);
+  current = DATA.sprints.find(s => todayISO >= s.start && todayISO <= s.end)
+    || planned.find(s => s.start > todayISO) || planned[planned.length - 1];
+  if (first || !planned.some(s => s.id === selSprint)) {
+    // Open on the first sprint (from now on) that still has unfinished work.
+    const open = planned.find(s => s.end >= todayISO && DATA.tasks.some(t => t.sprint === s.id && t.status !== 'Done'));
+    selSprint = (open || (current.buffer ? planned[planned.length - 1] : current)).id;
+  }
+  if (!DATA.members.some(m => m.id === selMember)) selMember = 'All';
+}
+
+function stackInto(node, tasks) {
+  node.replaceChildren();
+  const total = pts(tasks);
+  for (const st of STATUSES) {
+    const s = el('span'); s.style.background = st.color;
+    s.style.width = (total ? pts(tasks.filter(t => t.status === st.name)) / total * 100 : 0) + '%';
+    node.append(s);
+  }
+}
+
+function renderOverview() {
+  const tasks = DATA.tasks.filter(t => t.sprint === current.id);
+  const done = pts(tasks.filter(t => t.status === 'Done')), total = pts(tasks);
+  $('#ov-label').textContent = todayISO < current.start ? 'Next sprint' : 'Current sprint';
+  $('#ov-name').textContent = `${current.name} · ${fmt(current.start)} – ${fmt(current.end)}`;
+  $('#ov-goal').textContent = current.goal;
+  $('#ov-pct').replaceChildren(document.createTextNode((total ? Math.round(done / total * 100) : 0) + '% '), el('small', '', `of story points done · ${done} / ${total}`));
+  stackInto($('#ov-stack'), tasks);
+  $('#ov-legend').replaceChildren(...STATUSES.map(st => {
+    const i = el('span'), d = el('i'); d.style.background = st.color;
+    i.append(d, document.createTextNode(`${st.name} ${tasks.filter(t => t.status === st.name).length}`)); return i;
+  }));
+  const end = new Date(current.end + 'T00:00:00Z'), now = new Date(todayISO + 'T00:00:00Z');
+  const daysLeft = Math.max(0, Math.round((end - now) / 864e5) + 1);
+  const allPlanned = DATA.tasks.filter(t => t.sprint !== 'S0');
+  const deadline = Math.round((new Date('2027-05-30T00:00:00Z') - now) / 864e5);
+  const f = (label, value) => {const d = el('div'); d.append(el('b', '', value), document.createTextNode(label)); return d;};
+  const upcoming = todayISO < current.start, dayCount = upcoming ? Math.round((new Date(current.start + 'T00:00:00Z') - now) / 864e5) : daysLeft;
+  $('#ov-facts').replaceChildren(
+    f(`${dayCount === 1 ? 'day' : 'days'} ${upcoming ? 'until start' : 'left in sprint'}`, String(dayCount)),
+    f('tasks in sprint', String(tasks.length)),
+    f('points still planned', String(pts(allPlanned.filter(t => t.status !== 'Done')))),
+    f('days to 30 May 2027', String(deadline))
+  );
+  $('#today').replaceChildren(document.createTextNode(`Today ${fmt(todayISO)} (Maldives time)`), el('br'), document.createTextNode('Working deadline 30 May 2027 (time unconfirmed)'));
+}
+
+function renderMembers() {
+  $('#members').replaceChildren(...DATA.members.map(m => {
+    const own = DATA.tasks.filter(t => t.owner === m.id && t.sprint === selSprint);
+    const all = DATA.tasks.filter(t => t.owner === m.id && t.sprint !== 'S0');
+    const b = el('button', 'member' + (selMember === m.id ? ' active' : ''));
+    b.type = 'button'; b.style.setProperty('--c', m.color); b.setAttribute('aria-pressed', String(selMember === m.id));
+    b.append(el('span', 'role', `${m.id} · ${m.scrum}`), el('h3', '', m.name), el('p', '', m.focus));
+    const meta = el('div', 'meta');
+    meta.append(el('span', '', `${selSprint}: ${pts(own)} pts · ${own.length} tasks`), el('span', '', `${pts(all)} pts in S1–S8`));
+    const bar = el('div', 'mini'); stackInto(bar, own);
+    b.append(meta, bar);
+    b.addEventListener('click', () => {selMember = selMember === m.id ? 'All' : m.id; render();});
+    return b;
+  }));
+}
+
+function card(t) {
+  const m = member(t.owner);
+  const c = el('article', 'card'); c.style.setProperty('--c', m.color);
+  const top = el('div', 'top'); top.append(el('span', '', t.id), el('span', '', `${t.pts} pt${t.pts === 1 ? '' : 's'}`));
+  const tags = el('div', 'tags');
+  const o = el('span', 'tag owner', m.name); o.style.setProperty('--c', m.color); tags.append(o);
+  if (t.conditional) tags.append(el('span', 'tag cond', 'Conditional'));
+  const waiting = t.deps.filter(d => byId.get(d) && byId.get(d).status !== 'Done');
+  if (waiting.length && t.status !== 'Done') tags.append(el('span', 'tag wait', 'Waiting'));
+  for (const i of t.issues) tags.append(el('span', 'tag', i));
+  const det = el('details');
+  det.append(el('summary', '', 'Acceptance'), el('p', '', t.accept), el('p', '', 'Depends on: ' + (t.deps.join(', ') || 'none')));
+  if (waiting.length && t.status !== 'Done') det.append(el('p', '', 'Waiting for: ' + waiting.join(', ')));
+  c.append(top, el('p', 't', t.title), tags, det);
+  return c;
+}
+
+function renderBoard() {
+  const s = DATA.sprints.find(x => x.id === selSprint);
+  $('#b-title').textContent = `${s.name} · ${fmt(s.start)} – ${fmt(s.end)}`;
+  $('#b-goal').textContent = 'Goal: ' + s.goal + (selMember === 'All' ? '' : ` Showing ${member(selMember).name}'s tasks.`);
+  $('#clear').hidden = selMember === 'All';
+  $('#sprint-chips').replaceChildren(...planned.map(x => {
+    const b = el('button', 'chip' + (x.id === selSprint ? ' on' : ''), x.name);
+    b.type = 'button'; b.setAttribute('aria-pressed', String(x.id === selSprint));
+    if (x.id === current.id) {const d = el('span', 'now'); d.title = 'Current'; b.append(d);}
+    b.addEventListener('click', () => {selSprint = x.id; render();});
+    return b;
+  }));
+  const tasks = DATA.tasks.filter(t => t.sprint === selSprint && (selMember === 'All' || t.owner === selMember));
+  $('#board').replaceChildren(...STATUSES.map(st => {
+    const col = el('section', 'col'); col.setAttribute('aria-label', st.name);
+    const items = tasks.filter(t => t.status === st.name);
+    const h = el('h3'); h.append(el('span', '', st.name), el('span', '', `${items.length} · ${pts(items)} pts`));
+    col.append(h);
+    if (!items.length) col.append(el('p', 'empty', 'Nothing here.'));
+    items.forEach(t => col.append(card(t)));
+    return col;
+  }));
+}
+
+function renderPlan() {
+  $('#sprints').replaceChildren(...DATA.sprints.map(s => {
+    const tasks = DATA.tasks.filter(t => t.sprint === s.id);
+    const box = el('div', 'sprint' + (s.id === current.id ? ' current' : ''));
+    const a = el('div'); const n = el('div', 'sn', s.name);
+    if (s.id === current.id) n.append(el('span', 'badge now', todayISO < s.start ? 'Next' : 'Now'));
+    else if (s.end < todayISO) n.append(el('span', 'badge done', 'Closed'));
+    a.append(n, el('div', 'sd', `${fmt(s.start)} – ${fmt(s.end)}`));
+    const g = el('div', 'goal', s.goal);
+    g.append(el('small', '', s.buffer ? 'Replan after the lecturer confirms requirements (MF-10).' : `${tasks.length} tasks · ${pts(tasks)} points · ${tasks.filter(t => t.status === 'Done').length} done`));
+    const load = el('div', 'load');
+    const max = Math.max(1, ...DATA.sprints.flatMap(x => DATA.members.map(m => pts(DATA.tasks.filter(t => t.sprint === x.id && t.owner === m.id)))));
+    for (const m of DATA.members) {
+      const p = pts(tasks.filter(t => t.owner === m.id));
+      const ln = el('div', 'ln'), tr = el('div', 'tr'), f = el('span');
+      f.style.width = (p / max * 100) + '%'; f.style.background = m.color; tr.append(f);
+      ln.append(el('span', '', m.name), tr, el('span', '', p ? `${p} pts` : '—'));
+      load.append(ln);
+    }
+    box.append(a, g, load);
+    if (!s.buffer) {box.style.cursor = 'pointer'; box.tabIndex = 0; box.setAttribute('role', 'button'); box.setAttribute('aria-label', `Open ${s.name} on the board`);
+      const go = () => {selSprint = s.id; showTab('t-board'); render();};
+      box.addEventListener('click', go); box.addEventListener('keydown', e => {if (e.key === 'Enter' || e.key === ' ') {e.preventDefault(); go();}});}
+    return box;
+  }));
+}
+
+function renderBacklog() {
+  $('#backlog').replaceChildren(...DATA.backlog.map(b => {
+    const m = member(b.owner);
+    const r = el('div', 'row'), mid = el('div');
+    mid.append(el('p', 't', b.title), el('p', 'd', b.note));
+    const st = el('div', 'st'), tags = el('div', 'tags');
+    const o = el('span', 'tag owner', m.name); o.style.setProperty('--c', m.color); tags.append(o);
+    if (b.pending) tags.append(el('span', 'tag cond', 'Pending confirmation'));
+    st.append(tags);
+    r.append(el('span', 'id', b.id), mid, st);
+    return r;
+  }));
+  $('#roles').replaceChildren(...DATA.members.map(m => {
+    const tr = el('tr'); tr.append(el('td', '', `${m.name} (${m.id})`), el('td', '', m.scrum), el('td', '', m.focus)); return tr;
+  }));
+}
+
+function showTab(id) {
+  document.querySelectorAll('[role=tab]').forEach(t => {
+    const on = t.id === id; t.setAttribute('aria-selected', String(on));
+    document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+  });
+}
+document.querySelectorAll('[role=tab]').forEach(t => t.addEventListener('click', () => showTab(t.id)));
+$('#clear').addEventListener('click', () => {selMember = 'All'; render();});
+
+function render() {if (!DATA) return; renderOverview(); renderMembers(); renderBoard(); renderPlan(); renderBacklog();}
+
+// ---- Loading sprint.md
+let sourceMode = 'http', lastText = '', loading = false;
+function status(msg, isError) {
+  const s = $('#source-status');
+  s.textContent = msg; s.classList.toggle('error', Boolean(isError));
+}
+function stamp() {
+  return new Intl.DateTimeFormat('en-GB', {timeZone: 'Indian/Maldives', timeStyle: 'short'}).format(new Date()) + ' MVT';
+}
+function apply(text, label) {
+  const parsed = parseSprintMd(text);   // throws with a readable message on bad edits
+  setData(parsed); lastText = text; render();
+  $('#app').hidden = false;
+  status(`${label} · last read ${stamp()}`);
+}
+async function loadSprintMd(manual = false) {
+  if (sourceMode === 'file') {if (manual) $('#file').click(); return;}
+  if (location.protocol === 'file:') {
+    status('Opened from disk, so the browser cannot read sprint.md automatically. Choose "Load sprint.md", or open http://localhost:8080/sprint_board.html while the local server runs.', !DATA);
+    return;
+  }
+  if (loading) return;
+  loading = true;
+  try {
+    const res = await fetch('./sprint.md', {cache: 'no-store'});
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    if (text !== lastText || manual || $('#source-status').classList.contains('error')) apply(text, 'Reading sprint.md from this folder · checks for changes every 15 seconds');
+  } catch (err) {
+    status(`Could not use sprint.md: ${err.message}${DATA ? ' Showing the last version that loaded correctly.' : ''}`, true);
+  } finally {loading = false;}
+}
+$('#refresh').addEventListener('click', () => loadSprintMd(true));
+$('#load-file').addEventListener('click', () => $('#file').click());
+$('#file').addEventListener('change', async e => {
+  const f = e.target.files[0]; if (!f) return;
+  try {
+    apply(await f.text(), `Loaded ${f.name} from your computer · choose "Load sprint.md" again after editing, or reload the page to go back to automatic updates`);
+    sourceMode = 'file';
+  } catch (err) {status(`Could not use ${f.name}: ${err.message}${DATA ? ' Showing the last version that loaded correctly.' : ''}`, true);}
+  e.target.value = '';
+});
+loadSprintMd();
+setInterval(() => {if (!document.hidden && sourceMode === 'http') loadSprintMd();}, 15000);
+</script>
+</body>
+</html>
