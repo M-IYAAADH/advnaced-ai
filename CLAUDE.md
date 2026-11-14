@@ -106,3 +106,17 @@ Start with an auditable data-readiness and exploratory notebook, not a purported
 6. Propose the core modelling experiment once labels and data support are known. Supporting weather/tide models may be explored with clear target names and evaluation, without claiming they complete the flood project.
 
 Preserve raw inputs and source metadata. Keep derived outputs separate, retain dataset-specific attribution/licences, use paths relative to the project root and avoid hard-coded paths from the original download environment. Do not send agency requests or publish household-level data without the student's instruction and appropriate access rights.
+
+## 7. Task tracking: update `sprint.md` and push after every completion
+
+`sprint.md` is the single source of truth for task status. `sprint_board.html` reads it; the GitHub repo is https://github.com/M-IYAAADH/advnaced-ai (public, branch `main`).
+
+After finishing any task listed in `sprint.md` (whether done by a team member or by Claude):
+
+1. `git pull` first, so you edit the latest version.
+2. In the task's row, set **Status** to `Review` once its acceptance check is met. Only another member moves it to `Done` after reviewing it. Use `In progress` when starting work.
+3. Update `data_issues.md` statuses for any issue IDs the task resolves.
+4. Commit the work and the `sprint.md` change together, with a message such as `MF-11: Review`, then `git push`.
+5. If the push is rejected, `git pull` (resolve any conflict in `sprint.md` by keeping both people's row changes) and push again.
+
+The student has authorised Claude to commit and push to this repo after each completed task. Keep the `sprint.md` table headers unchanged, don't use `|` inside cells, and edit only the rows you worked on. New work that isn't in `sprint.md` gets a new row (unique ID, Sprint, Owner `M1`/`M2`/`M3`, Points) before it starts.

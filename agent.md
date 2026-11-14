@@ -84,3 +84,23 @@ Unresolved (ask the student or lecturer; don't block work on them):
 3. Exploratory comparison of road characteristics (class, length, distance to coast, FABDEM elevation, WorldCover, building density) between evidence roads and **unknown** roads. Treat this as descriptive only.
 4. Request observed-dry and complete location data from the City Council, NDMA (assistance logs) and MNDF (pump deployment logs), plus pump and drain locations from MWSC. See `Male_Flood_Data_Starter_Pack/Data_Request_Specification.md`.
 5. Only then choose a modelling approach: positive-unlabelled learning or a ranking model with spatially blocked evaluation. See `data_review.md` §6.
+
+Tasks, owners and sprint dates for these steps are in `sprint.md` (viewable in `sprint_board.html`).
+
+## 8. Task tracking: update `sprint.md` and push after every completion
+
+`sprint.md` is the single source of truth for task status. Every completed task must be recorded there and pushed to GitHub (https://github.com/M-IYAAADH/advnaced-ai, branch `main`), so the whole team sees the same board.
+
+| Step | Command / action |
+|---|---|
+| 1. Get the latest version | `git pull` |
+| 2. Start a task | Set its **Status** to `In progress` |
+| 3. Finish a task | When the acceptance check is met, set **Status** to `Review`. Another member reviews it and sets `Done` |
+| 4. Update the issue log | Change the status in `data_issues.md` for any issue IDs the task resolves |
+| 5. Commit and push | `git commit -am "MF-11: Review"`, then `git push` |
+| 6. If the push is rejected | `git pull`, keep both people's row changes, then push again |
+
+Rules:
+- This applies to every member and to Claude. Claude is authorised to commit and push after each completed task.
+- Edit only the rows you worked on. Keep the table headers unchanged and don't use `|` inside a cell; the board will show an error naming the bad row if you do.
+- Work that isn't in `sprint.md` yet gets a new row (unique ID, Sprint, Owner `M1`/`M2`/`M3`, Points) before it starts.
