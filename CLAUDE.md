@@ -12,13 +12,12 @@ This file records the student's stated requirements and the verified state of th
   - A report naming a whole road is road-level evidence. Do not label every segment of it as flooded; distinguish whole-road, bounded-section, junction and landmark reports.
   - Keep rainfall amounts with their units and accumulation periods (e.g. 30 mm in 1 h vs 30 mm in 24 h); record unknown periods as unknown. Flooding after X mm is an association, not a minimum triggering threshold.
   - Roads absent from the records are **unknown**, not dry, unless there is evidence they were observed not flooding.
-- Current lecturer instructions reported by the student: a **six-page literature review**, using **at least 15 related journal articles**, in the supplied **IJCAI 2026 format**.
-- Working submission deadline supplied by the student: **30 May 2027**. The exact submission time, whether references count within the six pages, and whether this is the review-only or whole-project deadline remain unconfirmed.
+- Current lecturer instructions reported by the student: a **six-page literature review**, using **at least 15 related journal articles**, in **IJCAI format**. The template to use is `COURSEWORK  SUBMISSION TEMPLATE _RESEARCH PAPER TEMPLATE .doc` in this folder, which is the IJCAI-format template. References do **not** count toward the six pages.
+- Deadline confirmed with the lecturer (14 Nov 2026): **30 May 2027, 12:00 am Maldives time (UTC+5)**, for the **whole project**. Treat this as midnight at the start of 30 May and plan to submit by 29 May 2027.
+- The lecturer approved the flood topic (reported by the student, 14 Nov 2026).
 - The planning pack contains 22 screened journal references. They need full-text appraisal before detailed claims and numerical results are used.
 
-The uploaded recipe-review assignment brief is a conflicting older/reference brief, with inconsistent dates. It is not sufficient evidence to replace the student's selected flood topic with recipe analysis. Retain the flood topic as the working scope. Do not invent written lecturer approval; none has been supplied in this folder. Flag unresolved rubric questions once without blocking literature review, data audit or exploratory GIS work.
-
-Whether clustering, classification, regression, neural-network comparison, the 1,000–1,200-word report, Colab submission and recorded demo from the older brief apply to this project must be clarified. Do not present them as confirmed requirements for the current six-page review.
+The uploaded recipe-review assignment brief is an older reference brief with inconsistent dates. The lecturer confirmed (14 Nov 2026) that its components do **not** apply. Clustering, classification, regression and neural-network comparison, the Colab submission and the recorded demo are not required, and its 1,000–1,200-word report is replaced by the six-page literature review. Do not add them back as requirements.
 
 ## 2. Find the project files
 
@@ -31,9 +30,9 @@ The two ZIP packs may have been extracted into different subfolders. Locate file
 - Data subfolders: `boundary/`, `mapping/`, `elevation/`, `rainfall/`, `tides/`, `flood/`.
 - Read folder-specific README and QA/source JSON files before processing.
 - Road-flood evidence (added 14 Nov 2026): `male-flood-basis/` (news/agency-report compilation, map page and weather files). Derived, traceable outputs: `derived/road_flood_inventory.csv`, `derived/road_match_review.csv`, `derived/road_flood_matched_segments.geojson`, `derived/road_flood_evidence_map.png`, built by `scripts/build_road_flood_inventory.py` then `scripts/match_road_flood_records.py`.
-- As of 14 Nov 2026 the planning and writing files listed above (`Project_Plan.md`, `latex/`, `ijcai26.docx`, reading matrix) are **not present in this folder**; the only template here is the legacy `COURSEWORK SUBMISSION TEMPLATE _RESEARCH PAPER TEMPLATE .doc`.
+- As of 14 Nov 2026 the planning and writing files listed above (`Project_Plan.md`, `latex/`, `ijcai26.docx`, reading matrix) are **not present in this folder**. The template to use is `COURSEWORK  SUBMISSION TEMPLATE _RESEARCH PAPER TEMPLATE .doc`, which the student confirmed is the IJCAI-format template.
 
-The supplied Word template is `.docx`, not a legacy `.doc`. The literature-review starter is an outline, not a completed six-page review. The reference list is not a substitute for critical reading. No trained flood model or completed final submission was included in the packs.
+The template in the planning pack is a `.docx`, not a legacy `.doc`. It is not in this folder; use the coursework `.doc` above. The literature-review starter is an outline, not a completed six-page review. The reference list is not a substitute for critical reading. No trained flood model or completed final submission was included in the packs.
 
 ## 3. What the downloaded data actually support
 

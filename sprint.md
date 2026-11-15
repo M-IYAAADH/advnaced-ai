@@ -35,9 +35,9 @@ Roles are a proposal; agree them at Sprint 1 planning. Sprint 0 work is recorded
 | S6 | Sprint 6 | 2027-01-24 | 2027-02-06 | Sprint | Evaluate the ranking model (if approved) and draft the review's main sections. |
 | S7 | Sprint 7 | 2027-02-07 | 2027-02-20 | Sprint | Complete the full literature review draft, with verified results inputs. |
 | S8 | Sprint 8 | 2027-02-21 | 2027-03-06 | Sprint | Review, polish, page check and group sign-off (internal deadline 6 Mar 2027). |
-| BUF | Buffer | 2027-03-07 | 2027-05-29 | Buffer | Lecturer feedback, any confirmed extra deliverables, final submission by 30 May 2027. |
+| BUF | Buffer | 2027-03-07 | 2027-05-29 | Buffer | Lecturer feedback and final submission by 29 May 2027 (deadline 12:00 am on 30 May, Maldives time). |
 
-Dates are YYYY-MM-DD. Working deadline: 30 May 2027 (time unconfirmed).
+Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00 am Maldives time, for the whole project. Plan to submit by 29 May 2027.
 
 ## Tasks
 
@@ -49,14 +49,14 @@ Dates are YYYY-MM-DD. Working deadline: 30 May 2027 (time unconfirmed).
 | MF-04 | S0 | M1 | 5 | Done | Match records to OSM roads and draw evidence map | MF-03 | F1, F2, F6 | No | road_match_review.csv, matched segments GeoJSON and evidence map; Dhivehi aliases documented. |
 | MF-05 | S0 | M1 | 3 | Done | Write data review and issue log | MF-04 | None | No | data_review.md and data_issues.md (43 issues with status). |
 | MF-06 | S0 | M1 | 1 | Done | Record scope rules and publish repository | None | None | No | agent.md and CLAUDE.md updated; project pushed to GitHub. |
-| MF-10 | S1 | M1 | 1 | To do | Confirm requirements with the lecturer | None | I1, I2, I3 | No | Submission time, page rules (do references count?) and whether the recipe-brief components apply are recorded in agent.md §3. |
+| MF-10 | S1 | M1 | 1 | Done | Confirm requirements with the lecturer | None | I1, I2, I3 | No | Submission time, page rules (do references count?) and whether the recipe-brief components apply are recorded in agent.md §3. |
 | MF-11 | S1 | M3 | 5 | To do | Verify the 17 road records against source articles | None | A1, D3 | No | Each road record gets a quoted phrase and any section or junction detail; confidence raised only where the article confirms it. |
-| MF-12 | S1 | M1 | 3 | To do | Verify the top 4 landmarks and settle duplicates | None | A1, B2, E1, E2 | No | IGMH, West Park, Villimalé Ferry Terminal, STO checked; pump wording (E1) and Rasfannu (E2) resolved; West Park/STO merge decided. |
+| MF-12 | S1 | M1 | 3 | Done | Verify the top 4 landmarks and settle duplicates | None | A1, B2, E1, E2 | No | IGMH, West Park, Villimalé Ferry Terminal, STO checked; pump wording (E1) and Rasfannu (E2) resolved; West Park/STO merge decided. |
 | MF-13 | S1 | M3 | 2 | To do | Read the JICA 2021 survey report | None | A5 | No | Notes on flood photos, drainage and elevation findings, with page numbers. |
 | MF-14 | S1 | M2 | 2 | To do | Resolve the Rahdhebai Magu match | None | C1, C2, D1 | No | Match confirmed or rejected using the source article and imagery; match review updated. |
 | MF-15 | S1 | M2 | 2 | To do | Review 8 unnamed OSM segments beside matched roads | None | F3 | No | Each segment marked as part of the named road or not, with the reason. |
 | MF-16 | S1 | M2 | 2 | To do | Check landmark positions on imagery | None | E6 | No | Approximate and off-polygon points confirmed or moved, with the change logged. |
-| MF-17 | S1 | M1 | 3 | To do | Draft agency data requests | None | H1, H2, H3, H4 | No | Drafts to Council/NDMA, MNDF, MWSC and MMS approved by the group. Nothing is sent without approval. |
+| MF-17 | S1 | M1 | 3 | Done | Draft agency data requests | None | H1, H2, H3, H4 | No | Drafts to Council/NDMA, MNDF, MWSC and MMS approved by the group. Nothing is sent without approval. |
 | MF-18 | S1 | M2 | 2 | To do | Pin the Python environment and rerun steps | None | None | No | requirements.txt plus README steps; a teammate rebuilds derived/ from scratch. |
 | MF-19 | S1 | M3 | 3 | To do | Literature search: 20+ candidate journal articles | None | None | No | Shortlist covering urban/road flood susceptibility, positive-only learning and spatial validation, with full references. |
 | MF-20 | S2 | M2 | 5 | To do | Split OSM roads at junctions into block segments | MF-15 | F4, F7 | No | Segment layer with stable IDs; total length matches the source network. |
@@ -71,7 +71,7 @@ Dates are YYYY-MM-DD. Working deadline: 30 May 2027 (time unconfirmed).
 | MF-32 | S3 | M2 | 3 | To do | One-command rebuild from raw to derived | MF-21 | None | No | A single script rebuilds all outputs and checks every record still traces to its source row. |
 | MF-33 | S3 | M3 | 5 | To do | Reading matrix: appraise the remaining articles | MF-25 | None | No | At least 15 journal articles fully appraised. |
 | MF-34 | S3 | M3 | 1 | To do | Wording check on exploratory outputs | MF-30 | G1, G4 | No | Says 'reported', treats unknown as unknown, and states no rainfall thresholds. |
-| MF-40 | S4 | M3 | 2 | To do | Get the IJCAI 2026 template and set up the review | None | I4 | No | Template compiles; title, authors and section skeleton in place. |
+| MF-40 | S4 | M3 | 2 | To do | Set up the review in the coursework IJCAI template | None | I4 | No | The coursework .doc template opens with the title, authors and section skeleton in place. |
 | MF-41 | S4 | M3 | 3 | To do | Literature review outline by theme | MF-33 | None | No | Themes, article-to-section mapping and a page budget. |
 | MF-42 | S4 | M2 | 2 | To do | Peer-review Iyaadh's attribute and exploratory code | MF-30 | None | No | Findings logged and resolved. |
 | MF-43 | S4 | M1 | 2 | To do | Peer-review Aslan's segmentation and evidence join | MF-21, MF-32 | None | No | Findings logged and resolved. |
@@ -86,25 +86,21 @@ Dates are YYYY-MM-DD. Working deadline: 30 May 2027 (time unconfirmed).
 | MF-61 | S6 | M2 | 2 | To do | Peer-review model and evaluation | MF-60 | None | Yes | Folds, leakage and metrics checked; findings resolved. |
 | MF-62 | S6 | M3 | 5 | To do | Draft review sections: labels, validation, research gap | MF-53 | None | No | Drafted with citations, and linked to this project's evidence limits. |
 | MF-63 | S6 | M2 | 3 | To do | Report-ready figures pipeline | MF-31 | None | No | Map, exploratory and evaluation figures exported at print resolution by script. |
-| MF-70 | S7 | M3 | 5 | To do | Complete the full review draft in IJCAI format | MF-62, MF-40 | None | No | Six pages under the confirmed rules, with at least 15 journal articles cited. |
+| MF-70 | S7 | M3 | 5 | To do | Complete the full review draft in IJCAI format | MF-62, MF-40 | None | No | Six pages excluding references, with at least 15 journal articles cited. |
 | MF-71 | S7 | M1 | 3 | To do | Results and limitations input | MF-30 | None | No | Verified numbers, figures and limitations handed to Gaanith. |
 | MF-72 | S7 | M2 | 3 | To do | Methods input: data, processing, reproducibility | MF-32 | None | No | Short verified notes on sources, licences and the build pipeline. |
 | MF-73 | S7 | M1 | 2 | To do | Check every number in the draft | MF-70 | None | No | Each figure in the text traced to a derived output or a cited source. |
-| MF-80 | S8 | M3 | 3 | To do | Citation, reference and page-count check | MF-70 | I1 | No | References complete; page count meets the confirmed rules. |
+| MF-80 | S8 | M3 | 3 | To do | Citation, reference and page-count check | MF-70 | I1 | No | References complete; body is six pages or fewer, excluding references. |
 | MF-81 | S8 | M1 | 2 | To do | Group review of the full draft | MF-73 | None | No | All three members have commented and every comment is resolved. |
 | MF-82 | S8 | M2 | 2 | To do | Final repository tidy | MF-32 | None | No | README, run steps, licences and attribution are complete; data_issues.md statuses are current. |
 | MF-83 | S8 | M1 | 1 | To do | Group sign-off (internal deadline 6 Mar 2027) | MF-80, MF-81, MF-82 | None | No | All three members approve the submission package. |
 
 ## Backlog
 
-Not yet in a sprint. Items pending confirmation come from the older recipe-review brief and only enter a sprint if the lecturer confirms they apply (MF-10).
+Not yet in a sprint. The lecturer confirmed on 14 Nov 2026 (MF-10) that the older recipe brief's components don't apply. The former PB-01 to PB-04 (Colab notebook, recorded demo, 1,000–1,200-word report and model comparison) were removed; the report is replaced by the six-page review (MF-70).
 
 | ID | Owner | Item | Pending confirmation | Note |
 | --- | --- | --- | --- | --- |
-| PB-01 | M2 | Shareable Colab notebook of the full pipeline | Yes | Pending confirmation (MF-10). Required by the older brief. |
-| PB-02 | M1 | Recorded demo of the model-building process | Yes | Pending confirmation. If confirmed, each member records a segment and Aslan assembles the video. |
-| PB-03 | M3 | 1,000–1,200-word report | Yes | Pending confirmation. The older brief's word limit differs from the six-page review. |
-| PB-04 | M1 | Clustering, classification, regression and neural-network comparison | Yes | Pending confirmation. If required, design these around road segments without inventing flood labels. |
 | PB-05 | M2 | Integrate observed-dry or complete-coverage data from agencies | No | Only if agencies supply it (MF-45). This would unlock a supervised classifier. |
 | PB-06 | M1 | Rainfall-response analysis with MMS hourly gauges | No | Only if MMS supplies hourly data (H4). Out of the current scope. |
 | PB-07 | M3 | Verify the unsourced map-page claims (40–45 mm, pump capacity, GSOD completeness) | No | Issues A2, A3, A4. Low priority unless the review cites them. |

@@ -27,17 +27,17 @@ Student clarification (14 Nov 2026):
 
 Do not pivot the main project to recipe analysis, heavy-rain classification or tide regression.
 
-## 3. Assignment requirements (from `CLAUDE.md`)
+## 3. Assignment requirements
 
-Confirmed by the student:
-- Six-page literature review, at least 15 related journal articles, IJCAI 2026 format.
-- Working deadline 30 May 2027.
+Confirmed with the lecturer (reported by the student, 14 Nov 2026; closes MF-10 and issues I1–I4):
+- **Deliverable:** a six-page literature review, citing at least 15 related journal articles, in IJCAI format. This replaces the older brief's 1,000–1,200-word report.
+- **Template:** `COURSEWORK  SUBMISSION TEMPLATE _RESEARCH PAPER TEMPLATE .doc` in this folder is the IJCAI-format template. Use it.
+- **Page rules:** references do **not** count toward the six pages. Follow the IJCAI template's rules otherwise.
+- **Deadline:** 30 May 2027, **12:00 am Maldives time (UTC+5)**. This deadline covers the **whole project**. "12:00 am on 30 May" usually means midnight at the *start* of 30 May (the end of 29 May), so plan to submit by **29 May 2027**.
+- **Older recipe brief:** none of its other components apply. Clustering, classification, regression and neural-network comparison, the Colab notebook and the recorded demo are **not required**.
+- **Topic:** the flood topic is approved by the lecturer (reported by the student; no written copy is stored in this folder).
 
-Unresolved (ask the student or lecturer; don't block work on them):
-- Exact submission time. Whether references count toward the six pages. Whether 30 May 2027 covers the review only or the whole project.
-- Whether the older recipe brief's components apply: clustering, classification, regression, neural-network comparison, 1,000–1,200-word report, Colab notebook, recorded demo. That brief also has contradictory dates (2025 and 2027).
-- Written lecturer approval for the flood topic isn't in the folder. Don't claim it exists.
-- The planning and writing files described in `CLAUDE.md` (`Project_Plan.md`, `latex/`, `ijcai26.docx`, reading matrix, 22-reference shortlist) are **not in this folder**. The only template here is a legacy `.doc` coursework template.
+Still not in this folder: the planning files described in `CLAUDE.md` (`Project_Plan.md`, `latex/`, `ijcai26.docx`, reading matrix, 22-reference shortlist). The literature search (MF-19) does not depend on them.
 
 ## 4. Data locations
 
