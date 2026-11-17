@@ -75,7 +75,7 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-41 | S4 | M3 | 3 | To do | Literature review outline by theme | MF-33 | None | No | Themes, article-to-section mapping and a page budget. |
 | MF-42 | S4 | M2 | 2 | To do | Peer-review Iyaadh's attribute and exploratory code | MF-30 | None | No | Findings logged and resolved. |
 | MF-43 | S4 | M1 | 2 | To do | Peer-review Aslan's segmentation and evidence join | MF-21, MF-32 | None | No | Findings logged and resolved. |
-| MF-44 | S4 | M1 | 2 | To do | Descriptive rainfall table for reported incidents | None | C3, D6, G4 | No | Units, accumulation periods and contradictions kept; no threshold claims. |
+| MF-44 | S4 | M1 | 2 | Review | Descriptive rainfall table for reported incidents | None | C3, D6, G4 | No | Units, accumulation periods and contradictions kept; no threshold claims. |
 | MF-45 | S4 | M2 | 3 | To do | Follow up agency requests and load any data received | MF-23 | H1, H2, H3, H4 | No | Response log updated; received data stored raw with provenance. |
 | MF-50 | S5 | M1 | 2 | To do | Decision record: descriptive only, or ranking model | MF-30, MF-45 | G1, G2, G3 | No | The group agrees, using the verified evidence and agency responses. No flooded/dry classifier without observed-dry data. |
 | MF-51 | S5 | M2 | 3 | To do | Implement spatial folds | MF-26, MF-50 | B2, B3, G3 | No | Road-grouped and block-based folds; near-duplicate places merged before splitting. |

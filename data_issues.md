@@ -41,7 +41,7 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 | D3 | Whole-road reports have no flood extent, section or junction detail. | Can't say which segments flooded. | Labelled `whole_road_named_section_unknown`. Not every segment is labelled flooded. Look for detail during source checks (A1). | Open |
 | D4 | No depth is given except "passed two feet" (about 0.6 m) on Kan'baa Aisa Rani Hingun and Izzuddeen Magu, 3 Jan 2025. No durations, and mostly no times of day. | A depth or duration target isn't possible. | None for now. | Open |
 | D5 | Rainfall is missing for 13 of 18 incidents. | Little rainfall context for the events. | Recorded as `unknown`. Request MMS gauge data. | Open |
-| D6 | The accumulation period is unknown for 2 of the 5 incidents that have an amount (30–31 Dec 2023, 2–3 Jan 2025). For 13 Aug 2024 the 24 h window's end date isn't stated. | Amounts can't be compared fairly. | Recorded as `unknown`. Don't assume 24 h. | Open |
+| D6 | The accumulation period is unknown for 2 of the 5 incidents that have an amount (30–31 Dec 2023, 2–3 Jan 2025). For 13 Aug 2024 the 24 h window's end date isn't stated. | Amounts can't be compared fairly. | Recorded as `unknown`. Don't assume 24 h. Still unknown for 30-31 Dec 2023 and 2-3 Jan 2025; see `derived/incident_rainfall_table.md`. | Open |
 | D7 | On city-wide days (13 Aug 2024 "nearly every street", 3 Jan 2025 "most of the city", 21 Oct 2026) the reports name only a few places. | Unnamed streets could be misread as dry. | Added 2 city-wide rows from the summary text. Unnamed roads are treated as unknown. | Handled |
 
 ## E. Uncertain interpretations
@@ -74,7 +74,7 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 | G1 | The data contains reports of flooding only, with no roads observed staying dry. | A supervised flooded vs not-flooded classifier isn't defensible. | Treat roads without reports as unknown. Request records that cover both flooded and dry roads (City Council, NDMA assistance logs, MNDF pump logs). | Open |
 | G2 | The reports lean toward main roads: 26 of the island's 35 primary/secondary segments are linked to evidence. | A model would mostly learn "this is a main road". | Report any results with and without main roads. Use descriptive analysis first. | Open |
 | G3 | There are few independent positives: 7 roads, 15 landmarks, and three roads dominate. | Any evaluation will be unstable. | Use spatial blocks and keep all segments of one road together when splitting train and test data. | Open |
-| G4 | All 5 rainfall amounts come from flood days, at daily scale. | No rainfall threshold or rainfall-response analysis is possible. | Descriptive table only. Hourly MMS data is needed for more. | Open |
+| G4 | All 5 rainfall amounts come from flood days, at daily scale. | No rainfall threshold or rainfall-response analysis is possible. | Descriptive table only. Hourly MMS data is needed for more. Table built: `derived/incident_rainfall_table.md` (MF-44). | Open |
 | G5 | `flood_reported = 0` in `male_daily_features_with_flood_labels.csv` means "no report found". | Misreading 0 as "dry" would invent negative labels. | Don't use 0 as a label without that caveat. | Open |
 | G6 | ERA5 reanalysis badly underestimates the big days (per the compiler: 56 mm vs 142 mm measured on 3 Jan 2025). | Reanalysis can't stand in for gauge intensity. | Use MMS gauges for any rainfall work. | Open |
 
