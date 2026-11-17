@@ -41,6 +41,15 @@ OUT_GEO = ROOT / "derived/road_flood_matched_segments.geojson"
 OUT_PNG = ROOT / "derived/road_flood_evidence_map.png"
 
 LAT0, LON0 = 4.175, 73.5
+
+# MF-16 (17 Nov 2026, Aslan): landmark points excluded from matching and the map.
+# Both are shoreline/sea facilities, not road locations, and the compiler's points
+# fall offshore (outside the OneMap polygon). Raw files are unchanged; inventory
+# records for these places are kept but get no point and no candidate roads.
+EXCLUDED_LANDMARKS = {
+    "Rasfannu": "Beach area, not a road; compiler point is 48 m offshore.",
+    "Swimming Track area": "Sea swimming track, not a road; compiler point is 21 m offshore.",
+}
 KX, KY = 111320 * np.cos(np.radians(LAT0)), 110574.0
 
 # English name in reports -> OSM Dhivehi `name` (manual transliteration; each
@@ -246,6 +255,9 @@ def main():
                                  "Flooding attributed to pumps not yet commissioned on a rebuilt road.")
                 for o in sorted(geo):
                     seg_evidence[o].append((name, "bounded_section_uncertain"))
+        elif name in EXCLUDED_LANDMARKS:
+            row.update(match_status="excluded_not_road_location", match_method="none",
+                       notes="Excluded in MF-16: " + EXCLUDED_LANDMARKS[name])
         else:  # landmark / ward / city
             if p["longitude"] and ptype == "landmark":
                 P = xy([[float(p["longitude"]), float(p["latitude"])]])
@@ -329,7 +341,7 @@ def draw(seg, seg_evidence, places, rows):
                 seen.add(kind)
     first = {"landmark": True, "area": True}
     for p in places:
-        if p["island"] != "Malé" or not p["longitude"] or p["type"] == "road":
+        if p["island"] != "Malé" or not p["longitude"] or p["type"] == "road" or p["name"] in EXCLUDED_LANDMARKS:
             continue
         P = xy([[float(p["longitude"]), float(p["latitude"])]])[0]
         n = int(p["times_reported"])
