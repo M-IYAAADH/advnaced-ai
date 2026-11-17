@@ -1,0 +1,3 @@
+# Python 3.10+ (tested on 3.14.4). Only these third-party packages are imported by scripts/.
+numpy==2.4.4
+matplotlib==3.10.9

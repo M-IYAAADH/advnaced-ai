@@ -103,7 +103,7 @@ def densify(L, step=2.0):
 
 
 def main():
-    osm = json.load(open(OSM))["features"]
+    osm = json.load(open(OSM, encoding="utf-8"))["features"]
     seg = []
     for f in osm:
         p = f["properties"]
@@ -117,7 +117,7 @@ def main():
             by_key[key(s["name"])].append(s)
             by_key[s["name"]].append(s)  # exact (Dhivehi) lookup
 
-    src = {f["properties"]["name"]: f for f in json.load(open(SRC_GEO))["features"]}
+    src = {f["properties"]["name"]: f for f in json.load(open(SRC_GEO, encoding="utf-8"))["features"]}
     with open(PLACES, encoding="utf-8-sig") as fh:
         places = list(csv.DictReader(fh))
     with open(INV, encoding="utf-8") as fh:
@@ -179,16 +179,22 @@ def main():
             if not hits:
                 row.update(match_status="unmatched", match_method=method)
             elif base == "Rahdhebai Magu":
-                row.update(match_status="uncertain_probable_name_match", match_method=method + " (spacing variant 'Rah Dhebai')",
+                row.update(match_status="confident_whole_road_name",
+                           match_method=method + " (spacing variant 'Rah Dhebai') + source article and junction check (MF-14)",
                            notes="Places file says the road is 'not in the base map data', but this OSM extract has 'Rah Dhebai Magu'. "
-                                 "No source coordinates to confirm. Different street 'Rah Dhebai Hingun' also exists.")
+                                 "Confirmed 17 Nov 2026: edition.mv/.../38397 diverts traffic 'from Chaandhanee Magu to Rah-dhebai Magu' "
+                                 "around the closed Majeedhee section (Nikagas to Dhanburuh Magu). In OSM, Chaandhanee and Rah Dhebai Magu "
+                                 "are the nearest crossings of Majeedhee on either side of that section (west to east: Chaandhanee, "
+                                 "Nikagas, Dhanburuh, Rah Dhebai Magu). Rah Dhebai Hingun is its southern continuation and does not "
+                                 "reach Majeedhee (about 300 m), and both articles say 'Magu'. Evidence is a council repair-list "
+                                 "designation, not a dated flood report. Not checked on imagery.")
             else:
                 row.update(match_status="confident_whole_road_name", match_method=method,
                            notes="Report names the road without a section: road-level evidence only; do not label every segment flooded.")
             if ff:
                 row["notes"] += f" Not matched to similarly spelled different street(s): {', '.join(ff)}."
             if only_geo:
-                row["notes"] += " Compiler line also covers OSM segments not carrying this name (often unnamed pieces of the same road); left unmatched pending review."
+                row["notes"] += " Compiler line also covers unnamed OSM segments; reviewed in unnamed_segment_review.csv (MF-15): none is part of the named carriageway, so they stay unmatched."
             for h in hits:
                 seg_evidence[h].append((base, "road_named_section_unknown" if row["match_status"].startswith("confident") else "road_named_uncertain_match"))
         elif ptype == "road":  # bounded sections
@@ -238,7 +244,7 @@ def main():
                            match_method="overlap with compiler's approximate section line (>=30% within 3 m)",
                            notes="Section ends are landmarks (ferry terminal, jetty); compiler marks extent approximate. "
                                  "Flooding attributed to pumps not yet commissioned on a rebuilt road.")
-                for o in geo:
+                for o in sorted(geo):
                     seg_evidence[o].append((name, "bounded_section_uncertain"))
         else:  # landmark / ward / city
             if p["longitude"] and ptype == "landmark":
@@ -276,7 +282,7 @@ def main():
                      evidence_kinds=" | ".join(sorted({e[1] for e in ev})),
                      label_note="Road named in flood report(s); flooded extent within this segment unknown. Not a flooded/dry label.")
         feats.append(dict(type="Feature", properties=props, geometry=s["feat"]["geometry"]))
-    json.dump(dict(type="FeatureCollection", features=feats), open(OUT_GEO, "w"), ensure_ascii=False)
+    json.dump(dict(type="FeatureCollection", features=feats), open(OUT_GEO, "w", encoding="utf-8"), ensure_ascii=False)
 
     # --- summary for the report
     named_len = sum(segid[o]["len_m"] for o in seg_evidence)
@@ -292,7 +298,7 @@ def draw(seg, seg_evidence, places, rows):
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    ring = xy(json.load(open(BOUNDARY))["features"][0]["geometry"]["coordinates"][0])
+    ring = xy(json.load(open(BOUNDARY, encoding="utf-8"))["features"][0]["geometry"]["coordinates"][0])
     fig, ax = plt.subplots(figsize=(11, 7.5), dpi=150)
     ax.fill(*ring.T, color="#f3f1ec", zorder=0)
     ax.plot(*ring.T, color="#9a968c", lw=0.8, zorder=1)
