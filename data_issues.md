@@ -8,7 +8,7 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 
 | ID | Issue | Effect | Action | Status |
 |---|---|---|---|---|
-| A1 | All records come from a secondary, AI-assisted compilation of news and agency reports. None of the roughly 40 linked articles has been opened or checked. | No record can be rated high confidence (60 medium, 7 low on Malé). | Check the 17 road records and the top 4 landmarks (IGMH, West Park, Villimalé Ferry Terminal, STO) against their articles. Record a quoted phrase and any junction or section detail. | Open |
+| A1 | All records come from a secondary, AI-assisted compilation of news and agency reports. None of the roughly 40 linked articles has been opened or checked. | No record can be rated high confidence (60 medium, 7 low on Malé). | Top 4 landmarks checked 15 Nov 2026 (MF-12): 22 of 29 records verified from the articles (`verification/landmark_checks.csv`). 7 rely only on see.mv, which blocks automated access; open those by hand. The 17 road records remain for MF-11. | Open |
 | A2 | `flood_map.html` claims "40 to 45 mm daily rain at which Malé starts to flood, per a Met Office official (Aug 2024)" with no linked source. | Risk of quoting an unverified number as a threshold. | Find the original statement or leave it out. Never use it as a trigger threshold. | Open |
 | A3 | `flood_map.html` claims "16 pump stations of about 400 m³ per hour" without a source. | Unverified drainage-capacity figure. | Verify with MWSC, the council or the stormwater project documents. | Open |
 | A4 | `flood_map.html` claims the NOAA GSOD rainfall "totals under half the true annual rain" and shows zero on several flood days. | If true, GSOD rainfall is unreliable for any rainfall work. | Compare GSOD annual totals with published MMS annual totals. | Open |
@@ -19,9 +19,9 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 | ID | Issue | Effect | Action | Status |
 |---|---|---|---|---|
 | B1 | On 20–21 Dec 2024, Majeedhee Magu appears both as the whole road and as the bounded section. The whole-road entry comes from the council repair list after the event, not from a report of flooding that day. | The source count `times_reported = 4` overstates it. It should read as 3 reported floods plus 1 designation. | Kept as `designated_flood_prone`, low confidence (RF039; the section is RF040). | Handled |
-| B2 | The West Park and STO flour warehouse points are about 40 m apart and share 3 incident dates. | The same flooded spot is probably counted twice. | Merge them into one group before any spatial evaluation. | Open |
+| B2 | The West Park and STO flour warehouse points are about 40 m apart and share 3 incident dates. | The same flooded spot is probably counted twice. | Checked 15 Nov 2026 (MF-12). MNDF listed them as separate sites on 10 Jan 2024, so both records stay. They share `location_group = west_park_sto` in `verification/landmark_checks.csv`; count each event once per group and keep the group in one fold. | Resolved |
 | B3 | Kudakudhinge Bageecha is on Ameenee Magu, and both are reported on 3 Jan 2025. | Possibly one location counted twice. | Check in the source article. Group them for evaluation. | Open |
-| B4 | Repeat counts at IGMH and West Park are partly pump-deployment reports. | Repetition may show where pumps are routinely placed, not where flooding is worst. | Report counts by evidence type. Don't rank places by raw count alone. | Open |
+| B4 | Repeat counts at IGMH and West Park are partly pump-deployment reports. | Repetition may show where pumps are routinely placed, not where flooding is worst. | Checked 15 Nov 2026 (MF-12). Of 29 landmark records, 8 state flooding (incl. 1 photo caption and 2 "worst flooded area" pump sites), 13 are pumping only, 1 is a closure and 7 are unverified. Use `verified_evidence` in `verification/landmark_checks.csv` and never rank by raw count. | Handled |
 
 ## C. Contradictions
 
@@ -41,19 +41,19 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 | D3 | Whole-road reports have no flood extent, section or junction detail. | Can't say which segments flooded. | Labelled `whole_road_named_section_unknown`. Not every segment is labelled flooded. Look for detail during source checks (A1). | Open |
 | D4 | No depth is given except "passed two feet" (about 0.6 m) on Kan'baa Aisa Rani Hingun and Izzuddeen Magu, 3 Jan 2025. No durations, and mostly no times of day. | A depth or duration target isn't possible. | None for now. | Open |
 | D5 | Rainfall is missing for 13 of 18 incidents. | Little rainfall context for the events. | Recorded as `unknown`. Request MMS gauge data. | Open |
-| D6 | The accumulation period is unknown for 2 of the 5 incidents that have an amount (30–31 Dec 2023, 2–3 Jan 2025). For 13 Aug 2024 the 24 h window's end date isn't stated. | Amounts can't be compared fairly. | Recorded as `unknown`. Don't assume 24 h. | Open |
+| D6 | The accumulation period is unknown for 2 of the 5 incidents that have an amount (30–31 Dec 2023, 2–3 Jan 2025). For 13 Aug 2024 the 24 h window's end date isn't stated. | Amounts can't be compared fairly. | Recorded as `unknown`. Don't assume 24 h. Still unknown for 30-31 Dec 2023 and 2-3 Jan 2025; see `derived/incident_rainfall_table.md`. | Open |
 | D7 | On city-wide days (13 Aug 2024 "nearly every street", 3 Jan 2025 "most of the city", 21 Oct 2026) the reports name only a few places. | Unnamed streets could be misread as dry. | Added 2 city-wide rows from the summary text. Unnamed roads are treated as unknown. | Handled |
 
 ## E. Uncertain interpretations
 
 | ID | Issue | Effect | Action | Status |
 |---|---|---|---|---|
-| E1 | "Pumps ran at two sites near IGMH, West Park and near the Polytechnic" (30–31 Dec 2023) names three places but counts two sites. | Unclear which places had pumps. | All three rated low confidence. Check the article. | Open |
-| E2 | Rasfannu on 13 Aug 2024 "was closed". Flooding there is implied, not stated. | It might not have flooded. | Rated low confidence (`other_reported_impact`). | Open |
+| E1 | "Pumps ran at two sites near IGMH, West Park and near the Polytechnic" (30–31 Dec 2023) names three places but counts two sites. | Unclear which places had pumps. | Resolved 15 Nov 2026 from Atoll Times 7094: MNDF listed pump sites as two areas near IGMH, West Park area, a Main Pump Station area and near Polytechnic. All three places had pumps; only West Park also has a flooding statement (houses near it). The unlocated Main Pump Station site is not added. | Resolved |
+| E2 | Rasfannu on 13 Aug 2024 "was closed". Flooding there is implied, not stated. | It might not have flooded. | Resolved 15 Nov 2026. 13 Aug 2024 (Raajje): closed "due to heavy rains and floods"; flooding at Rasfannu itself still not stated, kept low. 3 Jan 2025 (MMTV): "waterlogged pavements excavated", so standing water is stated for that date. | Resolved |
 | E3 | Henveiru ward on 30–31 Dec 2023: houses flooded, with no road flooding stated. | Not road evidence. | Labelled `building_flooding_reported`. | Handled |
 | E4 | Chaandhanee Magu (RF035) and Rahdhebai Magu (RF041) come only from the council's flood-prone repair list, not from a report of flooding on a given day. | These are designations, not dated reports of flooding. | Labelled `designated_flood_prone`. | Handled |
 | E5 | The Boduthakurufaanu section flood on 30 Jul 2026 was attributed to drainage pumps not yet working on a newly rebuilt road. | A construction-stage cause, not typical flooding of that road. | Noted. Consider leaving it out of susceptibility analysis or flagging it. | Open |
-| E6 | Landmark positions are the compiler's estimates. Rasfannu and STO are marked approximate, and Rasfannu and the Swimming Track fall just outside the OneMap polygon. | Possible position errors. | Flagged `yes_point_outside_onemap_polygon`. OSM cross-check (MF-16, `derived/landmark_position_check.csv`): 8 of the 15 Malé landmarks lie inside their named OSM footprint, so they agree with OSM (the compiler probably took them from it). STO, Rasfannu (48 m offshore) and Swimming Track (21 m offshore) have no OSM reference and still need an imagery check, as do Ekuveni, Henveiru Ground, Pizza Buona and the Polytechnic. No point has been moved. | Open |
+| E6 | Landmark positions are the compiler's estimates. Rasfannu and STO are marked approximate, and Rasfannu and the Swimming Track fall just outside the OneMap polygon. | Possible position errors. | Flagged `yes_point_outside_onemap_polygon`. IGMH, the Villimalé ferry terminal, STO and West Park positions match named OSM features (within about 5 m). OSM cross-check (MF-16, `derived/landmark_position_check.csv`): 8 of the 15 Malé landmarks lie inside their named OSM footprint, so they agree with OSM (the compiler probably took them from it). Rasfannu (48 m offshore) and Swimming Track (21 m offshore) have no OSM reference and still need an imagery check, as do Ekuveni, Henveiru Ground, Pizza Buona and the Polytechnic. No point has been moved. | Open |
 
 ## F. Matching to the OSM road layer
 
@@ -74,7 +74,7 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 | G1 | The data contains reports of flooding only, with no roads observed staying dry. | A supervised flooded vs not-flooded classifier isn't defensible. | Treat roads without reports as unknown. Request records that cover both flooded and dry roads (City Council, NDMA assistance logs, MNDF pump logs). | Open |
 | G2 | The reports lean toward main roads: 26 of the island's 35 primary/secondary segments are linked to evidence. | A model would mostly learn "this is a main road". | Report any results with and without main roads. Use descriptive analysis first. | Open |
 | G3 | There are few independent positives: 7 roads, 15 landmarks, and three roads dominate. | Any evaluation will be unstable. | Use spatial blocks and keep all segments of one road together when splitting train and test data. | Open |
-| G4 | All 5 rainfall amounts come from flood days, at daily scale. | No rainfall threshold or rainfall-response analysis is possible. | Descriptive table only. Hourly MMS data is needed for more. | Open |
+| G4 | All 5 rainfall amounts come from flood days, at daily scale. | No rainfall threshold or rainfall-response analysis is possible. | Descriptive table only. Hourly MMS data is needed for more. Table built: `derived/incident_rainfall_table.md` (MF-44). | Open |
 | G5 | `flood_reported = 0` in `male_daily_features_with_flood_labels.csv` means "no report found". | Misreading 0 as "dry" would invent negative labels. | Don't use 0 as a label without that caveat. | Open |
 | G6 | ERA5 reanalysis badly underestimates the big days (per the compiler: 56 mm vs 142 mm measured on 3 Jan 2025). | Reanalysis can't stand in for gauge intensity. | Use MMS gauges for any rainfall work. | Open |
 
@@ -89,9 +89,11 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 
 ## I. Project-level open questions
 
-| ID | Issue |
-|---|---|
-| I1 | Exact submission time. Whether references count toward the six pages. Whether 30 May 2027 is the review-only or whole-project deadline. |
-| I2 | Whether the older recipe brief's components apply (clustering, classification, regression, neural-network comparison, Colab, demo). That brief also has contradictory 2025/2027 dates. |
-| I3 | No written lecturer approval of the flood topic is in the folder. |
-| I4 | The planning and writing files referenced in `CLAUDE.md` (`Project_Plan.md`, `latex/`, `ijcai26.docx`, reading matrix) are not in this folder. |
+Resolved 14 Nov 2026 with the lecturer's answers, reported by the student (MF-10). Details in `agent.md` §3.
+
+| ID | Issue | Status |
+|---|---|---|
+| I1 | Exact submission time. Whether references count toward the six pages. Whether 30 May 2027 is the review-only or whole-project deadline. | Resolved: 12:00 am Maldives time on 30 May 2027 (submit by 29 May); references don't count; the deadline covers the whole project. |
+| I2 | Whether the older recipe brief's components apply (clustering, classification, regression, neural-network comparison, Colab, demo). That brief also has contradictory 2025/2027 dates. | Resolved: none apply. The 1,000–1,200-word report is replaced by the six-page review. |
+| I3 | No written lecturer approval of the flood topic is in the folder. | Resolved: the lecturer approved the topic (reported by the student). |
+| I4 | The planning and writing files referenced in `CLAUDE.md` (`Project_Plan.md`, `latex/`, `ijcai26.docx`, reading matrix) are not in this folder. | Resolved for the template: the coursework `.doc` is the IJCAI-format template. The planning files are still missing but not needed. |
