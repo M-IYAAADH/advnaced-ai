@@ -117,7 +117,7 @@ Output: `derived/road_match_review.csv` (one row per place, 32 rows). The base l
 | `out_of_study_area` | 5 | Midhili Magu, Hulhumalé roads and cemetery, Hulhulé, Villimalé |
 
 Other points:
-- The compiler's lines also cover **8 unnamed OSM segments** next to Majeedhee, Ameenee and Boduthakurufaanu. They are probably unnamed pieces of the same roads, but are left unmatched pending review.
+- The compiler's lines also cover **8 unnamed OSM segments** next to Majeedhee, Ameenee and Boduthakurufaanu. Reviewed in `derived/unnamed_segment_review.csv` (MF-15): none is part of the named carriageway. Six are footways or steps and one is an 8 m service stub. The eighth, a residential way (1528883097), duplicates 57 m of the Majeedhee centreline and must be dropped when segmenting the network so length is not counted twice.
 - Evidence-linked segments total 11.65 km, **18% of the OSM network length**. Boduthakurufaanu (the ring road) alone is 5.1 km.
 - Of the 56 linked segments, 26 are primary or secondary roads. Of the island's 35 primary or secondary features overall, 26 are linked. The evidence is therefore heavily concentrated on arterial roads.
 

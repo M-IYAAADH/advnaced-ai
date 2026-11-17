@@ -188,7 +188,7 @@ def main():
             if ff:
                 row["notes"] += f" Not matched to similarly spelled different street(s): {', '.join(ff)}."
             if only_geo:
-                row["notes"] += " Compiler line also covers OSM segments not carrying this name (often unnamed pieces of the same road); left unmatched pending review."
+                row["notes"] += " Compiler line also covers unnamed OSM segments; reviewed in unnamed_segment_review.csv (MF-15): none is part of the named carriageway, so they stay unmatched."
             for h in hits:
                 seg_evidence[h].append((base, "road_named_section_unknown" if row["match_status"].startswith("confident") else "road_named_uncertain_match"))
         elif ptype == "road":  # bounded sections
