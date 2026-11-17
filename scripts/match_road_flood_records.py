@@ -179,9 +179,15 @@ def main():
             if not hits:
                 row.update(match_status="unmatched", match_method=method)
             elif base == "Rahdhebai Magu":
-                row.update(match_status="uncertain_probable_name_match", match_method=method + " (spacing variant 'Rah Dhebai')",
+                row.update(match_status="confident_whole_road_name",
+                           match_method=method + " (spacing variant 'Rah Dhebai') + source article and junction check (MF-14)",
                            notes="Places file says the road is 'not in the base map data', but this OSM extract has 'Rah Dhebai Magu'. "
-                                 "No source coordinates to confirm. Different street 'Rah Dhebai Hingun' also exists.")
+                                 "Confirmed 17 Nov 2026: edition.mv/.../38397 diverts traffic 'from Chaandhanee Magu to Rah-dhebai Magu' "
+                                 "around the closed Majeedhee section (Nikagas to Dhanburuh Magu). In OSM, Chaandhanee and Rah Dhebai Magu "
+                                 "are the nearest crossings of Majeedhee on either side of that section (west to east: Chaandhanee, "
+                                 "Nikagas, Dhanburuh, Rah Dhebai Magu). Rah Dhebai Hingun is its southern continuation and does not "
+                                 "reach Majeedhee (about 300 m), and both articles say 'Magu'. Evidence is a council repair-list "
+                                 "designation, not a dated flood report. Not checked on imagery.")
             else:
                 row.update(match_status="confident_whole_road_name", match_method=method,
                            notes="Report names the road without a section: road-level evidence only; do not label every segment flooded.")

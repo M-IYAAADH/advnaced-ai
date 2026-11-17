@@ -8,7 +8,7 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 
 | ID | Issue | Effect | Action | Status |
 |---|---|---|---|---|
-| A1 | All records come from a secondary, AI-assisted compilation of news and agency reports. None of the roughly 40 linked articles has been opened or checked. | No record can be rated high confidence (59 medium, 8 low). | Check the 17 road records and the top 4 landmarks (IGMH, West Park, Villimalé Ferry Terminal, STO) against their articles. Record a quoted phrase and any junction or section detail. | Open |
+| A1 | All records come from a secondary, AI-assisted compilation of news and agency reports. None of the roughly 40 linked articles has been opened or checked. | No record can be rated high confidence (60 medium, 7 low on Malé). | Check the 17 road records and the top 4 landmarks (IGMH, West Park, Villimalé Ferry Terminal, STO) against their articles. Record a quoted phrase and any junction or section detail. | Open |
 | A2 | `flood_map.html` claims "40 to 45 mm daily rain at which Malé starts to flood, per a Met Office official (Aug 2024)" with no linked source. | Risk of quoting an unverified number as a threshold. | Find the original statement or leave it out. Never use it as a trigger threshold. | Open |
 | A3 | `flood_map.html` claims "16 pump stations of about 400 m³ per hour" without a source. | Unverified drainage-capacity figure. | Verify with MWSC, the council or the stormwater project documents. | Open |
 | A4 | `flood_map.html` claims the NOAA GSOD rainfall "totals under half the true annual rain" and shows zero on several flood days. | If true, GSOD rainfall is unreliable for any rainfall work. | Compare GSOD annual totals with published MMS annual totals. | Open |
@@ -27,8 +27,8 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 
 | ID | Issue | Effect | Action | Status |
 |---|---|---|---|---|
-| C1 | The places file says Rahdhebai Magu is "not in the base map data", but the OSM layer has *Rah Dhebai Magu* (2 segments, 548 m). | The road was left off the compiler's map. | Matched as `uncertain_probable_name_match`. Confirm the location. Don't confuse it with *Rah Dhebai Hingun*. | Open |
-| C2 | The places file gives Rahdhebai Magu the date 20–21 Dec 2024, but it is missing from that incident's location list. | The two source files disagree. | Kept with a note and low confidence. Check the source (atolltimes.mv/post/news/10872). | Open |
+| C1 | The places file says Rahdhebai Magu is "not in the base map data", but the OSM layer has *Rah Dhebai Magu* (2 segments, 548 m). | The road was left off the compiler's map. | Confirmed in MF-14 (17 Nov 2026) as OSM *Rah Dhebai Magu* (306840956, 649440524). edition.mv/.../38397 diverts traffic "from Chaandhanee Magu to Rah-dhebai Magu" around the closed Majeedhee section, and those two roads are the nearest Majeedhee crossings either side of it. *Rah Dhebai Hingun* does not reach Majeedhee. Not checked on imagery. | Handled |
+| C2 | The places file gives Rahdhebai Magu the date 20–21 Dec 2024, but it is missing from that incident's location list. | The two source files disagree. | Checked in MF-14: atolltimes.mv/post/news/10872 (28 Dec 2024) lists Rahdhebai Magu among roads repaired after a survey of "the most flood-prone areas", with Chaandhanee and Majeedhee. The incident file's omission looks like a compiler error. RF041 stays a designation (no dated flood is stated) and is raised to medium confidence. see.mv/94000 returned HTTP 403. | Handled |
 | C3 | Rainfall for 2–3 Jan 2025 is given as 142.2 mm and also as "162 mm by 11 pm in another count". | Two amounts for one event. | Both are kept in the notes; the inventory uses 142.2 mm with the period unknown. Resolve with MMS data. | Open |
 | C4 | The compiler's Majeedhee section line (Dhanburuh to Nikagas Magu) is 83 m long, but the junctions are 44 m apart. The line runs about 38 m past the Nikagas junction. | The section extent is overstated. | The clipped 44 m extent is used in the derived files. | Handled |
 
@@ -36,7 +36,7 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 
 | ID | Issue | Effect | Action | Status |
 |---|---|---|---|---|
-| D1 | Rahdhebai Magu has no coordinates. | It can only be placed by name match. | Recorded as `unknown`. Confirm through C1. | Open |
+| D1 | Rahdhebai Magu has no coordinates. | It can only be placed by name match. | The inventory coordinate stays `unknown` (never imputed). The road is located through the confirmed OSM match in C1. | Handled |
 | D2 | Road coordinates are midpoints, not flood locations. | They can't be used as flood points. | Labelled `compiler_road_midpoint_not_flood_point`. | Handled |
 | D3 | Whole-road reports have no flood extent, section or junction detail. | Can't say which segments flooded. | Labelled `whole_road_named_section_unknown`. Not every segment is labelled flooded. Look for detail during source checks (A1). | Open |
 | D4 | No depth is given except "passed two feet" (about 0.6 m) on Kan'baa Aisa Rani Hingun and Izzuddeen Magu, 3 Jan 2025. No durations, and mostly no times of day. | A depth or duration target isn't possible. | None for now. | Open |

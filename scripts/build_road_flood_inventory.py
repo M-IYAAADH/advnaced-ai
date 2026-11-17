@@ -121,8 +121,13 @@ ev("2024-12-20", "Majeedhee Magu", "agency_flood_prone_list", "whole_road_named_
    "Summary says the council repaired Majeedhee Magu after the event; it does not say the whole road flooded on 20-21 Dec. Possible double count with the bounded-section record.")
 ev("2024-12-20", "Chaandhanee Magu", "agency_flood_prone_list", "whole_road_named_section_unknown", "low",
    "On council flood-prone repair list after the event; flooding on 20-21 Dec not stated directly.")
-ev("2024-12-20", "Rahdhebai Magu", "agency_flood_prone_list", "whole_road_named_section_unknown", "low",
-   "On council flood-prone repair list (places file). NOT listed in the incident file's locations for 2024-12-20.")
+ev("2024-12-20", "Rahdhebai Magu", "agency_flood_prone_list", "whole_road_named_section_unknown", "medium",
+   "On council flood-prone repair list. Source checked 17 Nov 2026 (MF-14): atolltimes.mv/post/news/10872 (28 Dec 2024) "
+   "lists 'Rahdhebai Magu' under 'Repairs have been carried out on the following roads', after a survey of 'the most "
+   "flood-prone areas'. edition.mv/.../38397 (28 Dec 2024) says traffic was diverted 'from Chaandhanee Magu to "
+   "Rah-dhebai Magu' around the Majeedhee closure. Neither article says it flooded on 20-21 Dec or gives a section; "
+   "the rain is only 'last weekend'. see.mv/94000 could not be read (HTTP 403). Missing from the incident file's "
+   "location list, which looks like a compiler omission (Chaandhanee, on the same list, is included).")
 for road in ("Majeedhee Magu", "Ameenee Magu"):
     ev("2025-01-03", road, "news_report_flooding", "whole_road_named_section_unknown", "medium",
        "Became impassable; section not stated.")

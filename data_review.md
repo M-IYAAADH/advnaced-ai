@@ -6,7 +6,7 @@ Reviewed 14 Nov 2026. Scope: which roads or road sections on Malé island proper
 
 - The new folder `male-flood-basis/` contains the project's first **location-specific** flood evidence for Malé. It covers 18 rain-flood incidents (Dec 2021 to Oct 2026), **7 named roads, 2 bounded road sections, 15 landmarks** and 3 ward or city mentions on Malé.
 - All of it is **positive-only, secondary evidence**: a compilation of news and agency reports made with AI assistance. I have not opened the roughly 40 linked articles, so no record is rated above "medium" confidence.
-- All 7 roads match the OSM layer. Three matches are confident only because of Dhivehi-name aliases, and one (Rahdhebai) is uncertain. Landmarks are kept as points and not assigned to roads.
+- All 7 roads match the OSM layer. Three matches are confident only because of Dhivehi-name aliases. Rahdhebai was uncertain until a source-article and junction check (MF-14, 17 Nov 2026) confirmed it. Landmarks are kept as points and not assigned to roads.
 - The evidence supports a **documented map of reported flood-prone roads and places**, which is built, and **descriptive** comparison of road characteristics. It does **not** support a supervised flooded vs not-flooded classifier: there are no observed-dry roads, and the positives are few and concentrated on the main arterials.
 
 ## 2. Files reviewed
@@ -47,7 +47,7 @@ Malé records only (67):
 | Official statement, no streets named | 1 |
 | Houses flooded, no roads stated | 1 |
 
-There are **no** observed-dry records, **no** model outputs and **no** citizen complaints. Confidence ratings: 59 medium, 8 low, 0 high.
+There are **no** observed-dry records, **no** model outputs and **no** citizen complaints. Confidence ratings: 60 medium, 7 low, 0 high (RF041 Rahdhebai raised to medium after its source check, MF-14).
 
 Roads and how many separate incidents name them (the dated records are mostly whole-road mentions; one is a bounded section):
 
@@ -59,7 +59,7 @@ Roads and how many separate incidents name them (the dated records are mostly wh
 | Kan'baa Aisa Rani Hingun | Kanbaa Aisa Rani Hingun | 1 | Water "passed two feet" (about 0.6 m), 3 Jan 2025 |
 | Izzuddeen Magu | Izzuddeen Magu | 1 | Same as above |
 | Chaandhanee Magu | Chandhanee Magu | 1 (repair list only) | |
-| Rahdhebai Magu | Rah Dhebai Magu (uncertain) | 1 (repair list only) | No coordinates |
+| Rahdhebai Magu | Rah Dhebai Magu (confirmed, MF-14) | 1 (repair list only) | No source coordinates; located by the OSM match |
 
 Most-mentioned landmarks: IGMH area (10 incidents), West Park area (8), Villimalé Ferry Terminal (5), STO flour warehouse area (3). All four are on the west side of Malé.
 
@@ -84,7 +84,7 @@ No hourly intensities are reported. For 1 Mar 2025 the source gives only a durat
 - Repeat counts at **IGMH and West Park** are partly pump-deployment reports. Some of that repetition may reflect where pumps are routinely placed, not how deep the flooding was.
 
 ### 4.2 Contradictions
-- The places file says Rahdhebai Magu is "not in the base map data", but the OSM layer has *Rah Dhebai Magu* (2 segments, 548 m). Rahdhebai also appears with date 20–21 Dec 2024 in the places file but is **missing** from that incident's location list.
+- The places file says Rahdhebai Magu is "not in the base map data", but the OSM layer has *Rah Dhebai Magu* (2 segments, 548 m). Rahdhebai also appears with date 20–21 Dec 2024 in the places file but is **missing** from that incident's location list. The Atoll Times article (28 Dec 2024) lists it with Chaandhanee and Majeedhee among the roads repaired, so the omission looks like a compiler error (resolved in MF-14).
 - 3 Jan 2025 rainfall: 142.2 mm vs 162 mm.
 - The compiler's Majeedhee section line is 83 m long, but the junctions with Dhanburuh Magu and Nikagas Magu are 44 m apart. The line runs about 38 m past the Nikagas junction. The 44 m clip is used.
 
@@ -108,10 +108,9 @@ Output: `derived/road_match_review.csv` (one row per place, 32 rows). The base l
 
 | Status | Places | Detail |
 |---|---|---|
-| `confident_whole_road_name` | 6 | Majeedhee, Ameenee and Boduthakurufaanu (via Dhivehi `name`); Kan'baa Aisa Rani, Izzuddeen, Chaandhanee (spelling variants). 48 OSM segments, 11.1 km. Every name-matched segment except one of Boduthakurufaanu's overlaps the compiler's line. |
+| `confident_whole_road_name` | 7 | Majeedhee, Ameenee and Boduthakurufaanu (via Dhivehi `name`); Kan'baa Aisa Rani, Izzuddeen, Chaandhanee, Rahdhebai (spelling variants). 50 OSM segments, 11.6 km. Every name-matched segment except one of Boduthakurufaanu's overlaps the compiler's line (Rahdhebai has no compiler line). Rahdhebai → *Rah Dhebai Magu* (MF-14). There is no source geometry, but the Edition article diverts traffic "from Chaandhanee Magu to Rah-dhebai Magu" around the closed Majeedhee section, and in OSM those two roads are the nearest crossings of Majeedhee on either side of it. *Rah Dhebai Hingun* does not reach Majeedhee. |
 | `confident_section_partial_segments` | 1 | Majeedhee, Dhanburuh–Nikagas Magu: 44 m inside one 0.9 km OSM segment. Split the segment before labelling. |
 | `uncertain_section_extent` | 1 | Boduthakurufaanu, Henveiru Ferry Terminal to Izzuddin Jetty: 11 segments under the compiler's approximate 779 m line. The ends are landmarks. |
-| `uncertain_probable_name_match` | 1 | Rahdhebai → *Rah Dhebai Magu*. No source geometry. Do not confuse with *Rah Dhebai Hingun*. |
 | `uncertain_landmark_not_assigned` | 15 | Named OSM roads within 50 m are listed as candidates only. Example: West Park → Boduthakurufaanu 10 m, Haveeree Hingun 16 m, Kanbaa Aisa Rani 22 m. |
 | `unmatched_area_level` | 3 | Maafannu ward, Henveiru ward, city-wide |
 | `out_of_study_area` | 5 | Midhili Magu, Hulhumalé roads and cemetery, Hulhulé, Villimalé |
