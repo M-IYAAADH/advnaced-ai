@@ -1,16 +1,16 @@
-place,places_file_row,latitude,longitude,compiler_marked_approximate,inside_onemap_polygon,distance_to_onemap_coastline_m,osm_feature_ids,osm_feature,distance_to_osm_footprint_m,result,action_needed,position_changed
-IGMH area (Indira Gandhi Memorial Hospital),12,4.17333,73.50152,no,yes,82.1,151403710,OSM building 'Indira Gandhi Memorial Hospital',0.0,consistent_with_osm_feature,none,no
-West Park area,13,4.17753,73.50261,no,yes,22.8,61881622,OSM park 'West Park',0.0,consistent_with_osm_feature,none,no
-Maafannu (Villimalé) Ferry Terminal,14,4.17196,73.50166,no,yes,25.8,108758609,OSM building 'MTCC Vilingilli Ferry Terminal' (Villimalé = Vilingili),0.0,consistent_with_osm_feature,none,no
-STO flour warehouse area,15,4.17717,73.50256,yes,yes,38.5,,"OSM has 'STO' (522153523) and 'State Trading Organisation' (7551086) buildings, but the reports refer to the STO flour warehouse; which building that is cannot be told from OSM.",,no_osm_feature,imagery: no OSM reference to check against,no
-King Salman Mosque area,18,4.17574,73.5185,no,yes,60.0,959150179,OSM mosque named in Dhivehi 'Salman Rasgefaanuge Miskiy' (King Salman Mosque),0.0,consistent_with_osm_feature,none,no
-"Kudakudhinge Bageecha (children's park, Ameenee Magu)",19,4.17076,73.5144,no,yes,128.7,91986115,OSM park 'Kudakudhinge Bageecha',0.0,consistent_with_osm_feature,none,no
-Rasfannu,20,4.1757,73.501,yes,no,48.3,,"Beach area, not a road; compiler point is 48 m offshore.",,excluded_not_road_location,none: removed from matching and map (MF-16),no
-Dhiraagu head office area,21,4.17254,73.50198,no,yes,93.4,795286458,OSM building 'Dhiraagu Head Office',0.0,consistent_with_osm_feature,none,no
-Voice of Maldives area,23,4.17258,73.50326,no,yes,114.7,1211931510,OSM building 'Voice of Maldives',0.0,consistent_with_osm_feature,none,no
-Ekuveni running track,24,4.17009,73.50718,no,yes,91.3,node 1247058236,"Ekuveni (leisure=sports_centre) [full OSM, Nominatim]",0.2,consistent_with_osm_feature,none,no
-Swimming Track area,25,4.16944,73.5133,no,no,21.0,,"Sea swimming track, not a road; compiler point is 21 m offshore.",,excluded_not_road_location,none: removed from matching and map (MF-16),no
-Henveiru Ground (stadium),26,4.17508,73.51687,no,yes,179.0,way 108650593,"Henveiru Stadium (leisure=pitch), centroid [full OSM, Nominatim]",11.4,consistent_with_osm_feature,none,no
-Pizza Buona area,27,4.17459,73.51485,no,yes,387.0,node 11449179169,"Pizza Buona (amenity=restaurant), Majeedhee Magu [full OSM, Nominatim]",0.1,consistent_with_osm_feature,none,no
-Dharubaaruge area,28,4.1704,73.51528,no,yes,79.7,108762208,OSM building 'Dharubaaruge',0.0,consistent_with_osm_feature,none,no
-Maldives Polytechnic area,29,4.17049,73.51037,no,yes,143.7,node 5599539381,"Maldives Polytechnic (amenity=college) [full OSM, Nominatim]",0.3,consistent_with_osm_feature,none,no
+place,places_file_row,latitude,longitude,compiler_marked_approximate,inside_onemap_polygon,distance_to_onemap_coastline_m,osm_feature_ids,osm_feature,distance_to_osm_footprint_m,result,action_needed,position_changed,compiler_latitude,compiler_longitude,position_change_source,position_change_reason
+IGMH area (Indira Gandhi Memorial Hospital),12,4.17333,73.50152,no,yes,82.1,151403710,OSM building 'Indira Gandhi Memorial Hospital',0.0,consistent_with_osm_feature,none,no,4.17333,73.50152,,
+West Park area,13,4.17753,73.50261,no,yes,22.8,61881622,OSM park 'West Park',0.0,consistent_with_osm_feature,none,no,4.17753,73.50261,,
+Maafannu (Villimalé) Ferry Terminal,14,4.17196,73.50166,no,yes,25.8,108758609,OSM building 'MTCC Vilingilli Ferry Terminal' (Villimalé = Vilingili),0.0,consistent_with_osm_feature,none,no,4.17196,73.50166,,
+STO flour warehouse area,15,4.1794163,73.5093009,yes,yes,83.6,7551086,OSM building 'State Trading Organisation' (Google Maps: 'STO Wholesale Shop'),1.1,consistent_with_osm_feature,none,yes,4.17717,73.50256,"Google Maps place 'STO Wholesale Shop' (https://maps.app.goo.gl/sUmquybtgfhy84JY6), chosen by Aslan 17 Nov 2026","Compiler point (4.17717, 73.50256) was marked approximate and sat in the OSM 'STO' building by West Park. Moved 789 m to the STO site by the north harbour (within 1 m of OSM building 'State Trading Organisation', 7551086). Google names the place a wholesale shop, not a flour warehouse; the reports pair the warehouse with West Park and IGMH, so the identification remains uncertain."
+King Salman Mosque area,18,4.17574,73.5185,no,yes,60.0,959150179,OSM mosque named in Dhivehi 'Salman Rasgefaanuge Miskiy' (King Salman Mosque),0.0,consistent_with_osm_feature,none,no,4.17574,73.5185,,
+"Kudakudhinge Bageecha (children's park, Ameenee Magu)",19,4.17076,73.5144,no,yes,128.7,91986115,OSM park 'Kudakudhinge Bageecha',0.0,consistent_with_osm_feature,none,no,4.17076,73.5144,,
+Rasfannu,20,4.1757,73.501,yes,no,48.3,,"Beach area, not a road; compiler point is 48 m offshore.",,excluded_not_road_location,none: removed from matching and map (MF-16),no,4.1757,73.501,,
+Dhiraagu head office area,21,4.17254,73.50198,no,yes,93.4,795286458,OSM building 'Dhiraagu Head Office',0.0,consistent_with_osm_feature,none,no,4.17254,73.50198,,
+Voice of Maldives area,23,4.17258,73.50326,no,yes,114.7,1211931510,OSM building 'Voice of Maldives',0.0,consistent_with_osm_feature,none,no,4.17258,73.50326,,
+Ekuveni running track,24,4.17009,73.50718,no,yes,91.3,node 1247058236,"Ekuveni (leisure=sports_centre) [full OSM, Nominatim]",0.2,consistent_with_osm_feature,none,no,4.17009,73.50718,,
+Swimming Track area,25,4.16944,73.5133,no,no,21.0,,"Sea swimming track, not a road; compiler point is 21 m offshore.",,excluded_not_road_location,none: removed from matching and map (MF-16),no,4.16944,73.5133,,
+Henveiru Ground (stadium),26,4.17508,73.51687,no,yes,179.0,way 108650593,"Henveiru Stadium (leisure=pitch), centroid [full OSM, Nominatim]",11.4,consistent_with_osm_feature,none,no,4.17508,73.51687,,
+Pizza Buona area,27,4.17459,73.51485,no,yes,387.0,node 11449179169,"Pizza Buona (amenity=restaurant), Majeedhee Magu [full OSM, Nominatim]",0.1,consistent_with_osm_feature,none,no,4.17459,73.51485,,
+Dharubaaruge area,28,4.1704,73.51528,no,yes,79.7,108762208,OSM building 'Dharubaaruge',0.0,consistent_with_osm_feature,none,no,4.1704,73.51528,,
+Maldives Polytechnic area,29,4.17049,73.51037,no,yes,143.7,node 5599539381,"Maldives Polytechnic (amenity=college) [full OSM, Nominatim]",0.3,consistent_with_osm_feature,none,no,4.17049,73.51037,,

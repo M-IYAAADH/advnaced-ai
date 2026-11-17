@@ -21,7 +21,7 @@ import json
 
 import numpy as np
 
-from match_road_flood_records import EXCLUDED_LANDMARKS, BOUNDARY, KX, KY, LAT0, LON0, PLACES, ROOT, pt_to_lines, xy
+from match_road_flood_records import EXCLUDED_LANDMARKS, POSITION_OVERRIDES, apply_position_overrides, BOUNDARY, KX, KY, LAT0, LON0, PLACES, ROOT, pt_to_lines, xy
 
 BUILDINGS = ROOT / "Male_Flood_Data_Starter_Pack/mapping/male_osm_buildings.geojson"
 LANDUSE = ROOT / "Male_Flood_Data_Starter_Pack/mapping/male_osm_landuse.geojson"
@@ -39,6 +39,8 @@ OSM_IDENTITY = {
     "Dhiraagu head office area": (["795286458"], "OSM building 'Dhiraagu Head Office'"),
     "Voice of Maldives area": (["1211931510"], "OSM building 'Voice of Maldives'"),
     "Dharubaaruge area": (["108762208"], "OSM building 'Dharubaaruge'"),
+    # Checked against the MF-16 corrected position (POSITION_OVERRIDES), not the compiler's point.
+    "STO flour warehouse area": (["7551086"], "OSM building 'State Trading Organisation' (Google Maps: 'STO Wholesale Shop')"),
 }
 # MF-16 (17 Nov 2026): places missing from the clipped starter-pack layers, checked against
 # the full OSM database via Nominatim search. Google Maps could not be read by script
@@ -50,11 +52,7 @@ OSM_FULL_CHECK = {
     "Maldives Polytechnic area": ("node 5599539381", "Maldives Polytechnic (amenity=college)", 4.1704908, 73.5103677),
 }
 
-# Named in OSM but not the same place, recorded so nobody matches them by mistake.
-NOT_SAME = {
-    "STO flour warehouse area": "OSM has 'STO' (522153523) and 'State Trading Organisation' (7551086) buildings, but the "
-                                "reports refer to the STO flour warehouse; which building that is cannot be told from OSM.",
-}
+NOT_SAME = {}  # STO flour warehouse resolved in MF-16 (see POSITION_OVERRIDES)
 
 
 def rings(geom):
@@ -80,7 +78,7 @@ def main():
     onemap = rings(json.load(open(BOUNDARY, encoding="utf-8"))["features"][0]["geometry"])
 
     with open(PLACES, encoding="utf-8-sig") as fh:
-        places = [(i, r) for i, r in enumerate(csv.DictReader(fh), start=2)
+        places = [(i, r) for i, r in enumerate(apply_position_overrides(list(csv.DictReader(fh))), start=2)
                   if r["type"] == "landmark" and r["island"] == "Malé"]
 
     rows = []
@@ -94,7 +92,12 @@ def main():
                    inside_onemap_polygon="yes" if in_onemap else "no",
                    distance_to_onemap_coastline_m=round(coast_m, 1),
                    osm_feature_ids="", osm_feature="", distance_to_osm_footprint_m="",
-                   result="", action_needed="", position_changed="no")
+                   result="", action_needed="", position_changed="no",
+                   compiler_latitude=p.get("orig_latitude", p["latitude"]), compiler_longitude=p.get("orig_longitude", p["longitude"]),
+                   position_change_source="", position_change_reason="")
+        if p["name"] in POSITION_OVERRIDES:
+            _, _, src, why = POSITION_OVERRIDES[p["name"]]
+            row.update(position_changed="yes", position_change_source=src, position_change_reason=why)
         if p["name"] in OSM_IDENTITY:
             ids, why = OSM_IDENTITY[p["name"]]
             d = []

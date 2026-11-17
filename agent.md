@@ -55,7 +55,7 @@ Still not in this folder: the planning files described in `CLAUDE.md` (`Project_
 | `derived/road_flood_matched_segments.geojson` | 56 OSM segments linked to evidence (QGIS) | Derived. Not flooded/dry labels |
 | `derived/road_flood_evidence_map.png` | Map | Derived |
 | `derived/unnamed_segment_review.csv` | The 8 unnamed OSM segments under the compiler's lines, each marked part of the named road or not (MF-15) | Derived. Geometry-only decisions |
-| `derived/landmark_position_check.csv` | Each Malé landmark point checked against its named OSM feature (starter-pack layers, or the full OSM database via Nominatim for Ekuveni, Henveiru Stadium, Pizza Buona and the Polytechnic) and the OneMap polygon (MF-16). Rasfannu and the Swimming Track are marked `excluded_not_road_location` | Derived. Confirms agreement with OSM, not ground truth; no point moved. STO flour warehouse still unchecked |
+| `derived/landmark_position_check.csv` | Each Malé landmark point checked against its named OSM feature (starter-pack layers, or the full OSM database via Nominatim for Ekuveni, Henveiru Stadium, Pizza Buona and the Polytechnic) and the OneMap polygon (MF-16). Rasfannu and the Swimming Track are marked `excluded_not_road_location` | Derived. Confirms agreement with OSM, not ground truth; one point moved: the STO flour warehouse, to the Google Maps STO site by the north harbour (`POSITION_OVERRIDES`, old coordinates kept) |
 | `scripts/` | `build_road_flood_inventory.py`, then `match_road_flood_records.py`, then `review_unnamed_segments.py` and `check_landmark_positions.py` | Re-run from the project root (steps in `README.md`) |
 
 ## 5. Processing conventions

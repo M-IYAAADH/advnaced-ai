@@ -50,6 +50,29 @@ EXCLUDED_LANDMARKS = {
     "Rasfannu": "Beach area, not a road; compiler point is 48 m offshore.",
     "Swimming Track area": "Sea swimming track, not a road; compiler point is 21 m offshore.",
 }
+
+# MF-16 (17 Nov 2026, Aslan): corrected landmark positions. The raw places file keeps the
+# compiler's coordinates; these replace them in derived outputs only.
+# name -> (new lat, new lon, source, reason)
+POSITION_OVERRIDES = {
+    "STO flour warehouse area": (
+        4.1794163, 73.5093009,
+        "Google Maps place 'STO Wholesale Shop' (https://maps.app.goo.gl/sUmquybtgfhy84JY6), chosen by Aslan 17 Nov 2026",
+        "Compiler point (4.17717, 73.50256) was marked approximate and sat in the OSM 'STO' building by West Park. "
+        "Moved 789 m to the STO site by the north harbour (within 1 m of OSM building 'State Trading Organisation', 7551086). "
+        "Google names the place a wholesale shop, not a flour warehouse; the reports pair the warehouse with West Park and IGMH, "
+        "so the identification remains uncertain."),
+}
+
+
+def apply_position_overrides(places):
+    """Replace overridden coordinates in place, keeping the originals as orig_latitude/orig_longitude."""
+    for p in places:
+        if p["name"] in POSITION_OVERRIDES:
+            la, lo, _, _ = POSITION_OVERRIDES[p["name"]]
+            p["orig_latitude"], p["orig_longitude"] = p["latitude"], p["longitude"]
+            p["latitude"], p["longitude"] = str(la), str(lo)
+    return places
 KX, KY = 111320 * np.cos(np.radians(LAT0)), 110574.0
 
 # English name in reports -> OSM Dhivehi `name` (manual transliteration; each
@@ -128,7 +151,7 @@ def main():
 
     src = {f["properties"]["name"]: f for f in json.load(open(SRC_GEO, encoding="utf-8"))["features"]}
     with open(PLACES, encoding="utf-8-sig") as fh:
-        places = list(csv.DictReader(fh))
+        places = apply_position_overrides(list(csv.DictReader(fh)))
     with open(INV, encoding="utf-8") as fh:
         inv = list(csv.DictReader(fh))
     recs = defaultdict(list)
