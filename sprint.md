@@ -53,11 +53,11 @@ Dates are YYYY-MM-DD. Working deadline: 30 May 2027 (time unconfirmed).
 | MF-11 | S1 | M3 | 5 | To do | Verify the 17 road records against source articles | None | A1, D3 | No | Each road record gets a quoted phrase and any section or junction detail; confidence raised only where the article confirms it. |
 | MF-12 | S1 | M1 | 3 | To do | Verify the top 4 landmarks and settle duplicates | None | A1, B2, E1, E2 | No | IGMH, West Park, Villimalé Ferry Terminal, STO checked; pump wording (E1) and Rasfannu (E2) resolved; West Park/STO merge decided. |
 | MF-13 | S1 | M3 | 2 | To do | Read the JICA 2021 survey report | None | A5 | No | Notes on flood photos, drainage and elevation findings, with page numbers. |
-| MF-14 | S1 | M2 | 2 | To do | Resolve the Rahdhebai Magu match | None | C1, C2, D1 | No | Match confirmed or rejected using the source article and imagery; match review updated. |
-| MF-15 | S1 | M2 | 2 | To do | Review 8 unnamed OSM segments beside matched roads | None | F3 | No | Each segment marked as part of the named road or not, with the reason. |
-| MF-16 | S1 | M2 | 2 | To do | Check landmark positions on imagery | None | E6 | No | Approximate and off-polygon points confirmed or moved, with the change logged. |
+| MF-14 | S1 | M2 | 2 | In progress | Resolve the Rahdhebai Magu match | None | C1, C2, D1 | No | Match confirmed or rejected using the source article and imagery; match review updated. |
+| MF-15 | S1 | M2 | 2 | In progress | Review 8 unnamed OSM segments beside matched roads | None | F3 | No | Each segment marked as part of the named road or not, with the reason. |
+| MF-16 | S1 | M2 | 2 | In progress | Check landmark positions on imagery | None | E6 | No | Approximate and off-polygon points confirmed or moved, with the change logged. |
 | MF-17 | S1 | M1 | 3 | To do | Draft agency data requests | None | H1, H2, H3, H4 | No | Drafts to Council/NDMA, MNDF, MWSC and MMS approved by the group. Nothing is sent without approval. |
-| MF-18 | S1 | M2 | 2 | To do | Pin the Python environment and rerun steps | None | None | No | requirements.txt plus README steps; a teammate rebuilds derived/ from scratch. |
+| MF-18 | S1 | M2 | 2 | In progress | Pin the Python environment and rerun steps | None | None | No | requirements.txt plus README steps; a teammate rebuilds derived/ from scratch. |
 | MF-19 | S1 | M3 | 3 | To do | Literature search: 20+ candidate journal articles | None | None | No | Shortlist covering urban/road flood susceptibility, positive-only learning and spatial validation, with full references. |
 | MF-20 | S2 | M2 | 5 | To do | Split OSM roads at junctions into block segments | MF-15 | F4, F7 | No | Segment layer with stable IDs; total length matches the source network. |
 | MF-21 | S2 | M2 | 3 | To do | Attach evidence to segments at the right scope | MF-20, MF-11, MF-12, MF-14 | B1, D3, F6 | No | Each segment is reported, designated, landmark-candidate or unknown. Whole-road mentions are not spread to every segment as 'flooded'. |
