@@ -53,7 +53,7 @@ Status key: **Open** means not yet resolved. **Handled** means a workaround is a
 | E3 | Henveiru ward on 30–31 Dec 2023: houses flooded, with no road flooding stated. | Not road evidence. | Labelled `building_flooding_reported`. | Handled |
 | E4 | Chaandhanee Magu (RF035) and Rahdhebai Magu (RF041) come only from the council's flood-prone repair list, not from a report of flooding on a given day. | These are designations, not dated reports of flooding. | Labelled `designated_flood_prone`. | Handled |
 | E5 | The Boduthakurufaanu section flood on 30 Jul 2026 was attributed to drainage pumps not yet working on a newly rebuilt road. | A construction-stage cause, not typical flooding of that road. | Noted. Consider leaving it out of susceptibility analysis or flagging it. | Open |
-| E6 | Landmark positions are the compiler's estimates. Rasfannu and STO are marked approximate, and Rasfannu and the Swimming Track fall just outside the OneMap polygon. | Possible position errors. | Flagged `yes_point_outside_onemap_polygon`. Check positions on imagery. | Open |
+| E6 | Landmark positions are the compiler's estimates. Rasfannu and STO are marked approximate, and Rasfannu and the Swimming Track fall just outside the OneMap polygon. | Possible position errors. | Flagged `yes_point_outside_onemap_polygon`. OSM cross-check (MF-16, `derived/landmark_position_check.csv`): 8 of the 15 Malé landmarks lie inside their named OSM footprint, so they agree with OSM (the compiler probably took them from it). STO, Rasfannu (48 m offshore) and Swimming Track (21 m offshore) have no OSM reference and still need an imagery check, as do Ekuveni, Henveiru Ground, Pizza Buona and the Polytechnic. No point has been moved. | Open |
 
 ## F. Matching to the OSM road layer
 

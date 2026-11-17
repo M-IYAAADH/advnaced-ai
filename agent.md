@@ -55,7 +55,8 @@ Unresolved (ask the student or lecturer; don't block work on them):
 | `derived/road_flood_matched_segments.geojson` | 56 OSM segments linked to evidence (QGIS) | Derived. Not flooded/dry labels |
 | `derived/road_flood_evidence_map.png` | Map | Derived |
 | `derived/unnamed_segment_review.csv` | The 8 unnamed OSM segments under the compiler's lines, each marked part of the named road or not (MF-15) | Derived. Geometry-only decisions |
-| `scripts/` | `build_road_flood_inventory.py`, then `match_road_flood_records.py`, then `review_unnamed_segments.py` | Re-run from the project root (steps in `README.md`) |
+| `derived/landmark_position_check.csv` | Each Malé landmark point checked against its named OSM feature and the OneMap polygon (MF-16) | Derived. Not an imagery check |
+| `scripts/` | `build_road_flood_inventory.py`, then `match_road_flood_records.py`, then `review_unnamed_segments.py` and `check_landmark_positions.py` | Re-run from the project root (steps in `README.md`) |
 
 ## 5. Processing conventions
 
