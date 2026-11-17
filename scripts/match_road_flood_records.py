@@ -103,7 +103,7 @@ def densify(L, step=2.0):
 
 
 def main():
-    osm = json.load(open(OSM))["features"]
+    osm = json.load(open(OSM, encoding="utf-8"))["features"]
     seg = []
     for f in osm:
         p = f["properties"]
@@ -117,7 +117,7 @@ def main():
             by_key[key(s["name"])].append(s)
             by_key[s["name"]].append(s)  # exact (Dhivehi) lookup
 
-    src = {f["properties"]["name"]: f for f in json.load(open(SRC_GEO))["features"]}
+    src = {f["properties"]["name"]: f for f in json.load(open(SRC_GEO, encoding="utf-8"))["features"]}
     with open(PLACES, encoding="utf-8-sig") as fh:
         places = list(csv.DictReader(fh))
     with open(INV, encoding="utf-8") as fh:
@@ -238,7 +238,7 @@ def main():
                            match_method="overlap with compiler's approximate section line (>=30% within 3 m)",
                            notes="Section ends are landmarks (ferry terminal, jetty); compiler marks extent approximate. "
                                  "Flooding attributed to pumps not yet commissioned on a rebuilt road.")
-                for o in geo:
+                for o in sorted(geo):
                     seg_evidence[o].append((name, "bounded_section_uncertain"))
         else:  # landmark / ward / city
             if p["longitude"] and ptype == "landmark":
@@ -276,7 +276,7 @@ def main():
                      evidence_kinds=" | ".join(sorted({e[1] for e in ev})),
                      label_note="Road named in flood report(s); flooded extent within this segment unknown. Not a flooded/dry label.")
         feats.append(dict(type="Feature", properties=props, geometry=s["feat"]["geometry"]))
-    json.dump(dict(type="FeatureCollection", features=feats), open(OUT_GEO, "w"), ensure_ascii=False)
+    json.dump(dict(type="FeatureCollection", features=feats), open(OUT_GEO, "w", encoding="utf-8"), ensure_ascii=False)
 
     # --- summary for the report
     named_len = sum(segid[o]["len_m"] for o in seg_evidence)
@@ -292,7 +292,7 @@ def draw(seg, seg_evidence, places, rows):
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
 
-    ring = xy(json.load(open(BOUNDARY))["features"][0]["geometry"]["coordinates"][0])
+    ring = xy(json.load(open(BOUNDARY, encoding="utf-8"))["features"][0]["geometry"]["coordinates"][0])
     fig, ax = plt.subplots(figsize=(11, 7.5), dpi=150)
     ax.fill(*ring.T, color="#f3f1ec", zorder=0)
     ax.plot(*ring.T, color="#9a968c", lw=0.8, zorder=1)

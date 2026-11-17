@@ -190,7 +190,7 @@ def point_in_poly(lon, lat, ring):
 
 
 def main():
-    ring = json.load(open(BOUNDARY))["features"][0]["geometry"]["coordinates"][0]
+    ring = json.load(open(BOUNDARY, encoding="utf-8"))["features"][0]["geometry"]["coordinates"][0]
     with open(PLACES, encoding="utf-8-sig") as f:
         places = list(csv.DictReader(f))
     with open(INC, encoding="utf-8-sig") as f:
@@ -233,10 +233,10 @@ def main():
         else:
             in_area = "yes_point_outside_onemap_polygon"  # Malé place; waterfront point falls off the polygon
         rain = RAIN.get(inc_id, dict(mm=UNK, period=UNK, station=UNK, note="Source: rainfall not reported."))
-        src_files = [f"{INC.relative_to(ROOT)}"]
+        src_files = [f"{INC.relative_to(ROOT).as_posix()}"]
         src_rows = [f"incident row {iln} ({inc_id})"]
         if plc:
-            src_files.append(f"{PLACES.relative_to(ROOT)}")
+            src_files.append(f"{PLACES.relative_to(ROOT).as_posix()}")
             src_rows.append(f"places row {pln}")
         if origin == "places_only":
             note = (note + " " if note else "") + "Date appears in places file but place is not in this incident's location list."
