@@ -81,7 +81,7 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-43 | S4 | M1 | 2 | To do | Peer-review Aslan's area units and evidence join | MF-21, MF-32 | None | No | Findings logged and resolved. |
 | MF-44 | S4 | M1 | 2 | Review | Descriptive rainfall table for reported incidents | None | C3, D6, G4 | No | Units, accumulation periods and contradictions kept; no threshold claims. |
 | MF-45 | S4 | M2 | 3 | To do | Follow up agency requests and load any data received | MF-23 | H1, H2, H3, H4 | No | Response log updated; received data stored raw with provenance. |
-| MF-50 | S5 | M1 | 2 | In progress | Decision record: descriptive only, or ranking model | MF-30, MF-45 | G1, G2, G3 | No | The group agrees, using the verified evidence and agency responses. No flooded/dry classifier without observed-dry data. |
+| MF-50 | S5 | M1 | 2 | Review | Decision record: descriptive only, or ranking model | MF-30, MF-45 | G1, G2, G3 | No | The group agrees, using the verified evidence and agency responses. No flooded/dry classifier without observed-dry data. |
 | MF-51 | S5 | M2 | 3 | To do | Implement spatial folds | MF-26, MF-50 | B2, B3, G3 | No | Block-based folds over area units; near-duplicate places merged before splitting. |
 | MF-52 | S5 | M1 | 5 | To do | Prototype positive-only ranking model | MF-50, MF-51 | G1 | Yes | Only if MF-50 approves it. Positive-unlabelled or presence-background model, presented as a ranking, not a probability. |
 | MF-53 | S5 | M3 | 5 | To do | Draft review sections: background and methods | MF-41 | None | No | Drafted from the reading matrix, with citations. |
