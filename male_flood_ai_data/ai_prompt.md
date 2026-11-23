@@ -25,11 +25,11 @@ Read these before writing anything. Where they conflict with this prompt, they w
 
 ## Scope: what this study is, and is not
 
-- The project's research question is **which roads or road sections on Malé island proper are prone to rain flooding** (`agent.md` §1–2). This study does not answer it.
+- The project's research question is **which areas of Malé island proper are prone to rain flooding**: reported by ward, analysed on a 200 m grid (`agent.md` §1–2; changed from roads on 23 Nov 2026). This study does not answer it.
 - This study is a supporting experiment. It asks how well daily weather ranks days with an accepted rain-flood report. Every document must say so, in those words or close to them.
-- The lecturer confirmed that a model comparison is **not required** (`agent.md` §3; PB-04 was removed from `sprint.md`). This is optional group work. It must not displace the literature review (MF-70) or the road work (MF-20 to MF-33).
+- The lecturer confirmed that a model comparison is **not required** (`agent.md` §3; PB-04 was removed from `sprint.md`). This is optional group work. It must not displace the literature review (MF-70) or the area work (MF-20 to MF-33).
 - Every new sprint row is `Conditional = Yes`. MC-F02 includes a go/no-go record that the group must approve before any scored run (see below).
-- Do not change the existing MF-50 decision. MF-50 concerns road ranking; this study does not create flooded/dry road labels.
+- Do not change the existing MF-50 decision. MF-50 concerns area ranking on the grid; this study does not create flooded/dry area labels.
 
 ## Task IDs and the board
 

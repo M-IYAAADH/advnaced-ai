@@ -4,7 +4,7 @@ Created: 2026-11-23. Revised 2026-11-23 to fix conflicts with the project docs.
 Study area: Malé island proper.
 Destination in the repo: `docs/model_comparison_tasks.md`. This is not a root `todo.md`.
 
-**Status of this study.** This is a supporting daily experiment. It asks how well weather ranks days with an accepted rain-flood report. It does not answer the project question, which is which roads flood. The lecturer confirmed it is not required. It must not displace the literature review (MF-70) or the road work.
+**Status of this study.** This is a supporting daily experiment. It asks how well weather ranks days with an accepted rain-flood report. It does not answer the project question, which is which areas of Malé flood (reported by ward, analysed on the 200 m grid). The lecturer confirmed it is not required. It must not displace the literature review (MF-70) or the area work (MF-20 to MF-31).
 
 **Where status lives.** Only in `sprint.md`. This file holds the checklists and completion criteria. No task here is claimed, implemented, reviewed or completed by this document.
 
@@ -247,7 +247,7 @@ Done when the comparison table and the final results are reproducible.
 - [ ] Keep retrospective and next-day results visibly separate.
 - [ ] State the label definition: "no accepted report", not dry.
 - [ ] Write `reports/model_comparison.md` and export figures for the review (MF-70, MF-71).
-- [ ] Say clearly that this is supporting work and does not answer the road question.
+- [ ] Say clearly that this is supporting work and does not answer the area question.
 - [ ] Document what worked, what failed, time and feature sensitivity, and the limitations.
 - [ ] Keep the Council workbook out of the shareable bundle while its sharing status is unresolved.
 

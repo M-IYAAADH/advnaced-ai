@@ -51,4 +51,4 @@ Ward boundaries come from OpenStreetMap (`derived/male_wards_osm.geojson`, MF-48
 
 1. Recorded scope is now area level (student decision, 23 Nov 2026); `CLAUDE.md`, `agent.md` and `sprint.md` were updated.
 2. Issues A1, A4 and A5 in `data_issues.md` were updated with the v002/v003 findings.
-3. Analysis unit decided (23 Nov 2026): a 200 m grid (71 cells on the island, about 11 with a landmark report; fallback 250 m). Still open: checking the OSM ward lines against a Council map; rerunning MF-47 on v003.
+3. Analysis unit decided (23 Nov 2026): a 200 m grid, built 23 Nov 2026 as `derived/male_grid_200m.geojson` (75 cells, about 11 with a landmark report; fallback 250 m). Still open: checking the OSM ward lines against a Council map; rerunning MF-47 on v003.

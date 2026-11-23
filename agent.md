@@ -8,7 +8,7 @@ Last updated 23 Nov 2026. Read with `CLAUDE.md` (data-quality cautions), `data_r
 - **Current research question (student decision, 23 Nov 2026):** which **areas** of **Malé island proper** (for example Maafannu) are prone to flooding after rainfall?
   - Changed from roads and road sections (14 Nov 2026) because there is not enough road-level elevation or drainage data. FABDEM at about 30 m suits area units better than single streets.
   - Reporting unit: the four wards (Henveiru, Galolhu, Maafannu, Machchangolhi), from OSM (`derived/male_wards_osm.geojson`). Check the ward lines against a Council map before relying on them.
-  - Analysis unit: a **200 m square grid** (decided 23 Nov 2026). It gives 71 cells touching the OneMap island polygon, about 11 of them containing a landmark report. Each cell is tagged with the ward covering most of it. Grid in a projected CRS (EPSG:32643), aligned so each cell holds 2 × 2 WorldPop 100 m pixels where possible; each cell averages about 40 FABDEM 30 m pixels. Fallback: 250 m (47 cells) if too many cells lack data. Four wards alone support description only.
+  - Analysis unit: a **200 m square grid** (decided 23 Nov 2026). Built by `scripts/build_analysis_grid.py` as `derived/male_grid_200m.geojson` (MF-20): 75 cells in EPSG:32643 on a 200 m lattice, with stable IDs, land fraction, majority ward and ward share; about 11 cells contain a landmark report. 19 cells are under a quarter land (coast and jetties) and one jetty sliver lies outside the ward polygons; set a land-fraction rule before analysis. The rasters are in degrees, so they are not pixel-aligned with the grid; weight raster values by overlap area (each cell covers about 40 FABDEM 30 m pixels). Fallback: 250 m (47 cells) if too many cells lack data. Four wards alone support description only.
   - The road inventory and matching work stay as evidence. Landmarks can now be placed in an area; whole-road reports cross ward lines and are not assigned to one ward.
 - Study boundary: the official OneMap Malé polygon `Male_Flood_Data_Starter_Pack/boundary/OneMap_Male_Island.geojson`. OSM layers are clipped to a slightly different OSM island polygon, so reconcile coastline differences. Hulhumalé, Hulhulé, Villimalé and the Midhili Magu link road are **out of scope**. Their records are kept in the inventory and flagged `in_study_area = no`.
 - Process: rainfall-driven urban waterlogging. Keep coastal, wave and swell flooding separate.
@@ -62,9 +62,10 @@ Still not in this folder: the planning files described in `CLAUDE.md` (`Project_
 | `derived/unnamed_segment_review.csv` | The 8 unnamed OSM segments under the compiler's lines, each marked part of the named road or not (MF-15) | Derived. Geometry-only decisions |
 | `derived/landmark_position_check.csv` | Each Malé landmark point checked against its named OSM feature and the OneMap polygon (MF-16) | Derived. Not an imagery check |
 | `derived/male_wards_osm.geojson`, `male_wards_map.png/.pdf` | The 4 Malé wards from OSM and a map (MF-48) | Derived. Not checked against a Council map |
+| `derived/male_grid_200m.geojson` | 75-cell 200 m analysis grid with land fraction and majority ward (MF-20) | Derived. Cell edges exact in EPSG:32643; stored as WGS84 |
 | `derived/ward_evidence_summary.csv`, `ward_landmark_assignment.csv` | Landmark records placed in wards; v003 events naming each ward | Derived. Report counts, not flood frequency |
 | `male_flood_ai_data/` | Organised data folder (MF-46): v003 reviewed events (`03_reviewed/events/flood_events.csv`), catalogue, aligned weather, official PDFs, status reports | Reviewed and interim data. Files already elsewhere in the repo and the Council workbook are omitted; see its `OMITTED_FILES.csv` |
-| `scripts/` | `build_road_flood_inventory.py`, then `match_road_flood_records.py`, then `review_unnamed_segments.py` and `check_landmark_positions.py`; `build_ward_map.py`, then `summarise_ward_evidence.py` | Re-run from the project root (steps in `README.md`) |
+| `scripts/` | `build_road_flood_inventory.py`, then `match_road_flood_records.py`, then `review_unnamed_segments.py` and `check_landmark_positions.py`; `build_ward_map.py`, then `summarise_ward_evidence.py` and `build_analysis_grid.py` | Re-run from the project root (steps in `README.md`) |
 
 ## 5. Processing conventions
 
@@ -90,7 +91,7 @@ Still not in this folder: the planning files described in `CLAUDE.md` (`Project_
 
 ## 7. Next steps
 
-1. Check the OSM ward lines against a Council ward map, and build the 200 m analysis grid (MF-20).
+1. Check the OSM ward lines against a Council ward map, and set the land-fraction rule for coastal grid cells.
 2. Spot-check source articles for the 17 road records and the most-cited landmarks, recording the quote and any place detail that locates the flooding within an area. Raise confidence only after checking.
 3. Place every located record (landmark, bounded section, ward mention, v003 `location_as_reported`) in its area unit at its real scope.
 4. Exploratory comparison of area characteristics (FABDEM elevation, distance to coast, WorldCover, building coverage, road density) between areas with reports and **unknown** areas. Treat this as descriptive only, with and without the pump-site records.
