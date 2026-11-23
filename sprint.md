@@ -90,7 +90,7 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-61 | S6 | M2 | 2 | To do | Peer-review model and evaluation | MF-60 | None | Yes | Folds, leakage and metrics checked; findings resolved. |
 | MF-62 | S6 | M3 | 5 | To do | Draft review sections: labels, validation, research gap | MF-53 | None | No | Drafted with citations, and linked to this project's evidence limits. |
 | MF-63 | S6 | M2 | 3 | To do | Report-ready figures pipeline | MF-31 | None | No | Map, exploratory and evaluation figures exported at print resolution by script. |
-| MF-70 | S7 | M3 | 5 | To do | Complete the full review draft in IJCAI format | MF-62, MF-40 | None | No | Six pages excluding references, with at least 15 journal articles cited. |
+| MF-70 | S7 | M3 | 5 | In progress | Complete the full review draft in IJCAI format | MF-62, MF-40 | None | No | Six pages excluding references, with at least 15 journal articles cited. |
 | MF-71 | S7 | M1 | 3 | To do | Results and limitations input | MF-30 | None | No | Verified numbers, figures and limitations handed to Gaanith. |
 | MF-72 | S7 | M2 | 3 | To do | Methods input: data, processing, reproducibility | MF-32 | None | No | Short verified notes on sources, licences and the build pipeline. |
 | MF-73 | S7 | M1 | 2 | To do | Check every number in the draft | MF-70 | None | No | Each figure in the text traced to a derived output or a cited source. |

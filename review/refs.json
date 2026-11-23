@@ -924,91 +924,99 @@
   "art": "e12567"
  },
  {
-  "doi": "10.1007/s11069-017-2957-5",
-  "year": 2017,
+  "doi": "10.3390/w10111536",
+  "year": 2018,
   "auth": [
    [
-    "Wadey",
-    "M."
+    "Mosavi",
+    "A."
    ],
    [
-    "Brown",
-    "S."
+    "Ozturk",
+    "P."
    ],
    [
-    "Nicholls",
-    "R.J."
-   ],
-   [
-    "Haigh",
-    "I."
+    "Chau",
+    "K.w."
    ]
   ],
-  "title": "Coastal flooding in the Maldives: an assessment of historic events and their implications",
-  "journal": "Natural Hazards",
-  "vol": "89",
-  "iss": "1",
-  "page": "131-159",
+  "title": "Flood Prediction Using Machine Learning Models: Literature Review",
+  "journal": "Water",
+  "vol": "10",
+  "iss": "11",
+  "page": "1536",
   "art": null
  },
  {
-  "doi": "10.1016/j.jhydrol.2022.128312",
-  "year": 2022,
-  "auth": [
-   [
-    "Fu",
-    "S."
-   ],
-   [
-    "Lyu",
-    "H."
-   ],
-   [
-    "Wang",
-    "Z."
-   ],
-   [
-    "Hao",
-    "X."
-   ],
-   [
-    "Zhang",
-    "C."
-   ]
-  ],
-  "title": "Extracting historical flood locations from news media data by the named entity recognition (NER) model to assess urban flood susceptibility",
-  "journal": "Journal of Hydrology",
-  "vol": "612",
-  "iss": null,
-  "page": "128312",
-  "art": "128312"
- },
- {
-  "doi": "10.1016/j.jhydrol.2025.133053",
+  "doi": "10.3390/rs17030375",
   "year": 2025,
   "auth": [
    [
-    "Huang",
+    "Zhang",
+    "Y."
+   ],
+   [
+    "Wei",
+    "Y."
+   ],
+   [
+    "Yao",
+    "R."
+   ],
+   [
+    "Sun",
+    "P."
+   ],
+   [
+    "Zhen",
+    "N."
+   ],
+   [
+    "Xia",
+    "X."
+   ]
+  ],
+  "title": "Data Uncertainty of Flood Susceptibility Using Non-Flood Samples",
+  "journal": "Remote Sensing",
+  "vol": "17",
+  "iss": "3",
+  "page": "375",
+  "art": null
+ },
+ {
+  "doi": "10.1080/17538947.2015.1026853",
+  "year": 2016,
+  "auth": [
+   [
+    "Du",
+    "X."
+   ],
+   [
+    "Guo",
     "H."
    ],
    [
-    "Tao",
+    "Fan",
+    "X."
+   ],
+   [
+    "Zhu",
+    "J."
+   ],
+   [
+    "Yan",
     "Z."
    ],
    [
     "Zhan",
-    "J."
-   ],
-   [
-    "Wang",
-    "C."
+    "Q."
    ]
   ],
-  "title": "Contrast or Diversity: Non-Flood sampling in urban flood susceptibility modelling",
-  "journal": "Journal of Hydrology",
-  "vol": "656",
-  "iss": null,
-  "page": "133053",
-  "art": "133053"
+  "title": "Vertical accuracy assessment of freely available digital elevation models over low-lying coastal plains",
+  "journal": "International Journal of Digital Earth",
+  "vol": "9",
+  "iss": "3",
+  "page": "252-271",
+  "art": null
  }
 ]

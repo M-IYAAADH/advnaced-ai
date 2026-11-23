@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="678" viewBox="0 0 640 678" font-family="Times New Roman, Times, serif">
+<rect width="640" height="678" fill="white"/>
+<defs><marker id="a" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker></defs>
+<rect x="20" y="20" width="600" height="78" rx="8" fill="#f3e6d8" stroke="#333" stroke-width="1.6"/>
+<text x="320.0" y="47" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Positive-only flood reports</text>
+<text x="320.0" y="70" text-anchor="middle" font-size="18" fill="#222">news and agency records; no observed-dry sites</text>
+<text x="320.0" y="90" text-anchor="middle" font-size="16" font-style="italic" fill="#555">&#167;4: reporting bias, small samples, area vs point</text>
+<line x1="320.0" y1="100" x2="320.0" y2="124" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<rect x="20" y="132" width="600" height="78" rx="8" fill="#e8eef5" stroke="#333" stroke-width="1.6"/>
+<text x="320.0" y="159" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Aggregate to 200 m grid cells</text>
+<text x="320.0" y="182" text-anchor="middle" font-size="18" fill="#222">one presence per location; record scope kept</text>
+<text x="320.0" y="202" text-anchor="middle" font-size="16" font-style="italic" fill="#555">&#167;4.2: target-group background</text>
+<line x1="320.0" y1="212" x2="320.0" y2="236" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<rect x="20" y="244" width="600" height="78" rx="8" fill="#e8eef5" stroke="#333" stroke-width="1.6"/>
+<text x="320.0" y="271" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Covariates for each cell</text>
+<text x="320.0" y="294" text-anchor="middle" font-size="18" fill="#222">DEM rank, buildings, roads, distance to coast</text>
+<text x="320.0" y="314" text-anchor="middle" font-size="16" font-style="italic" fill="#555">&#167;6: DEM error &#8776; island relief; no drainage data</text>
+<line x1="320.0" y1="324" x2="320.0" y2="348" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<rect x="20" y="356" width="600" height="78" rx="8" fill="#e8eef5" stroke="#333" stroke-width="1.6"/>
+<text x="320.0" y="383" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Simple presence-only or PU model</text>
+<text x="320.0" y="406" text-anchor="middle" font-size="18" fill="#222">few covariates, strong regularisation</text>
+<text x="320.0" y="426" text-anchor="middle" font-size="16" font-style="italic" fill="#555">&#167;3&#8211;4: complex models need far more data</text>
+<line x1="320.0" y1="436" x2="320.0" y2="460" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<rect x="20" y="468" width="600" height="78" rx="8" fill="#e8eef5" stroke="#333" stroke-width="1.6"/>
+<text x="320.0" y="495" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Spatial evaluation</text>
+<text x="320.0" y="518" text-anchor="middle" font-size="18" fill="#222">spatial blocks, Boyce index, area of applicability</text>
+<text x="320.0" y="538" text-anchor="middle" font-size="16" font-style="italic" fill="#555">&#167;5: random CV is over-optimistic</text>
+<line x1="320.0" y1="548" x2="320.0" y2="572" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+<rect x="20" y="580" width="600" height="78" rx="8" fill="#f3e6d8" stroke="#333" stroke-width="1.6"/>
+<text x="320.0" y="607" text-anchor="middle" font-size="22" font-weight="bold" fill="#111">Relative susceptibility map</text>
+<text x="320.0" y="630" text-anchor="middle" font-size="18" fill="#222">ranked cells, not flood probability</text>
+<text x="320.0" y="650" text-anchor="middle" font-size="16" font-style="italic" fill="#555">&#167;2.1: susceptibility &#8800; hazard or risk</text>
+</svg>
