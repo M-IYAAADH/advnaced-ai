@@ -1,0 +1,5 @@
+ward,cells_kept,cells_reported_flooding,cells_pumping_only,cells_designated,cells_unknown,cells_V1,cells_V3,median_fabdem_mean_m,median_fabdem_p10_m,median_building_coverage_google075,median_worldcover_builtup_share,median_road_density_vehicular_m_per_km2,median_dist_land_centroid_to_coast_m
+Galolhu,8,0,1,0,7,0,0,5.5701,3.5949999999999998,0.3609375,0.5604525,29342.6,332.9295
+Henveiru,17,8,2,0,7,8,3,5.65695,1.83,0.305625,0.579855,31369.4,111.545
+Maafannu,22,3,1,0,18,3,3,4.38138,2.06,0.3146875,0.5225,32054.5,92.6361
+Machchangolhi,10,0,1,1,8,0,0,5.63466,4.87,0.296875,0.5628124999999999,27216.199999999997,262.6475
