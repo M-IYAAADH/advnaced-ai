@@ -21,7 +21,7 @@ import json
 
 import numpy as np
 
-from match_road_flood_records import BOUNDARY, KX, KY, LAT0, LON0, PLACES, ROOT, pt_to_lines, xy
+from match_road_flood_records import EXCLUDED_LANDMARKS, POSITION_OVERRIDES, apply_position_overrides, BOUNDARY, KX, KY, LAT0, LON0, PLACES, ROOT, pt_to_lines, xy
 
 BUILDINGS = ROOT / "Male_Flood_Data_Starter_Pack/mapping/male_osm_buildings.geojson"
 LANDUSE = ROOT / "Male_Flood_Data_Starter_Pack/mapping/male_osm_landuse.geojson"
@@ -39,12 +39,21 @@ OSM_IDENTITY = {
     "Dhiraagu head office area": (["795286458"], "OSM building 'Dhiraagu Head Office'"),
     "Voice of Maldives area": (["1211931510"], "OSM building 'Voice of Maldives'"),
     "Dharubaaruge area": (["108762208"], "OSM building 'Dharubaaruge'"),
+    # Compiler point kept (MF-16 move reverted 23 Nov 2026, see POSITION_OVERRIDES). OSM names this building only 'STO';
+    # that it is the flour warehouse rests on the reports pairing it with West Park and IGMH, so it stays approximate.
+    "STO flour warehouse area": (["522153523"], "OSM building 'STO' by West Park (flour warehouse identification not confirmed in OSM)"),
 }
-# Named in OSM but not the same place, recorded so nobody matches them by mistake.
-NOT_SAME = {
-    "STO flour warehouse area": "OSM has 'STO' (522153523) and 'State Trading Organisation' (7551086) buildings, but the "
-                                "reports refer to the STO flour warehouse; which building that is cannot be told from OSM.",
+# MF-16 (17 Nov 2026): places missing from the clipped starter-pack layers, checked against
+# the full OSM database via Nominatim search. Google Maps could not be read by script
+# (it needs a JavaScript browser). Values: (OSM object, OSM name and tag, lat, lon).
+OSM_FULL_CHECK = {
+    "Ekuveni running track": ("node 1247058236", "Ekuveni (leisure=sports_centre)", 4.1700889, 73.5071790),
+    "Henveiru Ground (stadium)": ("way 108650593", "Henveiru Stadium (leisure=pitch), centroid", 4.1749828, 73.5169041),
+    "Pizza Buona area": ("node 11449179169", "Pizza Buona (amenity=restaurant), Majeedhee Magu", 4.1745909, 73.5148509),
+    "Maldives Polytechnic area": ("node 5599539381", "Maldives Polytechnic (amenity=college)", 4.1704908, 73.5103677),
 }
+
+NOT_SAME = {}
 
 
 def rings(geom):
@@ -70,7 +79,7 @@ def main():
     onemap = rings(json.load(open(BOUNDARY, encoding="utf-8"))["features"][0]["geometry"])
 
     with open(PLACES, encoding="utf-8-sig") as fh:
-        places = [(i, r) for i, r in enumerate(csv.DictReader(fh), start=2)
+        places = [(i, r) for i, r in enumerate(apply_position_overrides(list(csv.DictReader(fh))), start=2)
                   if r["type"] == "landmark" and r["island"] == "Malé"]
 
     rows = []
@@ -84,7 +93,12 @@ def main():
                    inside_onemap_polygon="yes" if in_onemap else "no",
                    distance_to_onemap_coastline_m=round(coast_m, 1),
                    osm_feature_ids="", osm_feature="", distance_to_osm_footprint_m="",
-                   result="", action_needed="", position_changed="no")
+                   result="", action_needed="", position_changed="no",
+                   compiler_latitude=p.get("orig_latitude", p["latitude"]), compiler_longitude=p.get("orig_longitude", p["longitude"]),
+                   position_change_source="", position_change_reason="")
+        if p["name"] in POSITION_OVERRIDES:
+            _, _, src, why = POSITION_OVERRIDES[p["name"]]
+            row.update(position_changed="yes", position_change_source=src, position_change_reason=why)
         if p["name"] in OSM_IDENTITY:
             ids, why = OSM_IDENTITY[p["name"]]
             d = []
@@ -98,11 +112,20 @@ def main():
                            action_needed="none" if in_onemap else "imagery: point is off the OneMap polygon")
             else:
                 row.update(result="far_from_osm_feature", action_needed=f"imagery: point is {dist:.0f} m from the named OSM feature")
+        elif p["name"] in OSM_FULL_CHECK:
+            oid, why, la, lo = OSM_FULL_CHECK[p["name"]]
+            dist = float(np.hypot(*(P - xy([[lo, la]])[0])))
+            row.update(osm_feature_ids=oid, osm_feature=why + " [full OSM, Nominatim]",
+                       distance_to_osm_footprint_m=round(dist, 1))
+            row.update(result="consistent_with_osm_feature", action_needed="none") if dist <= NEAR_M else                 row.update(result="far_from_osm_feature", action_needed=f"imagery: point is {dist:.0f} m from the OSM object")
+        elif p["name"] in EXCLUDED_LANDMARKS:
+            row.update(result="excluded_not_road_location", osm_feature=EXCLUDED_LANDMARKS[p["name"]],
+                       action_needed="none: removed from matching and map (MF-16)")
         else:
             row.update(result="no_osm_feature",
                        osm_feature=NOT_SAME.get(p["name"], "No OSM building or land-use feature with this name."),
                        action_needed="imagery: no OSM reference to check against")
-        if approx and "imagery" not in row["action_needed"]:
+        if approx and row["action_needed"] == "none" and row["result"] != "consistent_with_osm_feature":
             row["action_needed"] = "imagery: compiler marks the position approximate"
         rows.append(row)
 

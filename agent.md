@@ -56,11 +56,11 @@ Still not in this folder: the planning files described in `CLAUDE.md` (`Project_
 | `male-flood-basis/flood_map.html` | Compiler's map and write-up | Raw. Contains unverified claims (see `data_review.md`) |
 | `male-flood-basis/data/*reanalysis*, hulhule_station_*, male_sea_level_*, male_forecast_*, male_daily_features_with_flood_labels.csv` | ERA5, GSOD, modelled sea level, forecast snapshot, daily table | Raw. Forecasting-oriented, not needed for the current question |
 | `derived/road_flood_inventory.csv` | 73 traceable records (67 Malé) | Derived |
-| `derived/road_match_review.csv` | Match status per place | Derived |
+| `derived/road_match_review.csv` | Match status per place. Rasfannu (beach) and the Swimming Track (sea) are `excluded_not_road_location` and are left off the map (MF-16, `EXCLUDED_LANDMARKS`) | Derived |
 | `derived/road_flood_matched_segments.geojson` | 56 OSM segments linked to evidence (QGIS) | Derived. Not flooded/dry labels |
 | `derived/road_flood_evidence_map.png` | Map | Derived |
 | `derived/unnamed_segment_review.csv` | The 8 unnamed OSM segments under the compiler's lines, each marked part of the named road or not (MF-15) | Derived. Geometry-only decisions |
-| `derived/landmark_position_check.csv` | Each Malé landmark point checked against its named OSM feature and the OneMap polygon (MF-16) | Derived. Not an imagery check |
+| `derived/landmark_position_check.csv` | Each Malé landmark point checked against its named OSM feature (starter-pack layers, or the full OSM database via Nominatim for Ekuveni, Henveiru Stadium, Pizza Buona and the Polytechnic) and the OneMap polygon (MF-16). Rasfannu and the Swimming Track are marked `excluded_not_road_location` | Derived. Confirms agreement with OSM, not ground truth. No point is moved: the MF-16 move of the STO flour warehouse was reverted on 23 Nov 2026 (see `data_issues.md` E6) |
 | `derived/male_wards_osm.geojson`, `male_wards_map.png/.pdf` | The 4 Malé wards from OSM and a map (MF-48) | Derived. Not checked against a Council map |
 | `derived/male_grid_200m.geojson` | 75-cell 200 m analysis grid with land fraction and majority ward (MF-20) | Derived. Cell edges exact in EPSG:32643; stored as WGS84 |
 | `derived/ward_evidence_summary.csv`, `ward_landmark_assignment.csv` | Landmark records placed in wards; v003 events naming each ward | Derived. Report counts, not flood frequency |

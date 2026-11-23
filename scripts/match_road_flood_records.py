@@ -41,6 +41,35 @@ OUT_GEO = ROOT / "derived/road_flood_matched_segments.geojson"
 OUT_PNG = ROOT / "derived/road_flood_evidence_map.png"
 
 LAT0, LON0 = 4.175, 73.5
+
+# MF-16 (17 Nov 2026, Aslan): landmark points excluded from matching and the map.
+# Both are shoreline/sea facilities, not road locations, and the compiler's points
+# fall offshore (outside the OneMap polygon). Raw files are unchanged; inventory
+# records for these places are kept but get no point and no candidate roads.
+EXCLUDED_LANDMARKS = {
+    "Rasfannu": "Beach area, not a road; compiler point is 48 m offshore.",
+    "Swimming Track area": "Sea swimming track, not a road; compiler point is 21 m offshore.",
+}
+
+# MF-16 (17 Nov 2026, Aslan): corrected landmark positions. The raw places file keeps the
+# compiler's coordinates; these replace them in derived outputs only.
+# name -> (new lat, new lon, source, reason)
+# MF-16 (17 Nov 2026) moved the STO flour warehouse to the north-harbour 'STO Wholesale Shop' (4.1794163, 73.5093009).
+# Reverted 23 Nov 2026: every report pairs the warehouse with IGMH and West Park, STO Staple Foods (which runs the flour
+# operation) gives its address as Handhuvaree Hingun, Maafannu (search snippet of sto.mv/outlets/staple-foods; the page
+# returned 404), and that road is 229 m from the compiler point but 536 m from the moved one. The compiler point (OSM
+# building 'STO', 522153523, by West Park) is kept and still marked approximate. Format: name -> (lat, lon, source, reason).
+POSITION_OVERRIDES = {}
+
+
+def apply_position_overrides(places):
+    """Replace overridden coordinates in place, keeping the originals as orig_latitude/orig_longitude."""
+    for p in places:
+        if p["name"] in POSITION_OVERRIDES:
+            la, lo, _, _ = POSITION_OVERRIDES[p["name"]]
+            p["orig_latitude"], p["orig_longitude"] = p["latitude"], p["longitude"]
+            p["latitude"], p["longitude"] = str(la), str(lo)
+    return places
 KX, KY = 111320 * np.cos(np.radians(LAT0)), 110574.0
 
 # English name in reports -> OSM Dhivehi `name` (manual transliteration; each
@@ -119,7 +148,7 @@ def main():
 
     src = {f["properties"]["name"]: f for f in json.load(open(SRC_GEO, encoding="utf-8"))["features"]}
     with open(PLACES, encoding="utf-8-sig") as fh:
-        places = list(csv.DictReader(fh))
+        places = apply_position_overrides(list(csv.DictReader(fh)))
     with open(INV, encoding="utf-8") as fh:
         inv = list(csv.DictReader(fh))
     recs = defaultdict(list)
@@ -246,6 +275,9 @@ def main():
                                  "Flooding attributed to pumps not yet commissioned on a rebuilt road.")
                 for o in sorted(geo):
                     seg_evidence[o].append((name, "bounded_section_uncertain"))
+        elif name in EXCLUDED_LANDMARKS:
+            row.update(match_status="excluded_not_road_location", match_method="none",
+                       notes="Excluded in MF-16: " + EXCLUDED_LANDMARKS[name])
         else:  # landmark / ward / city
             if p["longitude"] and ptype == "landmark":
                 P = xy([[float(p["longitude"]), float(p["latitude"])]])
@@ -329,7 +361,7 @@ def draw(seg, seg_evidence, places, rows):
                 seen.add(kind)
     first = {"landmark": True, "area": True}
     for p in places:
-        if p["island"] != "Malé" or not p["longitude"] or p["type"] == "road":
+        if p["island"] != "Malé" or not p["longitude"] or p["type"] == "road" or p["name"] in EXCLUDED_LANDMARKS:
             continue
         P = xy([[float(p["longitude"]), float(p["latitude"])]])[0]
         n = int(p["times_reported"])
