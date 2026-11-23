@@ -96,7 +96,7 @@ Still to find: a flood study that uses spatial cross-validation, and an urban fl
 
 ## More candidates (Crossref search, 23 Nov 2026)
 
-Every entry below came back from a Crossref search filtered to journal articles. The authors, title, journal, volume, pages or article number and DOI are copied from Crossref, not written from memory. The relevance column is judged **from the title only**, since none of these has been read yet. Where Crossref's year differs from the volume year (online-first), take the year from the PDF.
+Every entry below came back from a Crossref search filtered to journal articles. The authors, title, journal, volume, pages or article number and DOI are copied from Crossref, not written from memory. The relevance column is judged **from the title only**, since none of these has been read yet. Years were corrected to the volume year on 23 Nov 2026; see `lit_review_relevance.md`.
 
 | # | Article (Crossref metadata) | Section | Why it may matter |
 |---|---|---|---|
@@ -111,10 +111,10 @@ Every entry below came back from a Crossref search filtered to journal articles.
 | 32 | Wang, Lyu and Zhang (2024) Urban pluvial flood susceptibility mapping based on a novel explainable machine learning model … *J. Hydrology* 642, 131903. doi:10.1016/j.jhydrol.2024.131903 | 3.3 | Explainable model for urban rain floods |
 | 33 | Bersabe and Jun (2025) The machine learning-based mapping of urban pluvial flood susceptibility in Seoul … *ISPRS Int. J. Geo-Information* 14, 57. doi:10.3390/ijgi14020057 | 3.3 | Recent urban pluvial case |
 | 34 | Hijmans (2012) Cross-validation of species distribution models: removing spatial sorting bias and calibration with a null model. *Ecology* 93, 679–688. doi:10.1890/11-0826.1 | 5.1 | Spatial sorting bias in presence-only evaluation |
-| 35 | Yoo and Koo (2024 online; vol. 52) Exploring the impact of spatial autocorrelation on optimistic bias in cross-validation … *Cartography and Geographic Information Science* 52, 596–609. doi:10.1080/15230406.2024.2422593 | 5.1 | Random CV flatters spatial models |
+| 35 | Yoo and Koo (2025) Exploring the impact of spatial autocorrelation on optimistic bias in cross-validation … *Cartography and Geographic Information Science* 52, 596–609. doi:10.1080/15230406.2024.2422593 | 5.1 | Random CV flatters spatial models |
 | 36 | Hawker, Bates, Neal *et al.* (2018) Perspectives on digital elevation model (DEM) simulation for flood modeling in the absence of a high-accuracy open access global DEM. *Frontiers in Earth Science* 6, 233. doi:10.3389/feart.2018.00233 | 6.1 | Using global DEMs when no survey DEM exists |
-| 37 | Du, Guo, Fan *et al.* (2015 online; vol. 9) Vertical accuracy assessment of freely available digital elevation models over low-lying coastal plains. *Int. J. Digital Earth* 9, 252–271. doi:10.1080/17538947.2015.1026853 | 6.1 | Free DEM error on low coasts |
-| 38 | Brown, Wadey, Nicholls *et al.* (2019 online; vol. 13) Land raising as a solution to sea-level rise: an analysis of coastal flooding on an artificial island in the Maldives. *J. Flood Risk Management* 13, e12567. doi:10.1111/jfr3.12567 | 2.2 | Maldives flooding (Hulhumalé, context only, not our study area) |
+| 37 | Du, Guo, Fan *et al.* (2016) Vertical accuracy assessment of freely available digital elevation models over low-lying coastal plains. *Int. J. Digital Earth* 9, 252–271. doi:10.1080/17538947.2015.1026853 | 6.1 | Free DEM error on low coasts |
+| 38 | Brown, Wadey, Nicholls *et al.* (2020) Land raising as a solution to sea-level rise: an analysis of coastal flooding on an artificial island in the Maldives. *J. Flood Risk Management* 13, e12567. doi:10.1111/jfr3.12567 | 2.2 | Maldives flooding (Hulhumalé, context only, not our study area) |
 | 39 | Gallien, Sanders and Flick (2014) Urban coastal flood prediction: integrating wave overtopping, flood defenses and drainage. *Coastal Engineering* 91, 18–28. doi:10.1016/j.coastaleng.2014.04.007 | 2.1 | Separating coastal and drainage flooding |
 
 Searched with no usable journal result: Malé rain or urban-drainage flooding. Crossref returned no relevant peer-reviewed article, which is itself a gap to state in section 7. Very recent 2026 papers with few citations (e.g. Miao, Huang and Zheng 2026, *Urban Climate* 68, 103070, on social-media data in urban flood susceptibility) were left out for now; add them only after reading.
