@@ -8,7 +8,7 @@ Last updated 23 Nov 2026. Read with `CLAUDE.md` (data-quality cautions), `data_r
 - **Current research question (student decision, 23 Nov 2026):** which **areas** of **Malé island proper** (for example Maafannu) are prone to flooding after rainfall?
   - Changed from roads and road sections (14 Nov 2026) because there is not enough road-level elevation or drainage data. FABDEM at about 30 m suits area units better than single streets.
   - Reporting unit: the four wards (Henveiru, Galolhu, Maafannu, Machchangolhi), from OSM (`derived/male_wards_osm.geojson`). Check the ward lines against a Council map before relying on them.
-  - Analysis unit: **not yet decided**. Four wards support description only; a ranking or spatial hold-out needs finer units inside the wards (grid cells or neighbourhood blocks are the candidates).
+  - Analysis unit: a **200 m square grid** (decided 23 Nov 2026). It gives 71 cells touching the OneMap island polygon, about 11 of them containing a landmark report. Each cell is tagged with the ward covering most of it. Grid in a projected CRS (EPSG:32643), aligned so each cell holds 2 × 2 WorldPop 100 m pixels where possible; each cell averages about 40 FABDEM 30 m pixels. Fallback: 250 m (47 cells) if too many cells lack data. Four wards alone support description only.
   - The road inventory and matching work stay as evidence. Landmarks can now be placed in an area; whole-road reports cross ward lines and are not assigned to one ward.
 - Study boundary: the official OneMap Malé polygon `Male_Flood_Data_Starter_Pack/boundary/OneMap_Male_Island.geojson`. OSM layers are clipped to a slightly different OSM island polygon, so reconcile coastline differences. Hulhumalé, Hulhulé, Villimalé and the Midhili Magu link road are **out of scope**. Their records are kept in the inventory and flagged `in_study_area = no`.
 - Process: rainfall-driven urban waterlogging. Keep coastal, wave and swell flooding separate.
@@ -18,7 +18,7 @@ Last updated 23 Nov 2026. Read with `CLAUDE.md` (data-quality cautions), `data_r
 | | Area susceptibility mapping (current) | Future-event forecasting (not current) |
 |---|---|---|
 | Question | Where in Malé does flooding tend to occur? | When will the next flood happen? |
-| Unit | Ward for reporting; finer area unit for analysis (to be decided) | Day or hour |
+| Unit | Ward for reporting; 200 m grid cell for analysis | Day or hour |
 | Labels needed | Location evidence: flooded, prone, or observed dry | Dated flood / no-flood events |
 | Timestamps | **Optional** for the initial inventory | Essential |
 | Evaluation | Spatial hold-out (unseen areas) | Chronological hold-out with issue and lead time |
@@ -90,12 +90,12 @@ Still not in this folder: the planning files described in `CLAUDE.md` (`Project_
 
 ## 7. Next steps
 
-1. Check the OSM ward lines against a Council ward map, and decide the finer analysis unit (grid cells or neighbourhood blocks).
+1. Check the OSM ward lines against a Council ward map, and build the 200 m analysis grid (MF-20).
 2. Spot-check source articles for the 17 road records and the most-cited landmarks, recording the quote and any place detail that locates the flooding within an area. Raise confidence only after checking.
 3. Place every located record (landmark, bounded section, ward mention, v003 `location_as_reported`) in its area unit at its real scope.
 4. Exploratory comparison of area characteristics (FABDEM elevation, distance to coast, WorldCover, building coverage, road density) between areas with reports and **unknown** areas. Treat this as descriptive only, with and without the pump-site records.
 5. Request observed-dry and complete location data from the City Council, NDMA (assistance logs) and MNDF (pump deployment logs), plus pump and drain locations from MWSC. See `Male_Flood_Data_Starter_Pack/Data_Request_Specification.md`.
-6. Only then choose a modelling approach: positive-unlabelled learning or a ranking model over the finer area units with spatially blocked evaluation. See `data_review.md` §6.
+6. Only then choose a modelling approach: positive-unlabelled learning or a ranking model over the 200 m grid cells with spatially blocked evaluation. See `data_review.md` §6.
 
 Tasks, owners and sprint dates for these steps are in `sprint.md` (viewable in `sprint_board.html`).
 
