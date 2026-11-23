@@ -8,7 +8,7 @@
 ## Before submission
 
 1. **Read the sources.** Every claim was limited to what was read in an abstract, or in full text for Mobley, Ploton, Valavi (preprint), both Hawker papers and part of Bentivoglio. Check each claim against the PDF, using `../research/lit_review_relevance.md`.
-2. **Consider adding** Wadey *et al.* (2017), on the Maldives flood history, and Fu *et al.* (2022), on news-derived flood locations, after reading them. Both were left out because no text could be obtained.
+2. **Verification log:** `../research/lit_review_verification.md` lists corrections and which claims are still abstract-only. Wadey 2017 is now cited from its abstract; Fu 2022 is still out until read.
 3. **Search method (section 1).** Make it match what you actually did. If you add database searches (Scopus, Web of Science), update the numbers screened and retained.
 4. **Name and student number** go in the title block.
 5. **Check in Microsoft Word:** page count (six pages before References), table and figure placement, fonts. Save as .doc if the lecturer requires it.

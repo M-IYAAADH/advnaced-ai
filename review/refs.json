@@ -1018,5 +1018,33 @@
   "iss": "3",
   "page": "252-271",
   "art": null
+ },
+ {
+  "doi": "10.1007/s11069-017-2957-5",
+  "year": 2017,
+  "auth": [
+   [
+    "Wadey",
+    "M."
+   ],
+   [
+    "Brown",
+    "S."
+   ],
+   [
+    "Nicholls",
+    "R.J."
+   ],
+   [
+    "Haigh",
+    "I."
+   ]
+  ],
+  "title": "Coastal flooding in the Maldives: an assessment of historic events and their implications",
+  "journal": "Natural Hazards",
+  "vol": "89",
+  "iss": "1",
+  "page": "131-159",
+  "art": null
  }
 ]
