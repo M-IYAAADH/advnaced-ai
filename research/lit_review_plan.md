@@ -96,33 +96,40 @@ Still to find: a flood study that uses spatial cross-validation, and an urban fl
 
 ## Citation format (Cite Them Right Harvard)
 
-In text:
-- One author: (Surname, 2022). Two or three authors: (Mosavi, Ozturk and Chau, 2018). Four or more authors: (Seleem *et al.*, 2022).
-- Narrative: Ploton *et al.* (2020) showed that …
-- Several sources: (Tehrany, Pradhan and Jebur, 2014; Wang *et al.*, 2015). Use one order throughout, chronological or alphabetical.
-- Direct quotes need a page number: (Lobo, Jiménez-Valverde and Real, 2008, p. 146). Avoid quotes in a review.
+Checked on 23 Nov 2026 against the UWE pages: cite-them-right-harvard, in-text-citations (the same page) and referencing-tools.
 
-Reference list (alphabetical, not counted in the six pages):
+**In text (stated by UWE):**
+- One author: (Handy, 1987), or narrative: Mintzberg (1983).
+- Two or three authors: name them all, joined by "and", never "&". For example (Mosavi, Ozturk and Chau, 2018).
+- Four or more authors: first surname plus *et al.*, which must be in italics. For example (Seleem *et al.*, 2022), or Ploton *et al.* (2020) showed …
+- Several sources: separate them with semicolons, in **chronological order, earliest first**. For example (Tehrany, Pradhan and Jebur, 2014; Wang *et al.*, 2015; Seleem *et al.*, 2022).
+- Same author, same year: add 2022a and 2022b, in that order, both in the text and in the reference list.
+- Quotes: give the page number, e.g. (Robinson, 2012, p. 32). Use p. for one page and pp. for a range. A page number is optional when paraphrasing. Avoid quotes in a review.
+- Cite the source in full every time. Harvard does not use *ibid.*
+- Secondary citing, e.g. Melack and Thompson (1971, cited in Rowley, 1991): put only the source you actually read in the reference list. UWE says to avoid secondary citing.
+
+**Reference list:**
+- UWE: list **all authors**, unless there are more than nine. Then give the first author followed by *et al.*, in italics.
+- UWE: page numbers are required for journal articles.
+- UWE's examples are all books. The **journal-article layout below is the usual CTR format and is not taken from UWE's pages**. Confirm it on Cite Them Right Online (citethemrightonline.com, through the UWE OpenAthens login) before the final draft. Check two things there: whether a DOI reference needs "(Accessed: date)", and how article-number journals are shown.
 
 > Surname, Initials. (Year) 'Title of article', *Journal Title*, Volume(Issue), pp. first–last. Available at: https://doi.org/xxxx.
 
-Example:
-
 > Seleem, O., Ayzel, G., de Souza, A.C.T., Bronstert, A. and Heistermann, M. (2022) 'Towards urban flood susceptibility mapping using data-driven models in Berlin, Germany', *Geomatics, Natural Hazards and Risk*, 13(1), pp. 1640–1662. Available at: https://doi.org/10.1080/19475705.2022.2097131.
 
-- List up to the number of authors the UWE CTR page shows. Check whether it asks for all authors in the reference list.
-- Article-number journals (*Nature Communications*, *Land*, *ERL*, *Science Advances*) use the article number in place of pages, e.g. `11, 4540`.
-- If you use Zotero or Mendeley with the "Cite Them Right 12th edition – Harvard" style, check every entry by hand, as UWE advises.
+- Order the list alphabetically by first author's surname. Put the same author's works in chronological order.
+- Article-number journals (*Nature Communications*, *Land*, *ERL*, *Science Advances*) have no page range. Show the article number, for example `11, 4540`, after confirming the form on CTR Online.
+- Tools: UWE suggests Zotero or Mendeley but names no style file. It says to check every output by hand.
 
 ## Steps and sprint links
 
 1. MF-25 and MF-33: read the 23 in full. Fill the reading matrix (task, study area, unit, labels, model, validation, limitations, use for Malé). Confirm each section mapping above.
-2. MF-40: put the title, name and student number, and the headings above into the .doc template. Check the column, font and margin settings.
+2. MF-40: put the title, name and student number, and the headings above into the .doc template. Use the settings in the Template format section.
 3. MF-41: finalise this outline after step 1.
 4. MF-53: draft sections 1–3. MF-62 then drafts sections 4–7. MF-70 assembles the full draft and checks the six-page limit.
 
 ## Open questions for the lecturer
 
-1. Does Cite Them Right Harvard apply, or IJCAI's own reference style? The UWE notice says to follow the style in the brief when it names one.
+1. Confirm that Cite Them Right Harvard applies, not IJCAI's own reference style. UWE's pages make CTR the default for Harvard. Only the lecturer's email says a brief can override it.
 2. Does "journal articles" include method papers from ecology, and can conference papers count toward the 15?
-3. Is an Abstract expected? The template has none.
+3. Is an Abstract expected? The template has none. Should the template's "Source code as an appendix" line be removed for a review?
