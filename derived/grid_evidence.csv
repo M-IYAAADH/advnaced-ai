@@ -1,0 +1,76 @@
+cell_id,ward,land_fraction,status,status_note,n_records_stated,n_dates_stated,n_records_pumping,n_dates_pumping,n_records_designated,n_location_groups_stated,n_location_groups_pumping,location_groups,routine_pump_site,whole_roads_listed,ward_mentions_v003,stated_only_construction_confounded,has_unverified
+G333400_460800,Maafannu,0.044,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G333400_461000,Maafannu,0.146,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G333400_461200,Maafannu,0.008,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G333400_461400,Maafannu,0.019,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G333600_460800,Maafannu,0.526,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G333600_461000,Maafannu,0.346,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,10,no,no
+G333600_461200,Maafannu,0.676,reported_flooding,,3,2,4,4,0,2,1,dhiraagu_head_office_area;vilimale_ferry,no,Ameenee Magu;Boduthakurufaanu Magu;Kan'baa Aisa Rani Hingun,10,no,yes
+G333600_461400,Maafannu,0.917,reported_flooding,,4,4,6,6,0,1,1,igmh,yes,Boduthakurufaanu Magu;Kan'baa Aisa Rani Hingun,10,no,yes
+G333600_461600,Maafannu,0.532,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu;Kan'baa Aisa Rani Hingun;Majeedhee Magu,10,no,no
+G333600_461800,Maafannu,0.178,reported_flooding,,6,4,5,4,0,1,1,west_park_sto,yes,Boduthakurufaanu Magu,10,no,yes
+G333800_460800,Maafannu,0.552,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G333800_461000,Maafannu,0.924,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu;Izzuddeen Magu,10,no,no
+G333800_461200,Maafannu,0.952,pumping_only,,0,0,1,1,0,0,1,voice_of_maldives_area,no,Ameenee Magu;Boduthakurufaanu Magu;Izzuddeen Magu,10,no,no
+G333800_461400,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,Izzuddeen Magu,10,no,no
+G333800_461600,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,Izzuddeen Magu;Kan'baa Aisa Rani Hingun;Majeedhee Magu,10,no,no
+G333800_461800,Maafannu,0.974,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu;Izzuddeen Magu;Kan'baa Aisa Rani Hingun,10,no,no
+G333800_462000,Maafannu,0.161,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,10,no,no
+G334000_460800,Machchangolhi,0.381,unknown,,0,0,0,0,0,0,0,,no,,0,no,no
+G334000_461000,Machchangolhi,1.0,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,0,no,no
+G334000_461200,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,Ameenee Magu,10,no,no
+G334000_461400,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G334000_461600,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,Majeedhee Magu,10,no,no
+G334000_461800,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G334000_462000,Maafannu,0.943,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,10,no,no
+G334000_462200,Maafannu,0.179,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G334200_460800,Machchangolhi,0.065,unknown,,0,0,0,0,0,0,0,,no,,0,no,no
+G334200_461000,Machchangolhi,1.0,pumping_only,,0,0,1,1,0,0,1,ekuveni_running_track,no,Boduthakurufaanu Magu,0,no,no
+G334200_461200,Machchangolhi,1.0,unknown,,0,0,0,0,0,0,0,,no,Ameenee Magu,0,no,no
+G334200_461400,Machchangolhi,1.0,unknown,,0,0,0,0,0,0,0,,no,,0,no,no
+G334200_461600,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,Majeedhee Magu,10,no,no
+G334200_461800,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G334200_462000,Maafannu,0.87,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,10,no,no
+G334200_462200,Maafannu,0.139,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G334400_460800,Machchangolhi,0.054,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,0,no,no
+G334400_461000,Machchangolhi,1.0,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,0,no,no
+G334400_461200,Machchangolhi,1.0,unknown,,0,0,0,0,0,0,0,,no,Ameenee Magu;Chaandhanee Magu;Rahdhebai Magu,0,no,no
+G334400_461400,Machchangolhi,1.0,unknown,,0,0,0,0,0,0,0,,no,Chaandhanee Magu,0,no,no
+G334400_461600,Machchangolhi,1.0,designated,,0,0,0,0,1,0,0,,no,Chaandhanee Magu;Majeedhee Magu,0,no,no
+G334400_461800,Maafannu,1.0,unknown,,0,0,0,0,0,0,0,,no,Chaandhanee Magu,10,no,no
+G334400_462000,Maafannu,0.938,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,10,no,no
+G334400_462200,Maafannu,0.047,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G334600_460800,Galolhu,0.049,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,0,no,no
+G334600_461000,Galolhu,0.999,pumping_only,,0,0,1,1,0,0,1,polytechnic,no,Boduthakurufaanu Magu,0,no,no
+G334600_461200,Galolhu,1.0,unknown,,0,0,0,0,0,0,0,,no,Ameenee Magu;Rahdhebai Magu,0,no,no
+G334600_461400,Galolhu,1.0,unknown,,0,0,0,0,0,0,0,,no,Rahdhebai Magu,0,no,no
+G334600_461600,Galolhu,1.0,unknown,,0,0,0,0,0,0,0,,no,Majeedhee Magu;Rahdhebai Magu,0,no,no
+G334600_461800,Machchangolhi,1.0,unknown,,0,0,0,0,0,0,0,,no,Chaandhanee Magu;Rahdhebai Magu,0,no,no
+G334600_462000,Henveiru,0.701,reported_flooding,,1,1,0,0,0,0,0,,no,Boduthakurufaanu Magu;Chaandhanee Magu,4,yes,no
+G334600_462200,Maafannu,0.049,unknown,,0,0,0,0,0,0,0,,no,,10,no,no
+G334800_460800,outside_ward_polygons,0.001,unknown,,0,0,0,0,0,0,0,,no,,unknown,no,no
+G334800_461000,Galolhu,0.902,unknown,,0,0,0,0,0,0,0,,no,Ameenee Magu;Boduthakurufaanu Magu,0,no,no
+G334800_461200,Galolhu,1.0,unknown,,0,0,0,0,0,0,0,,no,Ameenee Magu,0,no,no
+G334800_461400,Galolhu,1.0,unknown,,0,0,0,0,0,0,0,,no,,0,no,no
+G334800_461600,Galolhu,1.0,unknown,,0,0,0,0,0,0,0,,no,Majeedhee Magu,0,no,no
+G334800_461800,Henveiru,1.0,unknown,,0,0,0,0,0,0,0,,no,,4,no,no
+G334800_462000,Henveiru,0.357,reported_flooding,,1,1,0,0,0,0,0,,no,Boduthakurufaanu Magu,4,yes,no
+G335000_461000,Henveiru,0.867,pumping_only,,0,0,2,2,0,0,1,kudakudhinge_bageecha_children,no,Ameenee Magu;Boduthakurufaanu Magu,4,no,no
+G335000_461200,Henveiru,1.0,unknown,,0,0,0,0,0,0,0,,no,,4,no,no
+G335000_461400,Henveiru,1.0,reported_flooding,,1,1,0,0,0,1,0,pizza_buona_area,no,Majeedhee Magu,4,no,no
+G335000_461600,Henveiru,1.0,unknown,,0,0,0,0,0,0,0,,no,Majeedhee Magu,4,no,no
+G335000_461800,Henveiru,0.992,reported_flooding,,1,1,0,0,0,0,0,,no,Boduthakurufaanu Magu,4,yes,no
+G335000_462000,Henveiru,0.096,reported_flooding,,1,1,0,0,0,0,0,,no,Boduthakurufaanu Magu,4,yes,no
+G335200_461000,Henveiru,0.691,reported_flooding,,1,1,0,0,0,1,0,dharubaaruge_area,no,Ameenee Magu;Boduthakurufaanu Magu,4,no,no
+G335200_461200,Henveiru,1.0,unknown,,0,0,0,0,0,0,0,,no,,4,no,no
+G335200_461400,Henveiru,1.0,unknown,,0,0,0,0,0,0,0,,no,Majeedhee Magu,4,no,no
+G335200_461600,Henveiru,1.0,reported_flooding,,1,1,0,0,0,1,0,henveiru_ground_stadium,no,,4,no,no
+G335200_461800,Henveiru,0.843,reported_flooding,,1,1,0,0,0,0,0,,no,Boduthakurufaanu Magu,4,yes,no
+G335200_462000,Henveiru,0.039,unknown,,0,0,0,0,0,0,0,,no,,4,no,no
+G335400_461000,Henveiru,0.177,unknown,,0,0,0,0,0,0,0,,no,,4,no,no
+G335400_461200,Henveiru,0.421,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu,4,no,no
+G335400_461400,Henveiru,0.815,unknown,,0,0,0,0,0,0,0,,no,Boduthakurufaanu Magu;Majeedhee Magu,4,no,no
+G335400_461600,Henveiru,1.0,pumping_only,,0,0,2,2,0,0,1,king_salman_mosque_area,no,Boduthakurufaanu Magu,4,no,no
+G335400_461800,Henveiru,0.68,reported_flooding,,1,1,0,0,0,0,0,,no,Boduthakurufaanu Magu,4,yes,no
+G335600_461600,Henveiru,0.114,unknown,,0,0,0,0,0,0,0,,no,,4,no,no
+G335600_461800,Henveiru,0.018,unknown,,0,0,0,0,0,0,0,,no,,4,no,no
