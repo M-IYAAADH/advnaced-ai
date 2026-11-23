@@ -1,0 +1,39 @@
+record_id,location_description,event_date_if_available,evidence_type,confidence,ward
+RF001,Henveiru Ground (stadium),11 Dec 2021,news_report_photograph,medium,Henveiru
+RF003,Ekuveni running track,17 Jul 2022,dewatering_reported,medium,Machchangolhi
+RF004,IGMH area (Indira Gandhi Memorial Hospital),17 Jul 2022,dewatering_reported,medium,Maafannu
+RF012,IGMH area (Indira Gandhi Memorial Hospital),30 to 31 Dec 2023,dewatering_reported,low,Maafannu
+RF014,Maldives Polytechnic area,30 to 31 Dec 2023,dewatering_reported,low,Galolhu
+RF016,West Park area,30 to 31 Dec 2023,dewatering_reported,low,Maafannu
+RF018,"Kudakudhinge Bageecha (children's park, Ameenee Magu)",10 Jan 2024,dewatering_reported,medium,Henveiru
+RF019,STO flour warehouse area,10 Jan 2024,dewatering_reported,medium,Maafannu
+RF020,West Park area,10 Jan 2024,dewatering_reported,medium,Maafannu
+RF023,IGMH area (Indira Gandhi Memorial Hospital),12 Jan 2024,dewatering_reported,medium,Maafannu
+RF024,STO flour warehouse area,12 Jan 2024,dewatering_reported,medium,Maafannu
+RF025,West Park area,12 Jan 2024,dewatering_reported,medium,Maafannu
+RF027,Dharubaaruge area,13 Aug 2024,news_report_flooding,medium,Henveiru
+RF028,Dhiraagu head office area,13 Aug 2024,news_report_flooding,medium,Maafannu
+RF029,IGMH area (Indira Gandhi Memorial Hospital),13 Aug 2024,news_report_flooding,medium,Maafannu
+RF031,Pizza Buona area,13 Aug 2024,news_report_flooding,medium,Henveiru
+RF034,West Park area,13 Aug 2024,news_report_flooding,medium,Maafannu
+RF036,Dhiraagu head office area,20 to 21 Dec 2024,news_report_flooding,medium,Maafannu
+RF037,IGMH area (Indira Gandhi Memorial Hospital),20 to 21 Dec 2024,news_report_flooding,medium,Maafannu
+RF038,Maafannu (Villimalé) Ferry Terminal,20 to 21 Dec 2024,news_report_flooding,medium,Maafannu
+RF042,STO flour warehouse area,20 to 21 Dec 2024,news_report_flooding,medium,Maafannu
+RF043,West Park area,20 to 21 Dec 2024,news_report_flooding,medium,Maafannu
+RF046,IGMH area (Indira Gandhi Memorial Hospital),2 to 3 Jan 2025,dewatering_reported,medium,Maafannu
+RF049,King Salman Mosque area,2 to 3 Jan 2025,dewatering_reported,medium,Henveiru
+RF050,"Kudakudhinge Bageecha (children's park, Ameenee Magu)",2 to 3 Jan 2025,dewatering_reported,medium,Henveiru
+RF051,Maafannu (Villimalé) Ferry Terminal,2 to 3 Jan 2025,dewatering_reported,medium,Maafannu
+RF055,Voice of Maldives area,2 to 3 Jan 2025,dewatering_reported,medium,Maafannu
+RF056,West Park area,2 to 3 Jan 2025,dewatering_reported,medium,Maafannu
+RF058,IGMH area (Indira Gandhi Memorial Hospital),1 Mar 2025,dewatering_reported,medium,Maafannu
+RF059,Maafannu (Villimalé) Ferry Terminal,1 Mar 2025,dewatering_reported,medium,Maafannu
+RF060,West Park area,1 Mar 2025,dewatering_reported,medium,Maafannu
+RF061,IGMH area (Indira Gandhi Memorial Hospital),11 to 12 Mar 2025,dewatering_reported,medium,Maafannu
+RF062,Maafannu (Villimalé) Ferry Terminal,11 to 12 Mar 2025,dewatering_reported,medium,Maafannu
+RF063,West Park area,11 to 12 Mar 2025,dewatering_reported,medium,Maafannu
+RF064,IGMH area (Indira Gandhi Memorial Hospital),25 Nov 2025,news_report_photograph,medium,Maafannu
+RF067,IGMH area (Indira Gandhi Memorial Hospital),4 May 2026,dewatering_reported,medium,Maafannu
+RF068,King Salman Mosque area,4 May 2026,dewatering_reported,medium,Henveiru
+RF069,Maafannu (Villimalé) Ferry Terminal,4 May 2026,dewatering_reported,medium,Maafannu

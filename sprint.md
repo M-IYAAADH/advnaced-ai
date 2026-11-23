@@ -1,4 +1,4 @@
-# Sprint board — Malé road-flood susceptibility
+# Sprint board — Malé area flood susceptibility
 
 This file is the task source for `sprint_board.html`. Edit it, commit and push. The board re-reads it every 15 seconds when served (`http://localhost:8080/sprint_board.html`), or use **Load sprint.md** if the page is opened from disk.
 
@@ -28,8 +28,8 @@ Roles are a proposal; agree them at Sprint 1 planning. Sprint 0 work is recorded
 | --- | --- | --- | --- | --- | --- |
 | S0 | Sprint 0 | 2026-11-03 | 2026-11-14 | Sprint | Audit the data and build a traceable road-flood inventory. |
 | S1 | Sprint 1 | 2026-11-15 | 2026-11-28 | Sprint | Verify the road-flood evidence and confirm the assignment requirements. |
-| S2 | Sprint 2 | 2026-11-29 | 2026-12-12 | Sprint | Build a block-level road segment table with evidence status and attributes. |
-| S3 | Sprint 3 | 2026-12-13 | 2026-12-26 | Sprint | Describe how reported roads differ from unknown roads, with the bias stated. |
+| S2 | Sprint 2 | 2026-11-29 | 2026-12-12 | Sprint | Build the area-unit table (inside the 4 wards) with evidence status and attributes. |
+| S3 | Sprint 3 | 2026-12-13 | 2026-12-26 | Sprint | Describe how reported areas differ from unknown areas, with the bias stated. |
 | S4 | Sprint 4 | 2026-12-27 | 2027-01-09 | Sprint | Holiday-light sprint: peer reviews, rainfall table and literature review outline. |
 | S5 | Sprint 5 | 2027-01-10 | 2027-01-23 | Sprint | Decide whether a positive-only ranking model is defensible, and set up spatial folds. |
 | S6 | Sprint 6 | 2027-01-24 | 2027-02-06 | Sprint | Evaluate the ranking model (if approved) and draft the review's main sections. |
@@ -61,31 +61,32 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-46 | S1 | M1 | 3 | Review | Organise data into male_flood_ai_data and reconcile the new flood inventory CSV | None | A1, G1, G5 | No | All files mapped and checksum-verified; 30 imported records reconciled, none promoted to labels; DATA_STATUS_REPORT written; archive verified. |
 | MF-47 | S1 | M1 | 5 | Review | Exploratory daily reported-flood analysis and dashboard (supporting work, not the main question) | None | G1, G4, G5, G6 | No | reports/daily_exploration.md and reports/extended_analysis.md with fold results, time-alignment sensitivity and a dashboard; zero means no report, not dry. Uses v001 labels and needs a rerun on v003. |
 | MF-48 | S1 | M1 | 2 | Review | Malé ward boundary map from OSM | None | None | No | derived/male_wards_osm.geojson (4 wards) and male_wards_map.png/pdf rebuilt by scripts/build_ward_map.py; OSM credit shown. Ward lines not yet checked against a Council map. |
+| MF-49 | S1 | M1 | 2 | Review | Combined repo and data-folder review; switch recorded scope from roads to areas | MF-46, MF-48 | A1, A4, A5 | No | reports/combined_folder_review.md and ward evidence CSVs (scripts/summarise_ward_evidence.py); CLAUDE.md, agent.md, sprint.md and data_issues.md updated for the area scope. |
 | MF-19 | S1 | M3 | 3 | To do | Literature search: 20+ candidate journal articles | None | None | No | Shortlist covering urban/road flood susceptibility, positive-only learning and spatial validation, with full references. |
-| MF-20 | S2 | M2 | 5 | To do | Split OSM roads at junctions into block segments | MF-15 | F4, F7 | No | Segment layer with stable IDs; total length matches the source network. |
-| MF-21 | S2 | M2 | 3 | To do | Attach evidence to segments at the right scope | MF-20, MF-11, MF-12, MF-14 | B1, D3, F6 | No | Each segment is reported, designated, landmark-candidate or unknown. Whole-road mentions are not spread to every segment as 'flooded'. |
-| MF-22 | S2 | M1 | 5 | To do | Compute segment attributes | MF-20 | None | No | FABDEM elevation, WorldCover, building coverage (one source only), coast distance, road class and length per segment. |
+| MF-20 | S2 | M2 | 5 | To do | Build finer area units inside the OSM wards (grid cells or neighbourhood blocks, as decided) | MF-48 | None | No | Area layer with stable IDs, each tagged with its ward; units tile the OneMap island polygon with no gaps or overlaps; the unit choice is recorded. |
+| MF-21 | S2 | M2 | 3 | To do | Attach evidence to area units at the right scope | MF-20, MF-11, MF-12, MF-14 | B1, B4, D3, F6 | No | Each unit is reported, pumping-only, designated or unknown, with record scope kept. Whole-road and ward mentions are not spread to every unit as 'flooded'. |
+| MF-22 | S2 | M1 | 5 | To do | Compute area-unit attributes | MF-20 | None | No | FABDEM elevation, WorldCover, building coverage (one source only), coast distance and road density per unit. |
 | MF-23 | S2 | M1 | 1 | To do | Send approved data requests and log responses | MF-17 | G1 | No | Sent date and contact recorded in a response log. |
-| MF-24 | S2 | M3 | 2 | To do | Data dictionary for the segment table | MF-21, MF-22 | None | No | Every column has units, source, licence and a known-limitations note. |
+| MF-24 | S2 | M3 | 2 | To do | Data dictionary for the area-unit table | MF-21, MF-22 | None | No | Every column has units, source, licence and a known-limitations note. |
 | MF-25 | S2 | M3 | 5 | To do | Reading matrix: appraise the first 8 articles | MF-19 | None | No | Task, data, resolution, labels, validation and limitations recorded for each article. |
-| MF-26 | S2 | M1 | 2 | To do | Define spatial blocks and grouping rules | MF-20 | G3 | No | Wards or 300–500 m tiles chosen; all segments of one road kept together. |
-| MF-30 | S3 | M1 | 5 | To do | Compare reported vs unknown segments | MF-21, MF-22 | G2 | No | Tables and plots, with and without arterial roads; written as descriptive, not causal. |
-| MF-31 | S3 | M2 | 3 | To do | Block-level evidence map and QGIS project | MF-21 | None | No | Map and .qgz file; grey roads labelled unknown, not dry. |
+| MF-26 | S2 | M1 | 2 | To do | Define spatial blocks and grouping rules | MF-20 | G3 | No | Blocks of neighbouring area units chosen (wards or groups of tiles); records at one landmark kept in one block. |
+| MF-30 | S3 | M1 | 5 | To do | Compare reported vs unknown areas | MF-21, MF-22 | G2 | No | Tables and plots by ward and by area unit, with and without pump-site records; written as descriptive, not causal. |
+| MF-31 | S3 | M2 | 3 | To do | Area evidence map and QGIS project | MF-21 | None | No | Map and .qgz file; areas without reports labelled unknown, not dry. |
 | MF-32 | S3 | M2 | 3 | To do | One-command rebuild from raw to derived | MF-21 | None | No | A single script rebuilds all outputs and checks every record still traces to its source row. |
 | MF-33 | S3 | M3 | 5 | To do | Reading matrix: appraise the remaining articles | MF-25 | None | No | At least 15 journal articles fully appraised. |
 | MF-34 | S3 | M3 | 1 | To do | Wording check on exploratory outputs | MF-30 | G1, G4 | No | Says 'reported', treats unknown as unknown, and states no rainfall thresholds. |
 | MF-40 | S4 | M3 | 2 | To do | Set up the review in the coursework IJCAI template | None | I4 | No | The coursework .doc template opens with the title, authors and section skeleton in place. |
 | MF-41 | S4 | M3 | 3 | To do | Literature review outline by theme | MF-33 | None | No | Themes, article-to-section mapping and a page budget. |
 | MF-42 | S4 | M2 | 2 | To do | Peer-review Iyaadh's attribute and exploratory code | MF-30 | None | No | Findings logged and resolved. |
-| MF-43 | S4 | M1 | 2 | To do | Peer-review Aslan's segmentation and evidence join | MF-21, MF-32 | None | No | Findings logged and resolved. |
+| MF-43 | S4 | M1 | 2 | To do | Peer-review Aslan's area units and evidence join | MF-21, MF-32 | None | No | Findings logged and resolved. |
 | MF-44 | S4 | M1 | 2 | Review | Descriptive rainfall table for reported incidents | None | C3, D6, G4 | No | Units, accumulation periods and contradictions kept; no threshold claims. |
 | MF-45 | S4 | M2 | 3 | To do | Follow up agency requests and load any data received | MF-23 | H1, H2, H3, H4 | No | Response log updated; received data stored raw with provenance. |
 | MF-50 | S5 | M1 | 2 | To do | Decision record: descriptive only, or ranking model | MF-30, MF-45 | G1, G2, G3 | No | The group agrees, using the verified evidence and agency responses. No flooded/dry classifier without observed-dry data. |
-| MF-51 | S5 | M2 | 3 | To do | Implement spatial folds | MF-26, MF-50 | B2, B3, G3 | No | Road-grouped and block-based folds; near-duplicate places merged before splitting. |
+| MF-51 | S5 | M2 | 3 | To do | Implement spatial folds | MF-26, MF-50 | B2, B3, G3 | No | Block-based folds over area units; near-duplicate places merged before splitting. |
 | MF-52 | S5 | M1 | 5 | To do | Prototype positive-only ranking model | MF-50, MF-51 | G1 | Yes | Only if MF-50 approves it. Positive-unlabelled or presence-background model, presented as a ranking, not a probability. |
 | MF-53 | S5 | M3 | 5 | To do | Draft review sections: background and methods | MF-41 | None | No | Drafted from the reading matrix, with citations. |
 | MF-54 | S5 | M2 | 2 | To do | Leakage checks | MF-51 | None | No | All preprocessing is fitted inside training folds; a test confirms it. |
-| MF-60 | S6 | M1 | 5 | To do | Evaluate ranking: recall@k and Boyce index | MF-52 | G2, G3 | Yes | Results with and without arterial roads; no accuracy scored against unknown roads. |
+| MF-60 | S6 | M1 | 5 | To do | Evaluate ranking: recall@k and Boyce index | MF-52 | G2, G3 | Yes | Results with and without pump-site records; no accuracy scored against unknown areas. |
 | MF-61 | S6 | M2 | 2 | To do | Peer-review model and evaluation | MF-60 | None | Yes | Folds, leakage and metrics checked; findings resolved. |
 | MF-62 | S6 | M3 | 5 | To do | Draft review sections: labels, validation, research gap | MF-53 | None | No | Drafted with citations, and linked to this project's evidence limits. |
 | MF-63 | S6 | M2 | 3 | To do | Report-ready figures pipeline | MF-31 | None | No | Map, exploratory and evaluation figures exported at print resolution by script. |

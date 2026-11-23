@@ -17,6 +17,8 @@ python scripts/match_road_flood_records.py
 python scripts/review_unnamed_segments.py
 python scripts/check_landmark_positions.py
 python scripts/build_incident_rainfall_table.py
+python scripts/build_ward_map.py
+python scripts/summarise_ward_evidence.py
 MPLCONFIGDIR=/tmp/male-matplotlib LOKY_MAX_CPU_COUNT=2 python scripts/explore_daily_flood.py
 MPLCONFIGDIR=/tmp/male-matplotlib python scripts/extended_daily_analysis.py
 python scripts/build_dashboard.py

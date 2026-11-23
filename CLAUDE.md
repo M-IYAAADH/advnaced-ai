@@ -7,17 +7,18 @@ This file records the student's stated requirements and the verified state of th
 - Student-selected project topic: **Geospatial-Based Flood Risk Modelling and Predictive Analysis Using Artificial Intelligence**.
 - Selected study area: **Malé island proper, Maldives**. Do not silently expand the scope to Hulhumalé, Vilimalé or Greater Malé.
 - Proposed manageable implementation: explainable geospatial modelling of rainfall-induced urban flood susceptibility. Treat coastal/wave flooding as a distinguishable process. This is the current planning recommendation, not proof that a model is already validated.
-- **Research question clarified by the student (14 Nov 2026): which roads or road sections on Malé island proper are prone to flooding?** This is road susceptibility mapping, not forecasting the date/time of the next flood. See `agent.md` for the working rules and `data_review.md` for the current evidence review.
-  - Event dates/timestamps are **optional** for the initial road-flood inventory. Do not reject useful location evidence only because it lacks a timestamp. (Dates remain required for any future-event or rainfall-response claim.)
-  - A report naming a whole road is road-level evidence. Do not label every segment of it as flooded; distinguish whole-road, bounded-section, junction and landmark reports.
+- **Research question (student decision, 23 Nov 2026): which areas of Malé island proper (for example Maafannu) are prone to flooding?** This is area susceptibility mapping, not forecasting the date/time of the next flood. It replaced the 14 Nov 2026 road/road-section question because there is not enough road-level elevation or drainage data. See `agent.md` for the working rules, `data_review.md` for the road evidence review and `reports/combined_folder_review.md` for the evidence by ward.
+  - Reporting unit: the four OSM wards (`derived/male_wards_osm.geojson`), not yet checked against a Council map. The finer analysis unit (grid cells or neighbourhood blocks) is **not yet decided**; four wards support description only.
+  - Event dates/timestamps are **optional** for the initial location inventory. Do not reject useful location evidence only because it lacks a timestamp. (Dates remain required for any future-event or rainfall-response claim.)
+  - Keep every record at its real scope (whole road, bounded section, junction, landmark, ward, city). A whole-road report does not mean every part of the road flooded, and whole roads cross ward lines.
   - Keep rainfall amounts with their units and accumulation periods (e.g. 30 mm in 1 h vs 30 mm in 24 h); record unknown periods as unknown. Flooding after X mm is an association, not a minimum triggering threshold.
-  - Roads absent from the records are **unknown**, not dry, unless there is evidence they were observed not flooding.
+  - Areas and roads absent from the records are **unknown**, not dry, unless there is evidence they were observed not flooding. Pumping-only records partly reflect where pumps are stationed; never rank areas by raw counts.
 - Current lecturer instructions reported by the student: a **six-page literature review**, using **at least 15 related journal articles**, in **IJCAI format**. The template to use is `COURSEWORK  SUBMISSION TEMPLATE _RESEARCH PAPER TEMPLATE .doc` in this folder, which is the IJCAI-format template. References do **not** count toward the six pages.
 - Deadline confirmed with the lecturer (14 Nov 2026): **30 May 2027, 12:00 am Maldives time (UTC+5)**, for the **whole project**. Treat this as midnight at the start of 30 May and plan to submit by 29 May 2027.
 - The lecturer approved the flood topic (reported by the student, 14 Nov 2026).
 - The planning pack contains 22 screened journal references. They need full-text appraisal before detailed claims and numerical results are used.
 
-The uploaded recipe-review assignment brief is an older reference brief with inconsistent dates. The lecturer confirmed (14 Nov 2026) that its components do **not** apply. Clustering, classification, regression and neural-network comparison, the Colab submission and the recorded demo are not required, and its 1,000–1,200-word report is replaced by the six-page literature review. Do not add them back as requirements.
+The uploaded recipe-review assignment brief (removed from the repo on 23 Nov 2026; a copy stays in the local data folder under `06_research/reports/coursework/`) is an older reference brief with inconsistent dates. The lecturer confirmed (14 Nov 2026) that its components do **not** apply. Clustering, classification, regression and neural-network comparison, the Colab submission and the recorded demo are not required, and its 1,000–1,200-word report is replaced by the six-page literature review. Do not add them back as requirements.
 
 ## 2. Find the project files
 
@@ -30,6 +31,8 @@ The two ZIP packs may have been extracted into different subfolders. Locate file
 - Data subfolders: `boundary/`, `mapping/`, `elevation/`, `rainfall/`, `tides/`, `flood/`.
 - Read folder-specific README and QA/source JSON files before processing.
 - Road-flood evidence (added 14 Nov 2026): `male-flood-basis/` (news/agency-report compilation, map page and weather files). Derived, traceable outputs: `derived/road_flood_inventory.csv`, `derived/road_match_review.csv`, `derived/road_flood_matched_segments.geojson`, `derived/road_flood_evidence_map.png`, built by `scripts/build_road_flood_inventory.py` then `scripts/match_road_flood_records.py`.
+- Area evidence (added 23 Nov 2026): `derived/male_wards_osm.geojson` and `derived/male_wards_map.png` (`scripts/build_ward_map.py`); `derived/ward_evidence_summary.csv` and `derived/ward_landmark_assignment.csv` (`scripts/summarise_ward_evidence.py`).
+- Organised data folder (MF-46, added to the repo 23 Nov 2026): `male_flood_ai_data/`, holding the v003 reviewed events (`03_reviewed/events/flood_events.csv`), catalogue, aligned weather tables and status reports. Files already elsewhere in the repo, the Council workbook and the 636 MB Groundsource parquet are not committed; see `male_flood_ai_data/OMITTED_FILES.csv`. The full folder lives locally at `~/Downloads/male_flood_ai_data/`.
 - As of 14 Nov 2026 the planning and writing files listed above (`Project_Plan.md`, `latex/`, `ijcai26.docx`, reading matrix) are **not present in this folder**. The template to use is `COURSEWORK  SUBMISSION TEMPLATE _RESEARCH PAPER TEMPLATE .doc`, which the student confirmed is the IJCAI-format template.
 
 The template in the planning pack is a `.docx`, not a legacy `.doc`. It is not in this folder; use the coursework `.doc` above. The literature-review starter is an outline, not a completed six-page review. The reference list is not a substitute for critical reading. No trained flood model or completed final submission was included in the packs.
@@ -61,6 +64,15 @@ Mapping clips use the OSM island polygon; the FABDEM clip uses the official OneM
 - Preserve original timestamps; distinguish UTC from Maldives UTC+5 and document reporting/accumulation windows.
 
 ### Flood labels and drainage
+
+Update 23 Nov 2026: the v002/v003 checks in `male_flood_ai_data/` supersede parts of this section and of §3's weather notes. The checks found:
+- 43 reviewed events: 30 accepted rain, 6 coastal and 7 uncertain, all positive-only.
+- The GSOD day shift is established: local day L is stored on date L+1.
+- The SYNOP 24 h group shows a one-tenth error on 178 days.
+- ERA5 is on UTC+5.
+- NOAA station files now cover 2020–2025.
+
+Read `male_flood_ai_data/06_research/reports/CHATGPT_DATA_UPDATE.md` and `reports/combined_folder_review.md` before quoting counts or alignments.
 
 - `flood/event_candidates.csv` contains only **three city-level date/source leads**. It is not a flooded/dry location dataset, a complete event inventory or validation evidence for a flood classifier.
 - No complete open multi-event, location-specific flooded/dry inventory was verified. Assistance/sandbag requests are not automatically observed inundation. No incident report does not mean observed dry.

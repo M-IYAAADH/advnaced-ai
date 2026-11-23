@@ -1,29 +1,34 @@
-# agent.md: working brief for the Malé road-flood project
+# agent.md: working brief for the Malé area flood project
 
-Last updated 14 Nov 2026. Read with `CLAUDE.md` (data-quality cautions) and `data_review.md` (current evidence review). If they conflict, the student's latest explicit instruction wins, then this file.
+Last updated 23 Nov 2026. Read with `CLAUDE.md` (data-quality cautions), `data_review.md` (road evidence review) and `reports/combined_folder_review.md` (current state of both folders and the evidence by ward). If they conflict, the student's latest explicit instruction wins, then this file.
 
 ## 1. Topic and study area
 
 - Module topic (student-selected): *Geospatial-Based Flood Risk Modelling and Predictive Analysis Using Artificial Intelligence*.
-- **Current research question:** which roads or road sections on **Malé island proper** are prone to flooding after rainfall?
+- **Current research question (student decision, 23 Nov 2026):** which **areas** of **Malé island proper** (for example Maafannu) are prone to flooding after rainfall?
+  - Changed from roads and road sections (14 Nov 2026) because there is not enough road-level elevation or drainage data. FABDEM at about 30 m suits area units better than single streets.
+  - Reporting unit: the four wards (Henveiru, Galolhu, Maafannu, Machchangolhi), from OSM (`derived/male_wards_osm.geojson`). Check the ward lines against a Council map before relying on them.
+  - Analysis unit: **not yet decided**. Four wards support description only; a ranking or spatial hold-out needs finer units inside the wards (grid cells or neighbourhood blocks are the candidates).
+  - The road inventory and matching work stay as evidence. Landmarks can now be placed in an area; whole-road reports cross ward lines and are not assigned to one ward.
 - Study boundary: the official OneMap Malé polygon `Male_Flood_Data_Starter_Pack/boundary/OneMap_Male_Island.geojson`. OSM layers are clipped to a slightly different OSM island polygon, so reconcile coastline differences. Hulhumalé, Hulhulé, Villimalé and the Midhili Magu link road are **out of scope**. Their records are kept in the inventory and flagged `in_study_area = no`.
 - Process: rainfall-driven urban waterlogging. Keep coastal, wave and swell flooding separate.
 
 ## 2. Susceptibility mapping, not forecasting
 
-| | Road susceptibility mapping (current) | Future-event forecasting (not current) |
+| | Area susceptibility mapping (current) | Future-event forecasting (not current) |
 |---|---|---|
-| Question | Where do roads tend to flood? | When will the next flood happen? |
-| Unit | Road segment / section | Day or hour |
+| Question | Where in Malé does flooding tend to occur? | When will the next flood happen? |
+| Unit | Ward for reporting; finer area unit for analysis (to be decided) | Day or hour |
 | Labels needed | Location evidence: flooded, prone, or observed dry | Dated flood / no-flood events |
 | Timestamps | **Optional** for the initial inventory | Essential |
-| Evaluation | Spatial hold-out (unseen roads or areas) | Chronological hold-out with issue and lead time |
+| Evaluation | Spatial hold-out (unseen areas) | Chronological hold-out with issue and lead time |
 
-Student clarification (14 Nov 2026):
-- Timestamps are optional for the initial road-flood inventory. Do not discard location evidence because it lacks a date. Keep dates where they exist, because they let us count independent events.
-- A road observed flooding after rainfall is evidence that it is flood-prone. A whole-road mention is not evidence that every segment flooded, so distinguish whole road, bounded section, junction and landmark.
+Student clarifications (14 Nov 2026, still in force at area level):
+- Timestamps are optional for the location inventory. Do not discard location evidence because it lacks a date. Keep dates where they exist, because they let us count independent events.
+- A place observed flooding after rainfall is evidence that its area is flood-prone. Keep each record at its real scope (whole road, bounded section, junction, landmark, ward, city). A whole-road mention is not evidence that every part of the road flooded.
 - Keep rainfall with its units and accumulation period. Record an unknown period as `unknown`. "Flooded after X mm" is an association, not a minimum threshold.
-- Roads absent from the records are **unknown**, not dry, unless they were observed not flooding.
+- Areas and roads absent from the records are **unknown**, not dry, unless they were observed not flooding.
+- Pumping-only records show where water was removed, which partly reflects where pumps are stationed. Never rank areas by raw record counts.
 
 Do not pivot the main project to recipe analysis, heavy-rain classification or tide regression.
 
@@ -56,7 +61,10 @@ Still not in this folder: the planning files described in `CLAUDE.md` (`Project_
 | `derived/road_flood_evidence_map.png` | Map | Derived |
 | `derived/unnamed_segment_review.csv` | The 8 unnamed OSM segments under the compiler's lines, each marked part of the named road or not (MF-15) | Derived. Geometry-only decisions |
 | `derived/landmark_position_check.csv` | Each Malé landmark point checked against its named OSM feature and the OneMap polygon (MF-16) | Derived. Not an imagery check |
-| `scripts/` | `build_road_flood_inventory.py`, then `match_road_flood_records.py`, then `review_unnamed_segments.py` and `check_landmark_positions.py` | Re-run from the project root (steps in `README.md`) |
+| `derived/male_wards_osm.geojson`, `male_wards_map.png/.pdf` | The 4 Malé wards from OSM and a map (MF-48) | Derived. Not checked against a Council map |
+| `derived/ward_evidence_summary.csv`, `ward_landmark_assignment.csv` | Landmark records placed in wards; v003 events naming each ward | Derived. Report counts, not flood frequency |
+| `male_flood_ai_data/` | Organised data folder (MF-46): v003 reviewed events (`03_reviewed/events/flood_events.csv`), catalogue, aligned weather, official PDFs, status reports | Reviewed and interim data. Files already elsewhere in the repo and the Council workbook are omitted; see its `OMITTED_FILES.csv` |
+| `scripts/` | `build_road_flood_inventory.py`, then `match_road_flood_records.py`, then `review_unnamed_segments.py` and `check_landmark_positions.py`; `build_ward_map.py`, then `summarise_ward_evidence.py` | Re-run from the project root (steps in `README.md`) |
 
 ## 5. Processing conventions
 
@@ -70,22 +78,24 @@ Still not in this folder: the planning files described in `CLAUDE.md` (`Project_
 - Distances use a local metre projection centred at 4.175°N 73.5°E (fine for this island). For GIS work use EPSG:32643.
 - Respect licences (OSM ODbL, FABDEM CC BY-NC-SA, etc.). Don't republish household-level details.
 
-## 6. Known limitations of the road evidence
+## 6. Known limitations of the evidence
 
-- Positive-only and secondary: news and agency reports compiled with AI assistance. The roughly 40 linked articles have not been opened or checked here.
+- Positive-only and secondary: news and agency reports. The v003 review (22 Nov 2026) fetched and read 71 sources, but 23 of its 43 events rest on a single source, and independence between publishers is unresolved.
+- By ward (see `reports/combined_folder_review.md` §3): Maafannu has 29 of the 38 landmark records, but 20 of those are pumping reports at routine pump sites (IGMH, West Park). Galolhu and Machchangolhi are under-reported, not shown to be dry. 16 of the 30 accepted rain events name no ward.
 - Reporting bias: the named roads are mostly the island's main arterials (Majeedhee, Ameenee, Boduthakurufaanu) and well-known landmarks. On city-wide days (13 Aug 2024, 3 Jan 2025, 21 Oct 2026) many unnamed streets also flooded.
 - 31 of 67 Malé records are pump/dewatering deployments. These show where water was removed, which partly reflects where pumps are stationed.
 - Rainfall with an amount exists for only 5 of 18 incidents, mostly daily totals. The period is unknown for two of the five, and one has contradictory figures (142.2 vs 162 mm).
 - The Boduthakurufaanu section flood on 30 Jul 2026 was attributed to pumps not yet commissioned on a rebuilt road, which is a construction confounder.
-- No surveyed DEM, drainage network or pump-station locations are available. FABDEM at about 30 m is too coarse for street-level susceptibility.
+- No surveyed DEM, drainage network or pump-station locations are available. FABDEM at about 30 m is too coarse for street-level susceptibility, which is why the unit moved to areas.
 
 ## 7. Next steps
 
-1. Spot-check source articles for the 17 road records and the most-cited landmarks, recording the quote and any section or junction detail. Raise confidence only after checking.
-2. Split OSM segments at junctions to build a block-level road network, then attach evidence at the right scope.
-3. Exploratory comparison of road characteristics (class, length, distance to coast, FABDEM elevation, WorldCover, building density) between evidence roads and **unknown** roads. Treat this as descriptive only.
-4. Request observed-dry and complete location data from the City Council, NDMA (assistance logs) and MNDF (pump deployment logs), plus pump and drain locations from MWSC. See `Male_Flood_Data_Starter_Pack/Data_Request_Specification.md`.
-5. Only then choose a modelling approach: positive-unlabelled learning or a ranking model with spatially blocked evaluation. See `data_review.md` §6.
+1. Check the OSM ward lines against a Council ward map, and decide the finer analysis unit (grid cells or neighbourhood blocks).
+2. Spot-check source articles for the 17 road records and the most-cited landmarks, recording the quote and any place detail that locates the flooding within an area. Raise confidence only after checking.
+3. Place every located record (landmark, bounded section, ward mention, v003 `location_as_reported`) in its area unit at its real scope.
+4. Exploratory comparison of area characteristics (FABDEM elevation, distance to coast, WorldCover, building coverage, road density) between areas with reports and **unknown** areas. Treat this as descriptive only, with and without the pump-site records.
+5. Request observed-dry and complete location data from the City Council, NDMA (assistance logs) and MNDF (pump deployment logs), plus pump and drain locations from MWSC. See `Male_Flood_Data_Starter_Pack/Data_Request_Specification.md`.
+6. Only then choose a modelling approach: positive-unlabelled learning or a ranking model over the finer area units with spatially blocked evaluation. See `data_review.md` §6.
 
 Tasks, owners and sprint dates for these steps are in `sprint.md` (viewable in `sprint_board.html`).
 
