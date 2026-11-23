@@ -6,27 +6,49 @@
 
 - Six pages in the coursework template (`COURSEWORK  SUBMISSION TEMPLATE _RESEARCH PAPER TEMPLATE .doc`), which follows the IJCAI layout. References are not counted in the six pages.
 - At least 15 journal articles. We aim for 20, so a few can be dropped after full-text reading.
-- Referencing: Cite Them Right Harvard (UWE's standard from Sept 2026). The template's own example, `Author, A. (1970) Title. Journal 1(1): 209-238`, is already author-date, so the two do not conflict. The lecturer still needs to confirm this (see Open questions).
+- Referencing: Cite Them Right Harvard. UWE says it "must be used for all new assignments in the Harvard style". The template's sample reference, `Author, A. (1970) Title. Journal 1(1): 209-238`, uses the old punctuation, so follow CTR rather than the sample. See the citation section below.
 - Due 30 May 2027 at 00:00 (UTC+5). We submit by 29 May 2027.
 - Review question: which areas of Malé island proper are prone to rainfall-induced flooding, and which methods can answer that honestly from positive-only, news-derived evidence and global 30 m data?
+
+## Template format (measured 23 Nov 2026)
+
+These settings were read from the .doc's own page and style settings in LibreOffice, then checked against a rendered PDF.
+
+| Item | Setting |
+|---|---|
+| Paper | A4 (21.0 × 29.7 cm) |
+| Margins | Top 3.0 cm, bottom 4.1 cm, left 1.8 cm, right 2.0 cm |
+| Columns | Title and name in one full-width column. Body in **2 columns**, each about 8.3 cm wide with a 0.6 cm gap |
+| Font | Times New Roman throughout |
+| Title | 20 pt, bold, centred |
+| Name and student number | 12 pt, bold, centred |
+| Section headings | Bold capitals with numbers ("1 INTRODUCTION"). Sections 1–3 use 11 pt (Normal plus bold); section 4 and References use the `MyH1` style (12 pt bold, 18 pt before, 6 pt after). Pick one and use it for every heading. `MyH1` is the better choice |
+| Body text | 11 pt, justified, single spacing, blank line between paragraphs, no first-line indent |
+| Figure caption | 10 pt, bold, centred, below the figure ("Figure Example: …") |
+| References | 9 pt, justified, hanging indent of 0.4 cm (`MyRef` style) |
+| Abstract, page numbers | Neither is in the template |
+
+Pitfall: the body style `MyFirstPar` is 9 pt by default. The 11 pt in the template is applied by hand on top of it. When you type or paste new text, check that it is 11 pt. You can also set `MyFirstPar` to 11 pt once.
+
+This template is not the official IJCAI style. Official IJCAI uses US Letter, 10 pt type and narrower margins. The template's 11 pt type and large top and bottom margins fit about **750 words per page**, against roughly 900 in real IJCAI, so the budget below assumes 750.
 
 ## Structure and page budget
 
 The template's headings (Introduction, Background research, Experimentation, Conclusions) were written for an experiment report. For a review, we keep Introduction, Background and Conclusions and replace Experimentation with the themed review.
 
-A page in the IJCAI two-column layout holds about 900 words of text. The budget below is about 4,600 words plus one table and one figure.
+At about 750 words per page, six pages hold about 4,500 words. Table 1 takes about half a page and the optional figure about a third, so the text budget is about 3,900 words.
 
 | # | Heading | Subheadings | Pages | Words |
 |---|---|---|---|---|
-| — | Title, name and student number, Abstract | Abstract of about 150 words | 0.3 | 150 |
-| 1 | Introduction | Problem: rain flooding in Malé. Research question and scope (Malé island proper, rain versus coastal flooding). Review method: databases, search terms, inclusion criteria, number screened and number included. Paper outline | 0.7 | 600 |
-| 2 | Background | 2.1 Susceptibility, hazard and risk (which one we study). 2.2 Malé and atoll flooding (Wadey, Storlazzi) | 0.5 | 450 |
-| 3 | Data-driven flood susceptibility methods | 3.1 Statistical and bivariate (FR, WoE). 3.2 Machine learning (SVM, RF, GARP/QUEST). 3.3 Urban and pluvial studies. 3.4 Deep learning and why it is out of scope at our data size. **Table 1: comparison of flood studies** | 1.4 | 1,100 |
-| 4 | Learning from positive-only evidence | 4.1 Presence-only and PU learning (Li, Elith, Phillips). 4.2 Reporting and sampling bias (target-group background). 4.3 Minimum sample size | 1.0 | 900 |
-| 5 | Validation of spatial models | 5.1 Spatial autocorrelation and block cross-validation. 5.2 Area of applicability. 5.3 Metrics without true absences (AUC criticism, Boyce, partial ROC) | 1.0 | 900 |
-| 6 | Data limits on small low-lying islands | 6.1 Global DEMs on flat islands (FABDEM). 6.2 Land cover and buildings. 6.3 Missing drainage and observed-dry data | 0.6 | 500 |
-| 7 | Research gaps and proposed approach | Gaps found across sections 3–6. How the Malé study responds: 200 m grid, descriptive map first, optional exploratory ranking. Optional **Figure 1: study area and wards** | 0.4 | 400 |
-| 8 | Conclusions | Key findings and limits of this review | 0.2 | 150 |
+| — | Title, name and student number, Abstract | Abstract of about 150 words | 0.2 | 150 |
+| 1 | Introduction | Problem: rain flooding in Malé. Research question and scope (Malé island proper, rain versus coastal flooding). Review method: databases, search terms, inclusion criteria, number screened and number included. Paper outline | 0.6 | 450 |
+| 2 | Background | 2.1 Susceptibility, hazard and risk (which one we study). 2.2 Malé and atoll flooding (Wadey, Storlazzi) | 0.5 | 350 |
+| 3 | Data-driven flood susceptibility methods | 3.1 Statistical and bivariate (FR, WoE). 3.2 Machine learning (SVM, RF, GARP/QUEST). 3.3 Urban and pluvial studies. 3.4 Deep learning and why it is out of scope at our data size. **Table 1: comparison of flood studies** | 1.6 (incl. table) | 800 |
+| 4 | Learning from positive-only evidence | 4.1 Presence-only and PU learning (Li, Elith, Phillips). 4.2 Reporting and sampling bias (target-group background). 4.3 Minimum sample size | 0.9 | 700 |
+| 5 | Validation of spatial models | 5.1 Spatial autocorrelation and block cross-validation. 5.2 Area of applicability. 5.3 Metrics without true absences (AUC criticism, Boyce, partial ROC) | 0.9 | 700 |
+| 6 | Data limits on small low-lying islands | 6.1 Global DEMs on flat islands (FABDEM). 6.2 Land cover and buildings. 6.3 Missing drainage and observed-dry data | 0.5 | 350 |
+| 7 | Research gaps and proposed approach | Gaps found across sections 3–6. How the Malé study responds: 200 m grid, descriptive map first, optional exploratory ranking. Optional **Figure 1: study area and wards** | 0.6 (incl. figure) | 300 |
+| 8 | Conclusions | Key findings and limits of this review | 0.2 | 120 |
 | — | References | Not counted | — | — |
 
 Rules for the writing:
