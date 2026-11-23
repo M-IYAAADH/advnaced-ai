@@ -1,0 +1,1014 @@
+[
+ {
+  "doi": "10.1080/10106049.2015.1041559",
+  "year": 2016,
+  "auth": [
+   [
+    "Rahmati",
+    "O."
+   ],
+   [
+    "Pourghasemi",
+    "H.R."
+   ],
+   [
+    "Zeinivand",
+    "H."
+   ]
+  ],
+  "title": "Flood susceptibility mapping using frequency ratio and weights-of-evidence models in the Golastan Province, Iran",
+  "journal": "Geocarto International",
+  "vol": "31",
+  "iss": "1",
+  "page": "42-70",
+  "art": null
+ },
+ {
+  "doi": "10.1016/j.jhydrol.2018.12.002",
+  "year": 2019,
+  "auth": [
+   [
+    "Darabi",
+    "H."
+   ],
+   [
+    "Choubin",
+    "B."
+   ],
+   [
+    "Rahmati",
+    "O."
+   ],
+   [
+    "Torabi Haghighi",
+    "A."
+   ],
+   [
+    "Pradhan",
+    "B."
+   ],
+   [
+    "Kl\u00f8ve",
+    "B."
+   ]
+  ],
+  "title": "Urban flood risk mapping using the GARP and QUEST models: A comparative study of machine learning techniques",
+  "journal": "Journal of Hydrology",
+  "vol": "569",
+  "iss": null,
+  "page": "142-154",
+  "art": null
+ },
+ {
+  "doi": "10.1080/19475705.2022.2097131",
+  "year": 2022,
+  "auth": [
+   [
+    "Seleem",
+    "O."
+   ],
+   [
+    "Ayzel",
+    "G."
+   ],
+   [
+    "de Souza",
+    "A.C.T."
+   ],
+   [
+    "Bronstert",
+    "A."
+   ],
+   [
+    "Heistermann",
+    "M."
+   ]
+  ],
+  "title": "Towards urban flood susceptibility mapping using data-driven models in Berlin, Germany",
+  "journal": "Geomatics, Natural Hazards and Risk",
+  "vol": "13",
+  "iss": "1",
+  "page": "1640-1662",
+  "art": null
+ },
+ {
+  "doi": "10.5194/nhess-21-807-2021",
+  "year": 2021,
+  "auth": [
+   [
+    "Mobley",
+    "W."
+   ],
+   [
+    "Sebastian",
+    "A."
+   ],
+   [
+    "Blessing",
+    "R."
+   ],
+   [
+    "Highfield",
+    "W.E."
+   ],
+   [
+    "Stearns",
+    "L."
+   ],
+   [
+    "Brody",
+    "S.D."
+   ]
+  ],
+  "title": "Quantification of continuous flood hazard using random forest classification and flood insurance claims at large spatial scales: a pilot study in southeast Texas",
+  "journal": "Natural Hazards and Earth System Sciences",
+  "vol": "21",
+  "iss": "2",
+  "page": "807-822",
+  "art": null
+ },
+ {
+  "doi": "10.3390/land11111971",
+  "year": 2022,
+  "auth": [
+   [
+    "Li",
+    "W."
+   ],
+   [
+    "Liu",
+    "Y."
+   ],
+   [
+    "Liu",
+    "Z."
+   ],
+   [
+    "Gao",
+    "Z."
+   ],
+   [
+    "Huang",
+    "H."
+   ],
+   [
+    "Huang",
+    "W."
+   ]
+  ],
+  "title": "A Positive-Unlabeled Learning Algorithm for Urban Flood Susceptibility Modeling",
+  "journal": "Land",
+  "vol": "11",
+  "iss": "11",
+  "page": "1971",
+  "art": null
+ },
+ {
+  "doi": "10.1111/j.1472-4642.2010.00725.x",
+  "year": 2011,
+  "auth": [
+   [
+    "Elith",
+    "J."
+   ],
+   [
+    "Phillips",
+    "S.J."
+   ],
+   [
+    "Hastie",
+    "T."
+   ],
+   [
+    "Dud\u00edk",
+    "M."
+   ],
+   [
+    "Chee",
+    "Y.E."
+   ],
+   [
+    "Yates",
+    "C.J."
+   ]
+  ],
+  "title": "A statistical explanation of MaxEnt for ecologists",
+  "journal": "Diversity and Distributions",
+  "vol": "17",
+  "iss": "1",
+  "page": "43-57",
+  "art": null
+ },
+ {
+  "doi": "10.1890/07-2153.1",
+  "year": 2009,
+  "auth": [
+   [
+    "Phillips",
+    "S.J."
+   ],
+   [
+    "Dud\u00edk",
+    "M."
+   ],
+   [
+    "Elith",
+    "J."
+   ],
+   [
+    "Graham",
+    "C.H."
+   ],
+   [
+    "Lehmann",
+    "A."
+   ],
+   [
+    "Leathwick",
+    "J."
+   ],
+   [
+    "Ferrier",
+    "S."
+   ]
+  ],
+  "title": "Sample selection bias and presence\u2010only distribution models: implications for background and pseudo\u2010absence data",
+  "journal": "Ecological Applications",
+  "vol": "19",
+  "iss": "1",
+  "page": "181-197",
+  "art": null
+ },
+ {
+  "doi": "10.1111/j.1472-4642.2008.00482.x",
+  "year": 2008,
+  "auth": [
+   [
+    "Wisz",
+    "M.S."
+   ],
+   [
+    "Hijmans",
+    "R.J."
+   ],
+   [
+    "Li",
+    "J."
+   ],
+   [
+    "Peterson",
+    "A.T."
+   ],
+   [
+    "Graham",
+    "C.H."
+   ],
+   [
+    "Guisan",
+    "A."
+   ],
+   [
+    "NCEAS Predicting Species Distributions Working Group",
+    ""
+   ]
+  ],
+  "title": "Effects of sample size on the performance of species distribution models",
+  "journal": "Diversity and Distributions",
+  "vol": "14",
+  "iss": "5",
+  "page": "763-773",
+  "art": null
+ },
+ {
+  "doi": "10.1111/ecog.01509",
+  "year": 2016,
+  "auth": [
+   [
+    "van Proosdij",
+    "A.S.J."
+   ],
+   [
+    "Sosef",
+    "M.S.M."
+   ],
+   [
+    "Wieringa",
+    "J.J."
+   ],
+   [
+    "Raes",
+    "N."
+   ]
+  ],
+  "title": "Minimum required number of specimen records to develop accurate species distribution models",
+  "journal": "Ecography",
+  "vol": "39",
+  "iss": "6",
+  "page": "542-552",
+  "art": null
+ },
+ {
+  "doi": "10.1111/ecog.02881",
+  "year": 2017,
+  "auth": [
+   [
+    "Roberts",
+    "D.R."
+   ],
+   [
+    "Bahn",
+    "V."
+   ],
+   [
+    "Ciuti",
+    "S."
+   ],
+   [
+    "Boyce",
+    "M.S."
+   ],
+   [
+    "Elith",
+    "J."
+   ],
+   [
+    "Guillera\u2010Arroita",
+    "G."
+   ],
+   [
+    "Hauenstein",
+    "S."
+   ],
+   [
+    "Lahoz\u2010Monfort",
+    "J.J."
+   ],
+   [
+    "Schr\u00f6der",
+    "B."
+   ],
+   [
+    "Thuiller",
+    "W."
+   ],
+   [
+    "Warton",
+    "D.I."
+   ],
+   [
+    "Wintle",
+    "B.A."
+   ],
+   [
+    "Hartig",
+    "F."
+   ],
+   [
+    "Dormann",
+    "C.F."
+   ]
+  ],
+  "title": "Cross\u2010validation strategies for data with temporal, spatial, hierarchical, or phylogenetic structure",
+  "journal": "Ecography",
+  "vol": "40",
+  "iss": "8",
+  "page": "913-929",
+  "art": null
+ },
+ {
+  "doi": "10.1038/s41467-020-18321-y",
+  "year": 2020,
+  "auth": [
+   [
+    "Ploton",
+    "P."
+   ],
+   [
+    "Mortier",
+    "F."
+   ],
+   [
+    "R\u00e9jou-M\u00e9chain",
+    "M."
+   ],
+   [
+    "Barbier",
+    "N."
+   ],
+   [
+    "Picard",
+    "N."
+   ],
+   [
+    "Rossi",
+    "V."
+   ],
+   [
+    "Dormann",
+    "C."
+   ],
+   [
+    "Cornu",
+    "G."
+   ],
+   [
+    "Viennois",
+    "G."
+   ],
+   [
+    "Bayol",
+    "N."
+   ],
+   [
+    "Lyapustin",
+    "A."
+   ],
+   [
+    "Gourlet-Fleury",
+    "S."
+   ],
+   [
+    "P\u00e9lissier",
+    "R."
+   ]
+  ],
+  "title": "Spatial validation reveals poor predictive performance of large-scale ecological mapping models",
+  "journal": "Nature Communications",
+  "vol": "11",
+  "iss": "1",
+  "page": null,
+  "art": "4540"
+ },
+ {
+  "doi": "10.1111/j.1466-8238.2007.00358.x",
+  "year": 2008,
+  "auth": [
+   [
+    "Lobo",
+    "J.M."
+   ],
+   [
+    "Jim\u00e9nez\u2010Valverde",
+    "A."
+   ],
+   [
+    "Real",
+    "R."
+   ]
+  ],
+  "title": "AUC: a misleading measure of the performance of predictive distribution models",
+  "journal": "Global Ecology and Biogeography",
+  "vol": "17",
+  "iss": "2",
+  "page": "145-151",
+  "art": null
+ },
+ {
+  "doi": "10.1016/j.ecolmodel.2006.05.017",
+  "year": 2006,
+  "auth": [
+   [
+    "Hirzel",
+    "A.H."
+   ],
+   [
+    "Le Lay",
+    "G."
+   ],
+   [
+    "Helfer",
+    "V."
+   ],
+   [
+    "Randin",
+    "C."
+   ],
+   [
+    "Guisan",
+    "A."
+   ]
+  ],
+  "title": "Evaluating the ability of habitat suitability models to predict species presences",
+  "journal": "Ecological Modelling",
+  "vol": "199",
+  "iss": "2",
+  "page": "142-152",
+  "art": null
+ },
+ {
+  "doi": "10.1088/1748-9326/ac4d4f",
+  "year": 2022,
+  "auth": [
+   [
+    "Hawker",
+    "L."
+   ],
+   [
+    "Uhe",
+    "P."
+   ],
+   [
+    "Paulo",
+    "L."
+   ],
+   [
+    "Sosa",
+    "J."
+   ],
+   [
+    "Savage",
+    "J."
+   ],
+   [
+    "Sampson",
+    "C."
+   ],
+   [
+    "Neal",
+    "J."
+   ]
+  ],
+  "title": "A 30 m global map of elevation with forests and buildings removed",
+  "journal": "Environmental Research Letters",
+  "vol": "17",
+  "iss": "2",
+  "page": "024016",
+  "art": null
+ },
+ {
+  "doi": "10.1016/j.jhydrol.2019.06.058",
+  "year": 2019,
+  "auth": [
+   [
+    "Tang",
+    "X."
+   ],
+   [
+    "Hong",
+    "H."
+   ],
+   [
+    "Shu",
+    "Y."
+   ],
+   [
+    "Tang",
+    "H."
+   ],
+   [
+    "Li",
+    "J."
+   ],
+   [
+    "Liu",
+    "W."
+   ]
+  ],
+  "title": "Urban waterlogging susceptibility assessment based on a PSO-SVM method using a novel repeatedly random sampling idea to select negative samples",
+  "journal": "Journal of Hydrology",
+  "vol": "576",
+  "iss": null,
+  "page": "583-595",
+  "art": null
+ },
+ {
+  "doi": "10.3390/ijgi14020057",
+  "year": 2025,
+  "auth": [
+   [
+    "Bersabe",
+    "J.T."
+   ],
+   [
+    "Jun",
+    "B.W."
+   ]
+  ],
+  "title": "The Machine Learning-Based Mapping of Urban Pluvial Flood Susceptibility in Seoul Integrating Flood Conditioning Factors and Drainage-Related Data",
+  "journal": "ISPRS International Journal of Geo-Information",
+  "vol": "14",
+  "iss": "2",
+  "page": "57",
+  "art": null
+ },
+ {
+  "doi": "10.1890/11-0826.1",
+  "year": 2012,
+  "auth": [
+   [
+    "Hijmans",
+    "R.J."
+   ]
+  ],
+  "title": "Cross\u2010validation of species distribution models: removing spatial sorting bias and calibration with a null model",
+  "journal": "Ecology",
+  "vol": "93",
+  "iss": "3",
+  "page": "679-688",
+  "art": null
+ },
+ {
+  "doi": "10.1016/j.jhydrol.2014.03.008",
+  "year": 2014,
+  "auth": [
+   [
+    "Tehrany",
+    "M.S."
+   ],
+   [
+    "Pradhan",
+    "B."
+   ],
+   [
+    "Jebur",
+    "M.N."
+   ]
+  ],
+  "title": "Flood susceptibility mapping using a novel ensemble weights-of-evidence and support vector machine models in GIS",
+  "journal": "Journal of Hydrology",
+  "vol": "512",
+  "iss": null,
+  "page": "332-343",
+  "art": null
+ },
+ {
+  "doi": "10.5194/hess-26-4345-2022",
+  "year": 2022,
+  "auth": [
+   [
+    "Bentivoglio",
+    "R."
+   ],
+   [
+    "Isufi",
+    "E."
+   ],
+   [
+    "Jonkman",
+    "S.N."
+   ],
+   [
+    "Taormina",
+    "R."
+   ]
+  ],
+  "title": "Deep learning methods for flood mapping: a review of existing applications and future research directions",
+  "journal": "Hydrology and Earth System Sciences",
+  "vol": "26",
+  "iss": "16",
+  "page": "4345-4378",
+  "art": null
+ },
+ {
+  "doi": "10.1111/2041-210X.13107",
+  "year": 2019,
+  "auth": [
+   [
+    "Valavi",
+    "R."
+   ],
+   [
+    "Elith",
+    "J."
+   ],
+   [
+    "Lahoz\u2010Monfort",
+    "J.J."
+   ],
+   [
+    "Guillera\u2010Arroita",
+    "G."
+   ]
+  ],
+  "title": "blockCV: an R package for generating spatially or environmentally separated folds for k-fold cross\u2010validation of species distribution models",
+  "journal": "Methods in Ecology and Evolution",
+  "vol": "10",
+  "iss": "2",
+  "page": "225-232",
+  "art": null
+ },
+ {
+  "doi": "10.1111/2041-210X.13650",
+  "year": 2021,
+  "auth": [
+   [
+    "Meyer",
+    "H."
+   ],
+   [
+    "Pebesma",
+    "E."
+   ]
+  ],
+  "title": "Predicting into unknown space? Estimating the area of applicability of spatial prediction models",
+  "journal": "Methods in Ecology and Evolution",
+  "vol": "12",
+  "iss": "9",
+  "page": "1620-1633",
+  "art": null
+ },
+ {
+  "doi": "10.1126/sciadv.aap9741",
+  "year": 2018,
+  "auth": [
+   [
+    "Storlazzi",
+    "C.D."
+   ],
+   [
+    "Gingerich",
+    "S.B."
+   ],
+   [
+    "van Dongeren",
+    "A."
+   ],
+   [
+    "Cheriton",
+    "O.M."
+   ],
+   [
+    "Swarzenski",
+    "P.W."
+   ],
+   [
+    "Quataert",
+    "E."
+   ],
+   [
+    "Voss",
+    "C.I."
+   ],
+   [
+    "Field",
+    "D.W."
+   ],
+   [
+    "Annamalai",
+    "H."
+   ],
+   [
+    "Piniak",
+    "G.A."
+   ],
+   [
+    "McCall",
+    "R."
+   ]
+  ],
+  "title": "Most atolls will be uninhabitable by the mid-21st century because of sea-level rise exacerbating wave-driven flooding",
+  "journal": "Science Advances",
+  "vol": "4",
+  "iss": "4",
+  "page": null,
+  "art": "eaap9741"
+ },
+ {
+  "doi": "10.1016/j.compenvurbsys.2021.101690",
+  "year": 2021,
+  "auth": [
+   [
+    "Songchon",
+    "C."
+   ],
+   [
+    "Wright",
+    "G."
+   ],
+   [
+    "Beevers",
+    "L."
+   ]
+  ],
+  "title": "Quality assessment of crowdsourced social media data for urban flood management",
+  "journal": "Computers, Environment and Urban Systems",
+  "vol": "90",
+  "iss": null,
+  "page": "101690",
+  "art": "101690"
+ },
+ {
+  "doi": "10.1016/j.jhydrol.2020.125475",
+  "year": 2020,
+  "auth": [
+   [
+    "Al-Abadi",
+    "A.M."
+   ],
+   [
+    "Pradhan",
+    "B."
+   ]
+  ],
+  "title": "In flood susceptibility assessment, is it scientifically correct to represent flood events as a point vector format and create flood inventory map?",
+  "journal": "Journal of Hydrology",
+  "vol": "590",
+  "iss": null,
+  "page": "125475",
+  "art": "125475"
+ },
+ {
+  "doi": "10.1080/10106049.2023.2275692",
+  "year": 2023,
+  "auth": [
+   [
+    "Wang",
+    "Z."
+   ],
+   [
+    "Lyu",
+    "H."
+   ],
+   [
+    "Zhang",
+    "C."
+   ]
+  ],
+  "title": "Pluvial flood susceptibility mapping for data-scarce urban areas using graph attention network and basic flood conditioning factors",
+  "journal": "Geocarto International",
+  "vol": "38",
+  "iss": "1",
+  "page": null,
+  "art": "2275692"
+ },
+ {
+  "doi": "10.1080/15230406.2024.2422593",
+  "year": 2025,
+  "auth": [
+   [
+    "Yoo",
+    "M."
+   ],
+   [
+    "Koo",
+    "H."
+   ]
+  ],
+  "title": "Exploring the impact of spatial autocorrelation on optimistic bias in cross-validation and assessing the effectiveness of spatial cross-validation",
+  "journal": "Cartography and Geographic Information Science",
+  "vol": "52",
+  "iss": "5",
+  "page": "596-609",
+  "art": null
+ },
+ {
+  "doi": "10.3389/feart.2018.00233",
+  "year": 2018,
+  "auth": [
+   [
+    "Hawker",
+    "L."
+   ],
+   [
+    "Bates",
+    "P."
+   ],
+   [
+    "Neal",
+    "J."
+   ],
+   [
+    "Rougier",
+    "J."
+   ]
+  ],
+  "title": "Perspectives on Digital Elevation Model (DEM) Simulation for Flood Modeling in the Absence of a High-Accuracy Open Access Global DEM",
+  "journal": "Frontiers in Earth Science",
+  "vol": "6",
+  "iss": null,
+  "page": null,
+  "art": "233"
+ },
+ {
+  "doi": "10.1111/jfr3.12567",
+  "year": 2020,
+  "auth": [
+   [
+    "Brown",
+    "S."
+   ],
+   [
+    "Wadey",
+    "M.P."
+   ],
+   [
+    "Nicholls",
+    "R.J."
+   ],
+   [
+    "Shareef",
+    "A."
+   ],
+   [
+    "Khaleel",
+    "Z."
+   ],
+   [
+    "Hinkel",
+    "J."
+   ],
+   [
+    "Lincke",
+    "D."
+   ],
+   [
+    "McCabe",
+    "M.V."
+   ]
+  ],
+  "title": "Land raising as a solution to sea\u2010level rise: An analysis of coastal flooding on an artificial island in the Maldives",
+  "journal": "Journal of Flood Risk Management",
+  "vol": "13",
+  "iss": "S1",
+  "page": null,
+  "art": "e12567"
+ },
+ {
+  "doi": "10.1007/s11069-017-2957-5",
+  "year": 2017,
+  "auth": [
+   [
+    "Wadey",
+    "M."
+   ],
+   [
+    "Brown",
+    "S."
+   ],
+   [
+    "Nicholls",
+    "R.J."
+   ],
+   [
+    "Haigh",
+    "I."
+   ]
+  ],
+  "title": "Coastal flooding in the Maldives: an assessment of historic events and their implications",
+  "journal": "Natural Hazards",
+  "vol": "89",
+  "iss": "1",
+  "page": "131-159",
+  "art": null
+ },
+ {
+  "doi": "10.1016/j.jhydrol.2022.128312",
+  "year": 2022,
+  "auth": [
+   [
+    "Fu",
+    "S."
+   ],
+   [
+    "Lyu",
+    "H."
+   ],
+   [
+    "Wang",
+    "Z."
+   ],
+   [
+    "Hao",
+    "X."
+   ],
+   [
+    "Zhang",
+    "C."
+   ]
+  ],
+  "title": "Extracting historical flood locations from news media data by the named entity recognition (NER) model to assess urban flood susceptibility",
+  "journal": "Journal of Hydrology",
+  "vol": "612",
+  "iss": null,
+  "page": "128312",
+  "art": "128312"
+ },
+ {
+  "doi": "10.1016/j.jhydrol.2025.133053",
+  "year": 2025,
+  "auth": [
+   [
+    "Huang",
+    "H."
+   ],
+   [
+    "Tao",
+    "Z."
+   ],
+   [
+    "Zhan",
+    "J."
+   ],
+   [
+    "Wang",
+    "C."
+   ]
+  ],
+  "title": "Contrast or Diversity: Non-Flood sampling in urban flood susceptibility modelling",
+  "journal": "Journal of Hydrology",
+  "vol": "656",
+  "iss": null,
+  "page": "133053",
+  "art": "133053"
+ }
+]
