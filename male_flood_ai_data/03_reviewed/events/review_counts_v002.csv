@@ -1,0 +1,41 @@
+measure,value,note,record_version
+"original records: male_flood_inventory.csv (import, 30)",30,,v002
+"original records: flood_incidents_greater_male_2021-2026.csv (compiled, 18)",18,,v002
+original records: legacy event_review.csv (18),18,,v002
+original records: starter-pack event_candidates.csv (3),3,,v002
+original records: Groundsource inventory_comparison.csv (29 windows),29,,v002
+"original records: storm_groups.csv v001 (legacy proxies, 17)",17,,v002
+original records: found during v002 verification,7,,v002
+sources registered,71,,v002
+sources checked with body accessible,71,,v002
+unique sources after URL de-duplication,69,SRC0046->SRC0019; SRC0063->SRC0030,v002
+reviewed events (all),43,,v002
+reviewed events in study period (2020+),41,,v002
+events in study period: accepted_reported_coastal_event,4,,v002
+events in study period: accepted_reported_rain_event,30,,v002
+events in study period: mixed_or_uncertain_cause,2,,v002
+events in study period: uncertain_date,4,,v002
+events in study period: uncertain_location,1,,v002
+source-verified reported rain-flood dates (single primary day),27,,v002
+source-verified rain-flood events with both days explicitly reported,1,EVT0002: 11 and 12 Dec 2021,v002
+"source-verified rain-flood overnight windows (2 days, day unresolved)",2,,v002
+distinct calendar days with an accepted single-day rain report,29,,v002
+"accepted rain events, property-level only",3,,v002
+accepted rain events resting on a single source,13,,v002
+source-verified coastal dates (study period),4,,v002
+uncertain date windows (uncertain_date),4,,v002
+persistence into the next day noted (not counted as new days),5,,v002
+classification (study period): coastal_swell,5,,v002
+classification (study period): mixed_rain_and_swell,1,,v002
+classification (study period): rain,34,,v002
+classification (study period): unresolved_response_only,1,,v002
+storm groups (study period): coastal / established,1,,v002
+storm groups (study period): coastal / provisional,2,,v002
+storm groups (study period): coastal / unresolved,1,,v002
+storm groups (study period): mixed / provisional,1,,v002
+storm groups (study period): rain / established,6,,v002
+storm groups (study period): rain / provisional,22,,v002
+storm groups (study period): rain / unresolved,1,,v002
+storm groups (study period): unresolved / unresolved,1,,v002
+proposed validation blocks: rain,28,,v002
+proposed validation blocks: coastal,3,,v002

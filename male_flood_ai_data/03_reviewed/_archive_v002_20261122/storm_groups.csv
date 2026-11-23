@@ -1,0 +1,55 @@
+storm_group_id,period_start_date,period_end_date,grouping_basis,evidence_source_ids,review_status,notes,member_event_ids,grouping_status,flood_type,validation_block_id,superseded_by,record_version
+LEGACY_S01,2021-12-11,2021-12-11,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0036,legacy_proxy_not_verified,members: 2021-12-11,,,,,STORM0002,v001 (preserved)
+LEGACY_S02,2022-07-17,2022-07-17,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0037,legacy_proxy_not_verified,members: 2022-07-17,,,,,STORM0003,v001 (preserved)
+LEGACY_S03,2023-04-01,2023-04-01,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0039,legacy_proxy_not_verified,members: 2023-04-01,,,,,STORM0005,v001 (preserved)
+LEGACY_S04,2023-07-21,2023-07-21,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0040,legacy_proxy_not_verified,members: 2023-07-21,,,,,STORM0007,v001 (preserved)
+LEGACY_S05,2023-12-30,2023-12-31,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0042,legacy_proxy_not_verified,members: 2023-12-31,,,,,STORM0011,v001 (preserved)
+LEGACY_S06,2024-01-10,2024-01-12,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0013;SRC0044,legacy_proxy_not_verified,members: 2024-01-10;2024-01-12,,,,,STORM0012,v001 (preserved)
+LEGACY_S07,2024-08-13,2024-08-13,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0045,legacy_proxy_not_verified,members: 2024-08-13,,,,,STORM0017,v001 (preserved)
+LEGACY_S08,2024-12-20,2024-12-21,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0050,legacy_proxy_not_verified,members: 2024-12-20,,,,,STORM0022,v001 (preserved)
+LEGACY_S09,2025-01-02,2025-01-03,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0053,legacy_proxy_not_verified,members: 2025-01-03,,,,,STORM0023,v001 (preserved)
+LEGACY_S10,2025-01-11,2025-01-11,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0057,legacy_proxy_not_verified,members: 2025-01-11,,,,,STORM0024,v001 (preserved)
+LEGACY_S11,2025-03-01,2025-03-01,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0059,legacy_proxy_not_verified,members: 2025-03-01,,,,,STORM0025,v001 (preserved)
+LEGACY_S12,2025-03-11,2025-03-12,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0061,legacy_proxy_not_verified,members: 2025-03-11,,,,,STORM0026,v001 (preserved)
+LEGACY_S13,2025-11-25,2025-11-25,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0062,legacy_proxy_not_verified,members: 2025-11-25,,,,,STORM0028,v001 (preserved)
+LEGACY_S14,2026-04-16,2026-04-16,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0063,legacy_proxy_not_verified,members: 2026-04-16,,,,,STORM0029,v001 (preserved)
+LEGACY_S15,2026-05-04,2026-05-04,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0064,legacy_proxy_not_verified,members: 2026-05-04,,,,,STORM0030,v001 (preserved)
+LEGACY_S16,2026-07-30,2026-07-30,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0065,legacy_proxy_not_verified,members: 2026-07-30,,,,,STORM0032,v001 (preserved)
+LEGACY_S17,2026-10-21,2026-10-21,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0035,legacy_proxy_not_verified,members: 2026-10-21,,,,,STORM0035,v001 (preserved)
+STORM0001,2020-05-18,2020-05-18,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0001,provisional,,EVT0001,provisional,mixed,VB001,,v002
+STORM0002,2021-12-11,2021-12-12,one source describes flooding 'yesterday and today' from the same unusual rain,SRC0002;SRC0036,established,,EVT0002,established,rain,VB002,,v002
+STORM0003,2022-07-17,2022-07-17,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0003;SRC0038,provisional,,EVT0003,provisional,rain,VB003,,v002
+STORM0004,2022-11-05,2022-11-05,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0004;SRC0005,provisional,,EVT0004,provisional,coastal,VB029,,v002
+STORM0005,2023-04-01,2023-04-01,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0006;SRC0039,provisional,,EVT0005,provisional,rain,VB004,,v002
+STORM0006,2023-05-04,2023-05-04,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0007,provisional,,EVT0006,provisional,rain,VB005,,v002
+STORM0007,2023-07-21,2023-07-21,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0008;SRC0040,provisional,,EVT0007,provisional,rain,VB006,,v002
+STORM0008,2023-07-31,2023-07-31,5 days before STORM0009; relation to the August swell/king-tide period not established,SRC0011,unresolved,,EVT0008,unresolved,coastal,VB030,,v002
+STORM0009,2023-08-05,2023-08-06,same swell episode: surges 'expected for hours' (Atoll Times); swells to continue 24 h (Sun),SRC0009;SRC0010,established,,EVT0009;EVT0010,established,coastal,VB030,,v002
+STORM0010,2023-10-01,2023-10-01,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0011,provisional,,EVT0011,provisional,rain,VB007,,v002
+STORM0011,2023-12-30,2023-12-31,'continuous downpour since Saturday morning' through Sunday (Atoll Times); low-pressure area (Sun),SRC0041;SRC0042,established,,EVT0012;EVT0013,established,rain,VB008,,v002
+STORM0012,2024-01-10,2024-01-13,"both 10 Jan and 12 Jan reports cite the same warned system (cyclonic circulation crossing the Maldives, warned on Tuesday 9 Jan); Hulhule SYNOP shows two bursts separated by ~30 h with <=2 mm. Same synoptic system; separate flood episodes",SRC0013;SRC0044;SRC0018,provisional,,EVT0014;EVT0015;EVT0016,provisional,rain,VB009,,v002
+STORM0013,2024-02-16,2024-02-16,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0018,provisional,,EVT0017,provisional,rain,VB010,,v002
+STORM0014,2024-04-13,2024-04-13,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0016;SRC0017,provisional,,EVT0018,provisional,rain,VB011,,v002
+STORM0015,2024-05-08,2024-05-08,MMS: circulations from 5-6 May; single Male' report,SRC0018,provisional,,EVT0019,provisional,rain,VB012,,v002
+STORM0016,2024-05-25,2024-05-25,MMS: Bay of Bengal system (later Cyclone Remal); single Male' report,SRC0018,provisional,,EVT0020,provisional,rain,VB013,,v002
+STORM0017,2024-08-13,2024-08-14,MMS: convection enhanced 11-17 Aug; 14 Aug only a caption date,SRC0018;SRC0019,provisional,,EVT0021;EVT0022,provisional,rain,VB014,,v002
+STORM0018,2024-09-18,2024-09-18,single reported episode; no other report within 7 days; independence from unreported days unknowable; property-level record,SRC0020,provisional,,EVT0023,provisional,rain,VB015,,v002
+STORM0019,2024-10-11,2024-10-11,MMS: severe-weather episode 4-14 Oct; Male' records on 11 Oct only,SRC0020;SRC0018,provisional,,EVT0024,provisional,rain,VB016,,v002
+STORM0020,2024-11-15,2024-11-18,date of Male' flooding within the mid-November episode unknown,SRC0018,unresolved,,EVT0025,unresolved,rain,VB017,,v002
+STORM0021,2024-12-17,2024-12-17,MMS describes back-to-back circulations (16 Dec and 20 Dec); relation to STORM0022 not established,SRC0018;SRC0021,unresolved,,EVT0026,unresolved,unresolved,VB018,,v002
+STORM0022,2024-12-20,2024-12-21,single overnight episode in all sources,SRC0021;SRC0022;SRC0049,established,,EVT0027,established,rain,VB018,,v002
+STORM0023,2025-01-03,2025-01-03,one episode from Thursday evening to early Saturday; MNDF pumping 11:37 Fri to 08:30 Sat,SRC0053;SRC0054;SRC0055,established,,EVT0028,established,rain,VB019,,v002
+STORM0024,2025-01-10,2025-01-11,single overnight episode; Atoll Times calls it the 'second instance ... within a week' (separate from STORM0023),SRC0024;SRC0057,established,,EVT0029,established,rain,VB019,,v002
+STORM0025,2025-03-01,2025-03-01,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0059,provisional,,EVT0030,provisional,rain,VB020,,v002
+STORM0026,2025-03-11,2025-03-11,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0026;SRC0061,provisional,,EVT0031,provisional,rain,VB021,,v002
+STORM0027,2025-04-27,2025-04-27,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0027,provisional,,EVT0032,provisional,rain,VB022,,v002
+STORM0028,2025-11-25,2025-11-26,consecutive-day reports within one multi-day alert period (Met forecast of heavy rain over the next three days on 26 Nov); not stated to be one storm,SRC0062;SRC0028;SRC0029,provisional,,EVT0033;EVT0034,provisional,rain,VB023,,v002
+STORM0029,2026-04-16,2026-04-16,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0030,provisional,,EVT0035,provisional,rain,VB024,,v002
+STORM0030,2026-05-04,2026-05-04,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0064,provisional,,EVT0036,provisional,rain,VB025,,v002
+STORM0031,2026-07-26,2026-07-26,swell episode without severe weather; different mechanism from STORM0032,SRC0031;SRC0032,provisional,,EVT0037,provisional,coastal,VB031,,v002
+STORM0032,2026-07-30,2026-07-30,single report; drainage pumps not commissioned,SRC0065,provisional,,EVT0038,provisional,rain,VB026,,v002
+STORM0033,2026-08-04,2026-08-04,southwest-monsoon spell ('past two weeks' of bad weather); relation to late-July events not established,SRC0033,provisional,,EVT0039,provisional,rain,VB026,,v002
+STORM0034,2026-09-12,2026-09-12,single reported episode; no other report within 7 days; independence from unreported days unknowable,SRC0034,provisional,,EVT0040,provisional,rain,VB027,,v002
+STORM0035,2026-10-21,2026-10-21,single overnight episode ('last night's non-stop rainfall'),SRC0035;SRC0067,established,,EVT0041,established,rain,VB028,,v002
+STORM0036,2019-06-15,2019-06-15,single swell weekend; before study period,SRC0071,provisional,,EVT0042,provisional,coastal,,,v002
+STORM0037,2004-12-26,2004-12-26,2004 Indian Ocean tsunami,SRC0070,established,,EVT0043,established,coastal_tsunami,,,v002

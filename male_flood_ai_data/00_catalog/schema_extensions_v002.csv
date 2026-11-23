@@ -1,0 +1,25 @@
+table,column,meaning,allowed_values_or_format
+03_reviewed/events/flood_events.csv,decision,Verification decision category,accepted_reported_rain_event; accepted_reported_coastal_event; mixed_or_uncertain_cause; uncertain_date; uncertain_location; conflicting_evidence; excluded
+03_reviewed/events/flood_events.csv,review_status,Template status derived from decision,accepted (accepted_*); uncertain (mixed/uncertain/conflicting); excluded
+03_reviewed/events/flood_events.csv,date_certainty,How the date window is supported,single_day; single_day_with_persistence (flooding persisted past midnight - not a new day); both_days_reported; overnight_window (day unresolved - not two daily positives); rain_reported_flood_not_dated; register_date_only; caption_date_only; window_bounds_approximate
+03_reviewed/events/flood_events.csv,evidence_scope,Spatial grain of the evidence,citywide; citywide_with_landmarks; street; street_section; landmark; property; unspecified_areas; unresolved
+03_reviewed/events/flood_events.csv,independent_source_count,Distinct supporting sources after URL de-duplication,integer
+03_reviewed/events/flood_events.csv,supporting_source_ids / conflicting_source_ids,Source IDs by relationship,semicolon list of SRC IDs
+03_reviewed/events/flood_events.csv,conflicts,Conflicts kept visible,text
+03_reviewed/events/flood_events.csv,rainfall_statements,Reported/observed rainfall with station; window and units,text; never calendar-day totals unless stated
+03_reviewed/events/flood_events.csv,original_record_ids,Crosswalk back to imported/compiled/legacy/Groundsource/new records,semicolon list
+03_reviewed/events/flood_events.csv,legacy_decision,Decision in the v001 legacy review (if any),include; uncertain; blank
+03_reviewed/events/flood_events.csv,study_period,Whether the event is in 2020-2026,in_study_period; before_study_period
+03_reviewed/events/flood_events.csv,label_use_note,How the row may be used,text
+03_reviewed/events/flood_events.csv,record_version,Table version,v002
+03_reviewed/events/event_source_links.csv,canonical_source_id,De-duplicated source,SRC ID
+03_reviewed/events/event_source_links.csv,source_checked_at_utc,When the source body was fetched,ISO 8601 UTC
+03_reviewed/storm_groups/storm_groups.csv,member_event_ids,Events in the group,semicolon list of EVT IDs
+03_reviewed/storm_groups/storm_groups.csv,grouping_status,Evidence status of the grouping,established (sources describe one episode/system); provisional; unresolved
+03_reviewed/storm_groups/storm_groups.csv,validation_block_id,Proposed evaluation block (not storm identity),VB ID
+03_reviewed/storm_groups/storm_groups.csv,superseded_by,For preserved v001 legacy proxies,STORM ID
+03_reviewed/time_alignment/time_alignment_decisions.csv,decision_id,Stable row ID,TA001-nn (v001 preserved); TA002-nn (v002)
+03_reviewed/time_alignment/time_alignment_decisions.csv,alternative_hypotheses,Named alternatives and their status,text
+03_reviewed/time_alignment/time_alignment_decisions.csv,evidence_files,Evidence tables for the decision,relative paths
+03_reviewed/time_alignment/time_alignment_decisions.csv,resolution_status,Extended statuses,verified; established_by_observation; data_quality_defect_established; documented_in_sources; partly_established; unresolved; unresolved_by_nature; hypothesis_only
+00_catalog/source_register.csv,canonical_source_id / verification_ref,De-duplication and pointer to verification,SRC ID; path

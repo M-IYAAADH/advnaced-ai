@@ -1,0 +1,19 @@
+test,detail,value,unit,amplitude_hPa,n
+ERA5 MSLP diurnal harmonic,period 12 h,9.86,label hour of first maximum,1.45,
+ERA5 MSLP diurnal harmonic,period 24 h,5.08,label hour of first maximum,0.33,
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+0, interval_ending",0.4654,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+0, interval_starting",0.4317,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+1, interval_ending",0.4866,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+1, interval_starting",0.4654,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+2, interval_ending",0.5062,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+2, interval_starting",0.4866,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+3, interval_ending",0.5161,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+3, interval_starting",0.5062,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+4, interval_ending",0.524,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+4, interval_starting",0.5161,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+5, interval_ending",0.5149,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+5, interval_starting",0.524,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+6, interval_ending",0.5033,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+6, interval_starting",0.5149,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+7, interval_ending",0.4873,Pearson r of log1p totals,,6248.0
+ERA5 hourly vs SYNOP 6 h blocks,"labels = UTC+7, interval_starting",0.5033,Pearson r of log1p totals,,6248.0

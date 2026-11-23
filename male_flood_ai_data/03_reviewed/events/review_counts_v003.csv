@@ -1,0 +1,84 @@
+measure,value,note,record_version
+"original records: male_flood_inventory.csv (import, 30)",30,,v003
+"original records: flood_incidents_greater_male_2021-2026.csv (compiled, 18)",18,,v003
+original records: legacy event_review.csv (18),18,,v003
+original records: starter-pack event_candidates.csv (3),3,,v003
+original records: Groundsource inventory_comparison.csv (29 windows),29,,v003
+"original records: storm_groups.csv v001 (legacy proxies, 17)",17,,v003
+original records: found during v002 verification,7,,v003
+crosswalk rows with non-ISO original_start/original_end,0,must be 0,v003
+crosswalk rows with alternative dates kept separately,10,,v003
+sources registered,71,,v003
+sources checked with body accessible,71,,v003
+unique sources after URL de-duplication,69,SRC0046->SRC0019; SRC0063->SRC0030,v003
+distinct normalised publishers (all registered sources),22,,v003
+source type: news_article,64,derived from fetched content type and host (no registered type column exists),v003
+source type: official_document,4,derived from fetched content type and host (no registered type column exists),v003
+source type: official_web_page,3,derived from fetched content type and host (no registered type column exists),v003
+publication clock (all 71 registered): empirically_supported,17,,v003
+publication clock (all 71 registered): metadata_confirmed,9,,v003
+publication clock (all 71 registered): not_applicable,7,,v003
+publication clock (all 71 registered): unresolved,38,,v003
+publication clock (unique sources): empirically_supported,16,,v003
+publication clock (unique sources): metadata_confirmed,9,,v003
+publication clock (unique sources): not_applicable,7,,v003
+publication clock (unique sources): unresolved,37,,v003
+publication clock x timezone (all registered): empirically_supported / +05:00,17,,v003
+publication clock x timezone (all registered): metadata_confirmed / +00:00,3,,v003
+publication clock x timezone (all registered): metadata_confirmed / +05:00,6,,v003
+publication clock x timezone (all registered): not_applicable / blank,7,,v003
+publication clock x timezone (all registered): unresolved / blank,38,,v003
+sources fetched via an Internet Archive capture (capture time kept separate from publication),5,,v003
+Dhivehi excerpts with translation pending human review,10,,v003
+reviewed events (all),43,,v003
+reviewed events in study period (2020+),41,,v003
+events in study period: accepted_reported_coastal_event,4,,v003
+events in study period: accepted_reported_rain_event,30,,v003
+events in study period: mixed_or_uncertain_cause,2,,v003
+events in study period: uncertain_date,4,,v003
+events in study period: uncertain_location,1,,v003
+accepted rain event rows,30,= 27 single-day + 1 both-days-reported + 2 overnight-window events,v003
+accepted rain events: single-day (incl. persistence noted),27,5 note persistence past midnight; not new days,v003
+accepted rain events: both days explicitly reported,1,EVT0002: 11 and 12 Dec 2021 (12 Dec rests on one source),v003
+accepted rain events: overnight windows (flood day unresolved),2,EVT0027 2024-12-20..2024-12-21; EVT0029 2025-01-10..2025-01-11,v003
+distinct single-day dates (accepted rain),27,,v003
+calendar days asserted by both-days events,2,,v003
+distinct calendar days asserted as accepted rain-report days (single + both-days),29,these are the only day-level positives,v003
+calendar days touched by overnight windows (not daily positives),4,window days are never expanded into daily labels,v003
+overlap between asserted days and window days,0,,v003
+calendar days touched by any accepted rain event,33,,v003
+"uncertain-date windows (multi-day, approximate bounds)",1,EVT0025 2024-11-15..2024-11-18,v003
+calendar days touched by uncertain-date windows,4,,v003
+uncertain-date single days,3,,v003
+"accepted rain events, property-level only",3,,v003
+accepted rain events resting on a single supporting source,13,,v003
+accepted rain events with >1 supporting source but one publisher,1,,v003
+accepted rain events with >=2 publishers (independence unresolved),16,distinct publishers do not establish independent evidence,v003
+accepted rain events by supporting_source_count = 1,13,,v003
+accepted rain events by supporting_source_count = 2,9,,v003
+accepted rain events by supporting_source_count = 3,3,,v003
+accepted rain events by supporting_source_count = 4,1,,v003
+accepted rain events by supporting_source_count = 5,4,,v003
+accepted rain events by supporting_publisher_count = 1,14,,v003
+accepted rain events by supporting_publisher_count = 2,8,,v003
+accepted rain events by supporting_publisher_count = 3,3,,v003
+accepted rain events by supporting_publisher_count = 4,3,,v003
+accepted rain events by supporting_publisher_count = 5,2,,v003
+source-verified coastal events (study period),4,,v003
+classification (study period): coastal_swell,5,,v003
+classification (study period): mixed_rain_and_swell,1,,v003
+classification (study period): rain,34,,v003
+classification (study period): unresolved_response_only,1,,v003
+storm groups (study period): coastal / established,1,,v003
+storm groups (study period): coastal / provisional,2,,v003
+storm groups (study period): coastal / unresolved,1,,v003
+storm groups (study period): mixed / provisional,1,,v003
+storm groups (study period): rain / established,6,,v003
+storm groups (study period): rain / provisional,22,,v003
+storm groups (study period): rain / unresolved,1,,v003
+storm groups (study period): unresolved / unresolved,1,,v003
+storm groups containing accepted rain events: established,6,,v003
+storm groups containing accepted rain events: provisional,22,,v003
+proposed validation blocks: rain,28,,v003
+proposed validation blocks: coastal,3,,v003
+Groundsource-only windows in review queue,13,6 in study period; not evidence of no flood,v003

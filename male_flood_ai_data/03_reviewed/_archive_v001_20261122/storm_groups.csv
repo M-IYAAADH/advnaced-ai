@@ -1,0 +1,18 @@
+﻿storm_group_id,period_start_date,period_end_date,grouping_basis,evidence_source_ids,review_status,notes
+LEGACY_S01,2021-12-11,2021-12-11,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0036,legacy_proxy_not_verified,members: 2021-12-11
+LEGACY_S02,2022-07-17,2022-07-17,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0037,legacy_proxy_not_verified,members: 2022-07-17
+LEGACY_S03,2023-04-01,2023-04-01,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0039,legacy_proxy_not_verified,members: 2023-04-01
+LEGACY_S04,2023-07-21,2023-07-21,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0040,legacy_proxy_not_verified,members: 2023-07-21
+LEGACY_S05,2023-12-30,2023-12-31,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0042,legacy_proxy_not_verified,members: 2023-12-31
+LEGACY_S06,2024-01-10,2024-01-12,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0013;SRC0044,legacy_proxy_not_verified,members: 2024-01-10;2024-01-12
+LEGACY_S07,2024-08-13,2024-08-13,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0045,legacy_proxy_not_verified,members: 2024-08-13
+LEGACY_S08,2024-12-20,2024-12-21,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0050,legacy_proxy_not_verified,members: 2024-12-20
+LEGACY_S09,2025-01-02,2025-01-03,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0053,legacy_proxy_not_verified,members: 2025-01-03
+LEGACY_S10,2025-01-11,2025-01-11,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0057,legacy_proxy_not_verified,members: 2025-01-11
+LEGACY_S11,2025-03-01,2025-03-01,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0059,legacy_proxy_not_verified,members: 2025-03-01
+LEGACY_S12,2025-03-11,2025-03-12,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0061,legacy_proxy_not_verified,members: 2025-03-11
+LEGACY_S13,2025-11-25,2025-11-25,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0062,legacy_proxy_not_verified,members: 2025-11-25
+LEGACY_S14,2026-04-16,2026-04-16,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0063,legacy_proxy_not_verified,members: 2026-04-16
+LEGACY_S15,2026-05-04,2026-05-04,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0064,legacy_proxy_not_verified,members: 2026-05-04
+LEGACY_S16,2026-07-30,2026-07-30,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0065,legacy_proxy_not_verified,members: 2026-07-30
+LEGACY_S17,2026-10-21,2026-10-21,Legacy proxy: compiled incidents merged when <=2 calendar days apart (reports/extended_analysis.md),SRC0035,legacy_proxy_not_verified,members: 2026-10-21

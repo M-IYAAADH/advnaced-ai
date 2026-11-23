@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+
+	<meta http-equiv="X-UA-Compatible">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>MNDF</title>
+
+
+
+	<!-- Include All CSS -->
+
+
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+	<link rel="stylesheet" type="text/css" href="../css/font-awesome.min.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/settings.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/owl.theme.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/magnific-popup.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/select2.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/preset.css" />
+
+	<link rel="stylesheet" type="text/css" href="css/style.css?version=1.1" />
+
+	<link rel="stylesheet" type="text/css" href="css/responsive.css" />
+
+	<link rel="stylesheet" id="layout" href="css/lay_colors/wide.css">
+
+	<link rel="stylesheet" id="lightDark" href="css/lay_colors/dark.css">
+
+	<link rel="stylesheet" id="colorChem" href="css/lay_colors/color1.css">
+
+	<!--<link rel="stylesheet" href="fonts/icomoon/style.css">
+
+       -- End Include All CSS -->
+
+
+
+
+
+	<!--[if lt IE 9]>
+
+            <script src="js/html5shiv.js"></script>
+
+            <script src="js/respond.min.js"></script>
+
+        <![endif]-->
+
+
+
+	<!-- Favicon Icon -->
+
+	<link rel="icon" type="image/x-icon" href="../images/fevicon.ico">
+
+	<!-- Favicon Icon -->
+
+
+
+	<style>
+		@font-face {
+
+			font-family: 'MV A Waheed';
+
+			src: url('../fonts/MVAWaheed-Bold.woff2') format('woff2'),
+
+				url('../fonts/MVAWaheed-Bold.woff') format('woff'),
+
+				url('../fonts/MVAWaheed-Bold.ttf') format('truetype'),
+
+				url('../fonts/MVAWaheed-Bold.svg#MVAWaheed-Bold') format('svg');
+
+
+
+		}
+
+		@font-face {
+
+			font-family: 'MV Faseyha';
+
+			src: url('../fonts/MVFaseyha.eot');
+
+			src: url('../fonts/MVFaseyha.eot?#iefix') format('embedded-opentype'),
+
+				url('../fonts/MVFaseyha.woff2') format('woff2'),
+
+				url('../fonts/MVFaseyha.woff') format('woff'),
+
+				url('../fonts/MVFaseyha.ttf') format('truetype'),
+
+				url('../fonts/MVFaseyha.svg#MVFaseyha') format('svg');
+
+
+
+		}
+
+
+
+
+
+
+
+		.text-waheed {
+
+			font-family: 'MV A Waheed';
+
+			text-align: right;
+
+			direction: rtl;
+
+		}
+
+		.dh-headline {
+
+			font-family: 'MV A Waheed';
+
+
+
+		}
+
+
+
+
+
+
+
+		.slider1 {
+
+			position: relative;
+
+			background-color: black;
+
+			height: 87vh;
+
+			min-height: 25rem;
+
+			width: 100%;
+
+			overflow: hidden;
+
+		}
+
+
+
+		.slider1 video {
+
+			position: absolute;
+
+			top: 50%;
+
+			left: 50%;
+
+			min-width: 100%;
+
+			min-height: 100%;
+
+			width: auto;
+
+			height: auto;
+
+			z-index: 0;
+
+			-ms-transform: translateX(-50%) translateY(-50%);
+
+			-moz-transform: translateX(-50%) translateY(-50%);
+
+			-webkit-transform: translateX(-50%) translateY(-50%);
+
+			transform: translateX(-50%) translateY(-50%);
+
+		}
+
+		.mndflogo {
+
+			position: absolute;
+
+			width: 100%;
+
+			text-align: center;
+
+			padding: 2%;
+
+
+
+
+
+			display: block;
+
+			bottom: 20px;
+
+
+
+		}
+
+		.mndflogo h1,
+		h2,
+		h3 {
+
+			color: #BFC9CA;
+
+		}
+
+
+
+		.slideanim {
+			visibility: hidden;
+		}
+
+		.slide {
+
+			animation-name: slide;
+
+			-webkit-animation-name: slide;
+
+			animation-duration: 1s;
+
+			-webkit-animation-duration: 1s;
+
+			visibility: visible;
+
+		}
+
+		@keyframes slide {
+
+			0% {
+
+				opacity: 0;
+
+				transform: translateY(70%);
+
+			}
+
+			100% {
+
+				opacity: 1;
+
+				transform: translateY(0%);
+
+			}
+
+		}
+
+		@-webkit-keyframes slide {
+
+			0% {
+
+				opacity: 0;
+
+				-webkit-transform: translateY(70%);
+
+			}
+
+			100% {
+
+				opacity: 1;
+
+				-webkit-transform: translateY(0%);
+
+			}
+
+		}
+	</style>
+
+</head>	
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!--HEADER INNER START -->
+
+<header class="innerHeader isStickyInner fixedHeader">
+
+	<div class="container">
+
+		<div class="col-lg-3 col-sm-2">
+
+			<div class="logo">
+
+				<a href="../index.php"><img src="../images/logo.png" alt=""></a>
+
+			</div>
+
+		</div>
+
+		<style>
+			.navHint {
+				display: none;
+				/* Hidden by default */
+				width: 120px;
+				background-color: #0066cc;
+				font-size: 12px;
+				color: #ffffff;
+				text-align: center;
+				padding: 5px 0;
+				border-radius: 6px;
+				position: absolute;
+				top: 70px;
+				left: -40px;
+				z-index: 1000;
+				/* Ensure tooltip is displayed above content */
+			}
+
+			.shwTip:hover+.navHint {
+				display: block;
+			}
+		</style>
+
+		<div class="col-sm-6">
+
+			<nav class="mainNav2">
+
+				<div class="mobileMenu2">
+
+					<span></span>
+
+					<span></span>
+
+					<span></span>
+
+				</div>
+
+				<ul>
+
+
+
+					<!--li class="has-menu-items active"><a href="index.html">HOME</a>
+
+						   
+
+						</li-->
+
+					<li class="has-menu-items"><a href="#">ABOUT MNDF</a>
+
+						<ul class="sub-menu">
+
+							<li><a href="history.php">HISTORY</a></li>
+
+							<li><a href="organization.php">ORGANIZATION</a></li>
+							<li><a href="def-corp.php">DEFENCE COOPERATION</a></li>
+							<li><a href="training.php">TRAINING THE FORCE</a></li>
+							<hr>
+
+							<li><a href="rank-structure.php">RANK INSIGNIA</a></li>
+
+							<li><a href="medals-and-ribbons.php">MEDALS & RIBBONS</a></li>
+
+							<li><a href="uniforms.php">UNIFORMS</a></li>
+							<hr>
+							<li><a href="dsc.php">DSC</a></li>
+							<li><a href="sifco.php">SIFCO</a></li>
+							<li><a href="siwec.php">SIWEC</a></li>
+
+
+
+						</ul>
+
+					</li>
+
+					<li class="has-menu-items"><a href="#">LEADERS</a>
+
+						<ul class="sub-menu">
+
+							<!--li><a href="commander-in-chief.html">COMMANDER-IN-CHIEF</a></li-->
+
+							<li><a href="leader-ship.php?title=minister-of-defence">MINISTER OF DEFENCE & NATIONAL SERVICE</a></li>
+
+							<li><a href="leader-ship.php?title=chief-of-defence-force">CHIEF OF DEFENCE FORCE</a></li>
+
+							<li><a href="leader-ship.php?title=vice-chief-of-defence-force">VICE CHIEF OF DEFENCE FORCE</a></li>
+
+							<li><a href="leader-ship.php?title=sergeant-major-of-mndf">SERGEANT MAJOR OF MNDF</a></li>
+
+							<!--hr>
+
+								<li><a href="service-commadants.php">SERVICE COMMADANTS</a></li>
+
+								<li><a href="area-commanders.php">AREA COMMANDERS</a></li-->
+
+
+
+						</ul>
+
+					</li>
+
+
+
+					<li class="has-menu-items"><a href="#">NEWS & MEDIA</a>
+
+						<ul class="sub-menu">
+
+							<li><a href="news-dhv.php">NEWS & RECENT EVENTS</a></li>
+
+							<li><a href="gallery.php">PHOTO GALLERY</a></li>
+							<!--<li><a href="qaumeelava.php">QAUMEE LAVA</a></li>-->
+
+							<li><a href="https://www.youtube.com/channel/UCSaxi9RmhrNwPW6trIz4fqg">VIDEOS</a></li>
+
+							<!--<hr>
+
+								<li><a href="press-release.php">PRESS RELEASE</a></li>
+								
+								<hr>
+								<li><a href="addana.php">ADDANA</a></li>
+								-->
+
+
+						</ul>
+
+					</li>
+
+					<li><a href="downloads.php">DOWNLOADS</a></li>
+					<li><a class="shwTip" target="_blank" href="https://mrcc.mndf.gov.mv/">MRCC</a><span class="navHint">Maritime Rescue Coordination Centre</span></li>
+				</ul>
+
+			</nav>
+
+		</div>
+
+
+
+		<div class="col-lg-3 col-sm-3">
+
+			<div class="sicialIcon ">
+
+				<a class="fb" href="https://web.facebook.com/mndfpage/?_rdc=1&_rdr" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a>
+
+				<a class="tw" href="https://twitter.com/MNDF_Official?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank" title="twitter"><i class="fa fa-twitter"></i></a>
+
+				<a class="yt" href="https://www.youtube.com/channel/UCSaxi9RmhrNwPW6trIz4fqg" target="_blank" title="youtube"><i class="fa fa-youtube"></i></a>
+
+				<a class="ig" href="https://www.instagram.com/MNDF_Official/?hl=en" target="_blank" title="instagram"><i class="fa fa-instagram"></i></a>&nbsp
+
+				<!--a class="lang dhiv-text" href="/mndf/dhivw/index.php" >ދިވެހި</a-->
+
+			</div>
+
+		</div>
+
+
+
+
+
+	</div>
+
+</header>
+
+<!--HEADER INNER END -->
+
+
+
+<!--HEADER TOP START -->
+
+<!--section class="headerTop">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-lg-2 col-sm-2">
+
+                            <div class="logo">
+
+                                <a href="index.html"><img src="images/logo.png" alt=""></a>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-sm-7">
+
+                            <div class="headerInfo">
+
+                                <div class="hsingleInfo">
+
+                                    <i class="fa fa-phone"></i>
+
+                                    <h6>FIRE & RESCUE</h6>
+
+                                    <h3>118</h3>
+
+                                </div>
+
+                                <div class="hsingleInfo">
+
+                                    <i class="fa fa-phone"></i>
+
+                                    <h6>COASTGUARD</h6>
+
+                                    <h3>191</h3>
+
+                                </div>
+
+                                <div class="hsingleInfo">
+
+                                    <i class="fa fa-phone"></i>
+
+                                    <h6>MNDF HQ</h6>
+
+                                    <h3>(+960)3322607</h3>
+
+                                </div>
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-3 col-sm-3">
+
+                            <div class="sicialIcon">
+
+                                <a class="fb" href="https://web.facebook.com/mndfpage/?_rdc=1&_rdr"><i class="fa fa-facebook"></i></a>
+
+                                <a class="tw" href="https://twitter.com/MNDF_Official?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"><i class="fa fa-twitter"></i></a>
+
+                                <a class="yt" href="https://www.youtube.com/channel/UC73xH13v2_L8KzKu8GC2jhQ"><i class="fa fa-youtube"></i></a>
+
+								<a class="lang" href="#">ދިވެހި</a>
+
+
+
+                            </div>
+
+                        </div>
+
+						
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--HEADER TOP END -->
+
+</html>
+
+
+
+            <!--BREADCRUMP START-->
+
+            <section class="breadcrumbSec overlay80">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-lg-12 text-center">
+
+                            <div class="breadcrumbInner">
+
+                                <h2 class="color_white">Recent Events</h2><br>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--BREADCRUMP END-->
+
+
+
+<style>
+
+		@font-face {
+
+			font-family: 'MV A Waheed';
+
+			src: url('../fonts/MVAWaheed-Bold.woff2') format('woff2'),
+
+				url('../fonts/MVAWaheed-Bold.woff') format('woff'),
+
+				url('../fonts/MVAWaheed-Bold.ttf') format('truetype'),
+
+				url('../fonts/MVAWaheed-Bold.svg#MVAWaheed-Bold') format('svg');
+
+
+
+		}
+
+		@font-face {
+
+			font-family: 'MV Faseyha';
+
+			src: url('../fonts/MVFaseyha.eot');
+
+			src: url('../fonts/MVFaseyha.eot?#iefix') format('embedded-opentype'),
+
+				url('../fonts/MVFaseyha.woff2') format('woff2'),
+
+				url('../fonts/MVFaseyha.woff') format('woff'),
+
+				url('../fonts/MVFaseyha.ttf') format('truetype'),
+
+				url('../fonts/MVFaseyha.svg#MVFaseyha') format('svg');
+
+
+
+		}
+
+
+
+			.text-waheed-heading{
+
+				font-family:'MV A Waheed';
+
+				font-size:430;
+
+				direction: rtl;
+
+				text-align: justify;
+
+			}
+
+			
+
+			.text-waheed{
+
+				font-family:'MV A Waheed';
+
+				font-size:380;
+
+				direction: rtl;
+
+				text-align: justify;
+
+			}
+
+ </style>			
+
+ 
+
+            <!--NEWS ARTICLE START-->
+
+            <section class="commonSection bg_black">
+
+                <div class="container">
+
+					
+
+                    <div class="row">
+
+                        <div class="col-sm-8">
+
+						
+
+                            <div class="singleBlogPage" >
+
+
+
+                                <div class="blogSingleDec">
+
+								<div><a href="news-article.php?article=3928"> English</a> |<a href="news-article-dhiv.php?article=3928" class="text-waheed"> ދިވެހި </a></div>
+
+                                    <div class="bsDecTop">
+
+                                        <h3 class="blogTitle">MNDF has undertaken work of dewatering the flooded roads of Male City </h3>
+
+                                        <p class="bDate color_red">Updated: 17-07-2022, 20:50</a></p>
+
+                                    </div>
+
+                                   <div class="postThum">
+                                   	
+                                    <img src="../newsphotos/f1/3928.jpg"  alt="">
+
+									</div> <br>
+				<style>
+					.contt img{
+						display:block !important;
+						width: 100% !important ;
+						height: auto !important ;
+
+					}
+					
+				</style>				
+									<div class="contt" style="text-align:justify">
+
+                                   <p>
+	Firefighters of MNDF Fire and Rescue Service have undertaken work of dewatering the flooded roads of Male&rsquo; City.</p>
+<p>
+	Firefighters of FRS have begun work of dewatering the roads near Ekuveni running track and IGMH area, flooded by heavy rain.</p>
+<p>
+	&nbsp;</p>
+<p>
+	&nbsp;</p>
+
+								   </div>
+
+                                </div>
+
+                            </div>
+
+							
+
+                           
+
+                        </div>
+
+                        <div class="col-sm-4">
+
+
+                               <aside class="widget">
+
+                                    <h3 class="widgetTitle color_red">Recent Posts</h3>
+
+									 <div class="recentPost">
+							
+									
+											<div class="siRecPost">
+
+                                            <img src="../newsphotos/thumbs/6366.jpg" alt="">
+
+                                            <h6 class="resPostTitle"><a href="news-article.php?article=6366">CGS Imaduddin conducts PASSEX with Indian Navy’s 1st Training Squadron </a></h6>
+
+                                            <p class="bDate"><a href="#">24th October 2026 </a></p>
+
+                                        </div>
+
+											
+
+											
+											<div class="siRecPost">
+
+                                            <img src="../newsphotos/thumbs/6209.jpg" alt="">
+
+                                            <h6 class="resPostTitle"><a href="news-article.php?article=6209">Australian-Gifted Naval Vessel &quot;Imaaduddin&quot; Officially Commissioned </a></h6>
+
+                                            <p class="bDate"><a href="#">28th July 2026 </a></p>
+
+                                        </div>
+
+											
+
+											
+											<div class="siRecPost">
+
+                                            <img src="../newsphotos/thumbs/6207.jpg" alt="">
+
+                                            <h6 class="resPostTitle"><a href="news-article.php?article=6207">President Inaugurates New MRCC Building </a></h6>
+
+                                            <p class="bDate"><a href="#">27th July 2026 </a></p>
+
+                                        </div>
+
+											
+
+											
+											<div class="siRecPost">
+
+                                            <img src="../newsphotos/thumbs/6143.jpg" alt="">
+
+                                            <h6 class="resPostTitle"><a href="news-article.php?article=6143">Navy ship Gifted by Australia Arrives in Maldives </a></h6>
+
+                                            <p class="bDate"><a href="#">15th June 2026 </a></p>
+
+                                        </div>
+
+											
+
+											
+											<div class="siRecPost">
+
+                                            <img src="../newsphotos/thumbs/6069.jpg" alt="">
+
+                                            <h6 class="resPostTitle"><a href="news-article.php?article=6069">Handover Ceremony of Guardian Class Patrol Boat </a></h6>
+
+                                            <p class="bDate"><a href="#">19th April 2026 </a></p>
+
+                                        </div>
+
+											
+
+											
+											<div class="siRecPost">
+
+                                            <img src="../newsphotos/thumbs/6021.jpg" alt="">
+
+                                            <h6 class="resPostTitle"><a href="news-article.php?article=6021">MNDF Continues Search for Two Missing Individuals Near V. Keyodhoo </a></h6>
+
+                                            <p class="bDate"><a href="#">21st March 2026 </a></p>
+
+                                        </div>
+
+											
+
+											
+                                   
+
+                                        
+
+                                       
+
+                                    </div>
+
+                                </aside>
+
+								
+
+								<br><br><br>
+
+                                <!--aside class="widget">
+
+                                    <h3 class="widgetTitle color_red">Archives</h3>
+
+                                    <div class="selectDiv">
+
+                                        <select>
+
+                                            <option selected="selected">Select Month</option>
+
+                                            <option value="1">January</option>
+
+                                            <option value="2">February</option>
+
+                                            <option value="3">March</option>
+
+                                            <option value="4">April</option>
+
+                                            <option value="5">May</option>
+
+                                            <option value="6">June</option>
+
+                                            <option value="7">July</option>
+
+                                            <option value="8">August</option>
+
+                                            <option value="9">September</option>
+
+                                            <option value="10">October</option>
+
+                                            <option value="11">November</option>
+
+                                            <option value="12">December</option>
+
+                                        </select>
+
+                                    </div>
+
+                                </aside-->
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--NEWS ARTICLE END-->
+
+
+
+
+
+<!--FOOTER START-->
+
+	    <footer class="footer overlay90" id="footer">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-lg-4 col-sm-6">
+
+                            <aside class="widget">
+
+                                <h3 class="widgetTitle">Contact Us</h3>
+
+                                
+
+                                <address class="faddress">
+
+                                    <div class="sads">
+
+                                        <i class="fa fa-globe"></i>
+
+                                        <p>Bandaarakoshi</p> 
+
+                                        <p>Ameer Ahmed Magu</p>
+
+										<p>Male, Maldives</p>
+
+                                    </div>
+
+                                    <div class="sads">
+
+                                        <i class="fa fa-phone"></i>
+
+                                        <p>3322607</p>
+
+                                    </div>
+
+                                    <div class="sads">
+
+                                      
+
+										<!--<i class="fa fa-envelope-o"></i>
+
+										<p class="fmail"><a href="mailto:mailto:civil.affairs@mndf.gov.mv">civil.affairs@mndf.gov.mv</a></p>-->
+
+                                    </div>
+
+                                </address>
+
+								<aside class="widget">
+
+                            </aside>
+
+                            </aside>
+
+                        </div>
+                        <style>
+                            .workHour li i{
+                                color:#e43d4e;
+                                padding-right:25px;
+                            }
+
+                        </style>
+                        <div class="col-lg-4 col-sm-6">
+
+                            <aside class="widget">
+
+							 <h3 class="widgetTitle">MNDF HEADQUARTERS</h3>
+
+                                <ul class="workHour">
+
+                                    <li><i class="fa fa-phone"></i>332 2607 </li>
+
+                                   
+
+                                </ul>
+
+							
+
+                                <h3 class="widgetTitle">MNDF INFORMATION OFFICER</h3>
+
+                                <ul class="workHour">
+
+                                    <li><i class="fa fa-phone"></i>9192607</li>
+                                    <li><i class="fa fa-envelope-o"></i><a href="/cdn-cgi/l/email-protection#7f121e16130b1045121a1b161e3f12111b1951181009511209"><span class="__cf_email__" data-cfemail="2e434b4a474f6e43404a4800494158004358">[email&#160;protected]</span></a></li>
+                               
+
+                                
+                                </ul>
+
+								
+
+								
+
+								<h3 class="widgetTitle">MNDF MALE AREA COMMAND</h3>
+
+                                <ul class="workHour">
+
+                                    <li><i class="fa fa-phone"></i> 3036868</li>
+                                    <li><i class="fa fa-mobile"></i> 9948578</li>
+
+
+                                </ul>
+
+
+                            </aside>
+
+                        </div>
+
+                        <div class="clearfix hidden-lg hidden-md"></div>
+
+                        
+
+                        <div class="col-lg-4 col-sm-6">
+
+                             <aside class="widget">
+
+                                <h3 class="widgetTitle">MNDF CENTRAL AREA COMMAND</h3>
+
+                                <ul class="workHour">
+
+                                    <li><i class="fa fa-phone"></i> 9906383</li>
+
+                                </ul>
+
+								 <h3 class="widgetTitle">MNDF SOUTHERN AREA COMMAND</h3>
+
+                                <ul class="workHour">
+
+                                    <li><i class="fa fa-phone"></i> 6898073 </li>
+
+                                   
+
+                                </ul>
+
+								
+
+								<h3 class="widgetTitle">MNDF NORTHERN AREA COMMAND</h3>
+
+                                <ul class="workHour">
+
+                                    <li><i class="fa fa-phone"></i> 9921805</li>
+
+                                </ul>
+
+                            </aside>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+            <!--FOOTER END-->
+
+
+
+            <!--COPYRIGHT START-->
+
+            <section class="copyRight">
+
+                <div class="container">
+
+                    <div class="row">
+
+                        <div class="col-lg-12 text-center">
+
+                            <p class="copyPera">&copy; mndf 2020 | All rights reserved.</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!--COPYRIGHT END-->
+
+
+
+        </div>
+
+
+
+        <a href="#" id="backToTop"><i class="fa fa-angle-up"></i></a>
+
+
+
+      
+
+        <!-- Include All JS -->
+
+       <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="../js/jquery-3.6.0.min.js"></script>
+        <!--   <script type="text/javascript" src="js/jquery.js"></script>-->
+
+        <script type="text/javascript" src="../js/jquery-ui.js"></script>
+
+        <script type="text/javascript" src="../js/bootstrap.js"></script>
+
+        <script type="text/javascript" src="../js/jquery.themepunch.revolution.min.js"></script>
+
+        <script type="text/javascript" src="../js/jquery.themepunch.tools.min.js"></script>
+
+        <script type="text/javascript" src="../js/owl.carousel.min.2.js"></script>
+
+        
+
+        <script type="text/javascript" src="../js/gmaps.js" ></script>
+
+        <script type="text/javascript" src="../js/jquery.appear.js"></script>
+
+        <script type="text/javascript" src="../js/select2.js"></script>
+
+        <script type="text/javascript" src="../js/jquery.magnific-popup.js"></script>
+
+        <script type="text/javascript" src="../js/theme-used.js" ></script>
+
+		<script>
+
+			$(document).ready(function(){
+
+			  // Add smooth scrolling to all links in navbar + footer link
+
+			 
+			  
+
+			  $(window).scroll(function() {
+
+				$(".slideanim").each(function(){
+
+				  var pos = $(this).offset().top;
+
+
+
+				  var winTop = $(window).scrollTop();
+
+					if (pos < winTop + 600) {
+
+					  $(this).addClass("slide");
+
+					}
+
+				});
+
+			  });
+
+			})
+            $(".newsToggleEng").click(function() {
+                
+                        
+                    $('.DhivTb').hide();
+                     $('.EngTb').show();
+                
+
+                    var url = 'news.php';
+                    var form = $('<form action="' + url + '" method="post">' +
+                      '<input type="text" name="nLang" value="Eng" />' +
+                      '</form>');
+                    $('body').append(form);
+                    form.submit();
+
+               });
+
+             $(".newsToggleDhiv").click(function() {
+                   
+                  $('.DhivTb').show(); 
+                  $('.EngTb').hide();
+
+
+                    var url = 'news.php';
+                    var form = $('<form action="' + url + '" method="post">' +
+                      '<input type="text" name="nLang" value="Dhiv" />' +
+                      '</form>');
+                    $('body').append(form);
+                    form.submit();
+               });
+			</script>
+
+    </body>
+
+</html>
+<!--FOOTER END-->

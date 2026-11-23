@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 # large raw data lives in male_flood_ai_data/, not in git
 *.parquet
+male_flood_ai_data/01_raw/flood_evidence/compiled_secondary/bobs_flood_workbook/

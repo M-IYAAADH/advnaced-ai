@@ -1,0 +1,6 @@
+﻿step,input,input_rows,output_rows,decision
+gsod_clean,Male_Flood_Data_Starter_Pack/rainfall/noaa_gsod_2024_43555099999.csv,355,355,"PRCP inches->mm (x25.4, documented NOAA units); 99.99 -> missing (not zero); raw value and flag kept; date left as GSOD day (local-day alignment unresolved)"
+gsod_clean,Male_Flood_Data_Starter_Pack/rainfall/noaa_gsod_2025_43555099999.csv,236,236,"PRCP inches->mm (x25.4, documented NOAA units); 99.99 -> missing (not zero); raw value and flag kept; date left as GSOD day (local-day alignment unresolved)"
+uhslc_clean,Male_Flood_Data_Starter_Pack/tides/UHSLC_Male_Record1082_Hourly_2024.csv,8784,8784,units row removed; numeric mm relative to station zero (no datum change); blank -> missing; explicit +00:00 UTC timestamp; local-time conversion not applied
+daily_coverage,"ERA5 hourly/daily, modelled sea level, Hulhule GSOD (compiled), UHSLC clean",60216,2509,"nominal day of each file's own time label; days with no series value are recorded, not imputed; observed sea level grouped by UTC day; flood_label fixed to 'unlabelled'"
+import_clean,02_interim/event_candidates/male_flood_inventory.csv,30,30,"all original columns unchanged as text; added ISO-date validity, window length, publication lag, multi-day flag and qualifier-preserving rain-start text; no timezone conversion"

@@ -1,0 +1,1 @@
+﻿fold_id,prediction_issue_definition,prediction_horizon,train_start,train_end,validation_start,validation_end,test_start,test_end,gap_or_embargo_days,label_version,feature_version,storm_grouping_version,notes

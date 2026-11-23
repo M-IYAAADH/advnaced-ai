@@ -1,0 +1,9 @@
+alignment,status,accepted_rain_events_covered,accepted_rain_events_total,note
+"ERA5 labels = UTC+5, local day as labelled",established by observation (pressure-tide phase),30,30,
+ERA5 labels = UTC,rejected,30,30,shown for sensitivity only
+"SYNOP 6 h blocks, local 05:00-05:00, complete",clock verified (UTC); blocks derived,13,30,"station on Hulhule, ends 2025-08-24"
+GSOD shifted (local day D <- GSOD D+1),established by observation (24 h group ending 00 UTC),21,30,
+"GSOD shifted, excluding days where the 24 h group is about one-tenth",data-quality filter,14,30,7 events fall on a one-tenth day
+GSOD as labelled (local day D <- GSOD D),rejected,21,30,wrong window; kept for comparison with v001
+Modelled sea level (labels UTC+4 or UTC+5; hypotheses unresolved),unresolved clock; model datum,28,30,available from label 2022-11-23T05:00; same days under either hypothesis except edges
+"UHSLC observed (UTC verified, station zero)",verified,10,30,2024 only
