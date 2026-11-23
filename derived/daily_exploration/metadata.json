@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "included_events": 11,
+  "uncertain_incidents": 7,
+  "uncertain_days": 14,
+  "common_sample": "Complete cases for every compared input; 2023 onward; station ends 2025-08-24",
+  "folds": 2,
+  "evaluation": "Agreement with reported labels; unknown reports are not confirmed negative",
+  "versions": {
+    "pandas": "3.0.2",
+    "numpy": "2.4.4",
+    "scikit-learn": "1.8.0",
+    "matplotlib": "3.10.9"
+  }
+}

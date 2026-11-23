@@ -1,0 +1,25 @@
+{
+  "size_bytes": 667122400,
+  "row_count": 2646302,
+  "schema": "uuid: string\narea_km2: double\ngeometry: binary\nstart_date: string\nend_date: string\n__index_level_0__: int64",
+  "row_groups": 3,
+  "null_counts": {
+    "uuid": 0,
+    "area_km2": 0,
+    "geometry": 0,
+    "start_date": 0,
+    "end_date": 0,
+    "__index_level_0__": 0
+  },
+  "min_start_date": "2000-01-01",
+  "max_end_date": "2026-02-03",
+  "screening_box": [
+    72.3,
+    -1,
+    74.1,
+    7.5
+  ],
+  "regional_candidates": 260,
+  "male_boundary_intersections": 43,
+  "greater_male_box_intersections": 55
+}

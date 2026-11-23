@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .ipynb_checkpoints/
 .venv/
+# large raw data lives in male_flood_ai_data/, not in git
+*.parquet

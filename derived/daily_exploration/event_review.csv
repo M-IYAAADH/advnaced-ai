@@ -1,0 +1,19 @@
+incident_id,decision,positive_date,uncertain_dates,reason,checked_url
+2021-12-11,uncertain,,2021-12-11,Survey photo date and incident date not independently established,https://openjicareport.jica.go.jp/pdf/12368783.pdf
+2022-07-17,include,2022-07-17,,Prior project verification records official source stating flooded roads near IGMH and Ekuveni,https://mndf.gov.mv/mndf/en/news-article.php?article=3928
+2023-04-01,uncertain,,2023-04-01;2023-04-02,Article publication date and stated last night 1 April contradict,https://mfr.mv/male/heavy-rainfalls-result-in-flooded-roads-in-male-city
+2023-07-21,include,2023-07-21,,Article reports four Malé districts and rainfall on July 21 but publication date not visible,https://psmnews.mv/en/123789
+2023-12-31,include,2023-12-31,2023-12-30,Article on 31 Dec reports flooding in Henveiru; onset date unclear,https://atolltimes.mv/post/news/7094
+2024-01-10,include,2024-01-10,,Article dated 11 January identifies Wednesday evening and flooded Malé areas,https://atolltimes.mv/post/news/7232
+2024-01-12,uncertain,,2024-01-12,Source blocked; possible same storm as 10 January,https://s1.see.mv/87007
+2024-08-13,include,2024-08-13,2024-08-14,Article identifies flooded Malé locations on Tuesday,https://raajje.mv/156747
+2024-12-20,uncertain,,2024-12-20;2024-12-21,Source accessible only says previous weekend; original report blocked,https://atolltimes.mv/post/news/10872
+2025-01-03,include,2025-01-03,2025-01-02;2025-01-04,Friday flooding reported; exact neighboring days uncertain,https://avas.mv/en/146990
+2025-01-11,include,2025-01-11,,Article dated 11 January reports overnight flooding,https://standard.mv/heavy-rainfall-causes-severe-flooding-in-male-mndf-mobilizes-to-drain-male-streets/
+2025-03-01,include,2025-03-01,,Article dated 1 March reports flooding after sunset in Malé,https://en.mmtv.mv/2580
+2025-03-11,uncertain,,2025-03-11;2025-03-12,Article reports flooding after Tuesday evening but date of flood not explicit,https://en.mmtv.mv/2732
+2025-11-25,include,2025-11-25,,Article identifies Maafannu flooding Tuesday morning,https://adhadhu.com/article/75659
+2026-04-16,uncertain,,2026-04-16,Blocked source and compiled record states pumps only,https://see.mv/104638
+2026-05-04,uncertain,,2026-05-04,Blocked source and compiled record states dewatering only,https://see.mv/105144
+2026-07-30,include,2026-07-30,,Article reports flooding on newly rebuilt road; drainage incomplete,https://standard.mv/fact-check-boduthakurufaanu-magu-flooding-was-not-caused-by-road-defects-or-a-design-flaw/
+2026-10-21,include,2026-10-21,,Article dated 21 Oct explicitly reports citywide flooding since sundown,https://edition.mv/news/55125
