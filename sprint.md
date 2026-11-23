@@ -76,7 +76,7 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-33 | S3 | M3 | 5 | To do | Reading matrix: appraise the remaining articles | MF-25 | None | No | At least 15 journal articles fully appraised. |
 | MF-34 | S3 | M3 | 1 | To do | Wording check on exploratory outputs | MF-30 | G1, G4 | No | Says 'reported', treats unknown as unknown, and states no rainfall thresholds. |
 | MF-40 | S4 | M3 | 2 | To do | Set up the review in the coursework IJCAI template | None | I4 | No | The coursework .doc template opens with the title, authors and section skeleton in place. |
-| MF-41 | S4 | M3 | 3 | To do | Literature review outline by theme | MF-33 | None | No | Themes, article-to-section mapping and a page budget. |
+| MF-41 | S4 | M3 | 3 | In progress | Literature review outline by theme | MF-33 | None | No | Themes, article-to-section mapping and a page budget. |
 | MF-42 | S4 | M2 | 2 | To do | Peer-review Iyaadh's attribute and exploratory code | MF-30 | None | No | Findings logged and resolved. |
 | MF-43 | S4 | M1 | 2 | To do | Peer-review Aslan's area units and evidence join | MF-21, MF-32 | None | No | Findings logged and resolved. |
 | MF-44 | S4 | M1 | 2 | Review | Descriptive rainfall table for reported incidents | None | C3, D6, G4 | No | Units, accumulation periods and contradictions kept; no threshold claims. |
