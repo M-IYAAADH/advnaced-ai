@@ -10,7 +10,7 @@ Set up a **supporting** daily model-comparison study for our Malé-island flood 
 
 This run is planning and team setup only. Do not train the candidate models, choose a winner, fabricate results or push.
 
-## Read first (there is no AGENTS.md in this repo)
+## Read first (`AGENTS.md` at the repo root points to these)
 
 Read these before writing anything. Where they conflict with this prompt, they win:
 1. `CLAUDE.md`: scope, data cautions, task-tracking rules (§7).
@@ -46,8 +46,8 @@ Read these before writing anything. Where they conflict with this prompt, they w
   - Points are whole numbers;
   - Depends on lists only existing task IDs, or `None`;
   - `Conditional = Yes`.
-- Owners are **proposals** taken from the team focus in `sprint.md` (M1 modelling and evaluation, M2 data and pipelines, M3 writing). Anyone claims a task by changing its Owner cell and setting `In progress`. Use the proposed owner, sprint and points in `docs/model_comparison_tasks.md`.
-- Do **not** create a root `todo.md` or any second status board. Checklists and completion criteria go in `docs/model_comparison_tasks.md`. Status lives only in `sprint.md`.
+- Owners are **proposals** taken from the team focus in `sprint.md` (M1 modelling and evaluation, M2 data and pipelines, M3 writing). Anyone claims a task by changing its Owner cell and setting `In progress`. Use the proposed owner, sprint and points in `todo.md`.
+- The root `todo.md` already holds the checklists and completion criteria; update it, do not create another task file. Status lives only in `sprint.md`; do not add a status column to `todo.md`.
 - Commit the docs and the sprint rows together in one local commit, `MC-setup: To do`. Do not push. A human pushes after review, following `CLAUDE.md` §7.
 
 ## Candidate methods (fixed initial list)
@@ -65,7 +65,7 @@ MC-M01 to MC-M03 already have earlier versions in `scripts/extended_daily_analys
 
 Write:
 1. `docs/model_comparison_plan.md`: the protocol.
-2. `docs/model_comparison_tasks.md`: per-task checklists, adapted from the supplied starter `todo (1).md`.
+2. Root `todo.md`: the existing per-task checklists. Adjust them to match the plan; do not move the file.
 
 Do not write a separate team-workflow document. `agent.md` §8 is the workflow; the tasks file adds only the claim and handover rules.
 
@@ -151,7 +151,7 @@ If you add a dependency, pin it in `requirements.txt`.
 
 ## Board content
 
-Rows MC-F01 to MC-F03, MC-M01 to MC-M06 and MC-C01 to MC-C03, with the proposed sprint, owner, points and dependencies from `docs/model_comparison_tasks.md`.
+Rows MC-F01 to MC-F03, MC-M01 to MC-M06 and MC-C01 to MC-C03, with the proposed sprint, owner, points and dependencies from `todo.md`.
 - Members may write their estimator factory and method notes now.
 - Official scored runs depend on MC-F01 to MC-F03 and the go/no-go record.
 - Model owners deliver code, a bounded config, checks, a reproduction command, validation outputs and a handover. A different member reviews before `Done`.

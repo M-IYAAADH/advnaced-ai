@@ -2,7 +2,7 @@
 
 Created: 2026-11-23. Revised 2026-11-23 to fix conflicts with the project docs.
 Study area: Malé island proper.
-Destination in the repo: `docs/model_comparison_tasks.md`. This is not a root `todo.md`.
+Lives at the repo root as `todo.md` (moved 23 Nov 2026). It holds checklists only; task status lives in `sprint.md`.
 
 **Status of this study.** This is a supporting daily experiment. It asks how well weather ranks days with an accepted rain-flood report. It does not answer the project question, which is which areas of Malé flood (reported by ward, analysed on the 200 m grid). The lecturer confirmed it is not required. It must not displace the literature review (MF-70) or the area work (MF-20 to MF-31).
 
@@ -257,7 +257,7 @@ Done when the team can reproduce and explain the results without this chat.
 
 Replace the member ID and task ID before giving this to your coding assistant:
 
-> Read CLAUDE.md, agent.md, sprint.md, docs/model_comparison_plan.md and docs/model_comparison_tasks.md. If sprint.md shows task MC-M04 as `To do`, claim it: git pull, set Owner to M1 and Status to `In progress`, commit and push. Then implement only that task using the shared interface (scripts/models/, scripts/model_comparison.py). Do not change other members' files. Prepare the model module with a bounded CONFIG, method notes and unittest checks. Run official validation only after MC-F01 to MC-F03 are Done and the go/no-go is approved. Leave the final test to MC-C02. Then set the row to `Review`, and report changed paths, exact commands, actual results and open dependencies. If the task is already claimed, report that and leave the claim alone.
+> Read CLAUDE.md, agent.md, sprint.md, docs/model_comparison_plan.md and todo.md. If sprint.md shows task MC-M04 as `To do`, claim it: git pull, set Owner to M1 and Status to `In progress`, commit and push. Then implement only that task using the shared interface (scripts/models/, scripts/model_comparison.py). Do not change other members' files. Prepare the model module with a bounded CONFIG, method notes and unittest checks. Run official validation only after MC-F01 to MC-F03 are Done and the go/no-go is approved. Leave the final test to MC-C02. Then set the row to `Review`, and report changed paths, exact commands, actual results and open dependencies. If the task is already claimed, report that and leave the claim alone.
 
 ## Handover record template
 
