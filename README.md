@@ -22,6 +22,7 @@ python scripts/summarise_ward_evidence.py
 python scripts/build_analysis_grid.py
 python scripts/attach_evidence_to_grid.py
 python scripts/compute_grid_attributes.py
+python scripts/define_spatial_blocks.py
 MPLCONFIGDIR=/tmp/male-matplotlib LOKY_MAX_CPU_COUNT=2 python scripts/explore_daily_flood.py
 MPLCONFIGDIR=/tmp/male-matplotlib python scripts/extended_daily_analysis.py
 python scripts/build_dashboard.py
