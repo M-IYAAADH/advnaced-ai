@@ -150,5 +150,5 @@ L.append("## 6. Limits\n- Positive-only evidence: unknown cells include cells th
          "- FABDEM is relative only, not surveyed, with known bias; exact zeros are likely sea mask. WorldCover built-up share is near saturation on land, so it separates little. Building coverage is one source (Google, confidence >= 0.75).\n"
          "- The four OSM wards are not checked against a Council map; ward rows describe small n and are not comparable by size.\n- Differences are descriptive and not tested for any population.\n")
 L.append("## 7. For MF-50\nFacts only: see the overlap table for which attributes separate or overlap between the groups, and the V3 and V4 columns for how the picture changes when confounded cells or routine pump sites are removed. Use the MF-50 draft for any modelling decision.\n")
-open("reports/mf30_reported_vs_unknown.md", "w").write("\n".join(L))
+open("reports/mf30_reported_vs_unknown.md", "w", encoding="utf-8").write("\n".join(L))
 print("ok", {vn: cnt(vn) for vn in V}, dropped)

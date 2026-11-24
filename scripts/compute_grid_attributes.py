@@ -138,9 +138,9 @@ def utm_xy(coords):
 
 
 def main():
-    ring = utm_xy(json.loads(ISLAND.read_text())["features"][0]["geometry"]["coordinates"][0])
+    ring = utm_xy(json.loads(ISLAND.read_text(encoding="utf-8"))["features"][0]["geometry"]["coordinates"][0])
     island = Path(ring)
-    grid = json.loads(GRID.read_text())["features"]
+    grid = json.loads(GRID.read_text(encoding="utf-8"))["features"]
     fab, wc = Raster(FAB), Raster(WC)
 
     # extent check: rasters must cover the island bbox
@@ -150,7 +150,7 @@ def main():
         assert r.x0 <= lo[0] + tol and r.x0 + r.w * r.dx >= la[0] - tol and r.y0 - r.h * r.dy <= lo[1] + tol and r.y0 >= la[1] - tol, n
 
     polys = []  # Google footprints: outer rings in UTM with bbox
-    for f in json.loads(BLD.read_text())["features"]:
+    for f in json.loads(BLD.read_text(encoding="utf-8"))["features"]:
         g = f["geometry"]
         for poly in (g["coordinates"] if g["type"] == "MultiPolygon" else [g["coordinates"]]):
             xy = utm_xy(poly[0])
@@ -158,7 +158,7 @@ def main():
     bmin = np.array([p[0] for p in polys]); bmax = np.array([p[1] for p in polys])
 
     roads = []  # (is_vehicular, xy)
-    for f in json.loads(ROADS.read_text())["features"]:
+    for f in json.loads(ROADS.read_text(encoding="utf-8"))["features"]:
         g = f["geometry"]
         for line in (g["coordinates"] if g["type"] == "MultiLineString" else [g["coordinates"]]):
             roads.append((f["properties"].get("fclass") in VEHICULAR, utm_xy(line)))
