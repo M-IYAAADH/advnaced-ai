@@ -53,11 +53,11 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-11 | S1 | M3 | 5 | To do | Verify the 17 road records against source articles | None | A1, D3 | No | Each road record gets a quoted phrase and any section or junction detail; confidence raised only where the article confirms it. |
 | MF-12 | S1 | M1 | 3 | Review | Verify the top 4 landmarks and settle duplicates | None | A1, B2, E1, E2 | No | IGMH, West Park, Villimalé Ferry Terminal, STO checked; pump wording (E1) and Rasfannu (E2) resolved; West Park/STO merge decided. |
 | MF-13 | S1 | M3 | 2 | To do | Read the JICA 2021 survey report | None | A5 | No | Notes on flood photos, drainage and elevation findings, with page numbers. |
-| MF-14 | S1 | M2 | 2 | Review | Resolve the Rahdhebai Magu match | None | C1, C2, D1 | No | Match confirmed or rejected using the source article and imagery; match review updated. |
-| MF-15 | S1 | M2 | 2 | Review | Review 8 unnamed OSM segments beside matched roads | None | F3 | No | Each segment marked as part of the named road or not, with the reason. |
-| MF-16 | S1 | M2 | 2 | Review | Check landmark positions on imagery | None | E6 | No | Approximate and off-polygon points confirmed or moved, with the change logged. |
+| MF-14 | S1 | M2 | 2 | Done | Resolve the Rahdhebai Magu match | None | C1, C2, D1 | No | Match confirmed or rejected using the source article and imagery; match review updated. |
+| MF-15 | S1 | M2 | 2 | Done | Review 8 unnamed OSM segments beside matched roads | None | F3 | No | Each segment marked as part of the named road or not, with the reason. |
+| MF-16 | S1 | M2 | 2 | Done | Check landmark positions on imagery | None | E6 | No | Approximate and off-polygon points confirmed or moved, with the change logged. |
 | MF-17 | S1 | M1 | 3 | Review | Draft agency data requests | None | H1, H2, H3, H4 | No | Drafts to Council/NDMA, MNDF, MWSC and MMS approved by the group. Nothing is sent without approval. |
-| MF-18 | S1 | M2 | 2 | Review | Pin the Python environment and rerun steps | None | None | No | requirements.txt plus README steps; a teammate rebuilds derived/ from scratch. |
+| MF-18 | S1 | M2 | 2 | Done | Pin the Python environment and rerun steps | None | None | No | requirements.txt plus README steps; a teammate rebuilds derived/ from scratch. |
 | MF-46 | S1 | M1 | 3 | Review | Organise data into male_flood_ai_data and reconcile the new flood inventory CSV | None | A1, G1, G5 | No | All files mapped and checksum-verified; 30 imported records reconciled, none promoted to labels; DATA_STATUS_REPORT written; archive verified. |
 | MF-47 | S1 | M1 | 5 | Review | Exploratory daily reported-flood analysis and dashboard (supporting work, not the main question) | None | G1, G4, G5, G6 | No | reports/daily_exploration.md and reports/extended_analysis.md with fold results, time-alignment sensitivity and a dashboard; zero means no report, not dry. Uses v001 labels and needs a rerun on v003. |
 | MF-48 | S1 | M1 | 2 | Review | Malé ward boundary map from OSM | None | None | No | derived/male_wards_osm.geojson (4 wards) and male_wards_map.png/pdf rebuilt by scripts/build_ward_map.py; OSM credit shown. Ward lines not yet checked against a Council map. |
@@ -70,6 +70,7 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-24 | S2 | M3 | 2 | To do | Data dictionary for the area-unit table | MF-21, MF-22 | None | No | Every column has units, source, licence and a known-limitations note. |
 | MF-25 | S2 | M3 | 5 | To do | Reading matrix: appraise the first 8 articles | MF-19 | None | No | Task, data, resolution, labels, validation and limitations recorded for each article. |
 | MF-26 | S2 | M1 | 2 | Review | Define spatial blocks and grouping rules | MF-20 | G3 | No | Blocks of neighbouring area units chosen (wards or groups of tiles); records at one landmark kept in one block. |
+| MF-27 | S2 | M2 | 1 | To do | Imagery check: Rah Dhebai Magu match and OSM segment 1528883097 | MF-14, MF-15 | C1, F3 | No | Both checked on imagery; checked_on_imagery set in road_match_review.csv and unnamed_segment_review.csv. Follow-up from the MF-14/MF-15 review. |
 | MF-30 | S3 | M1 | 5 | Review | Compare reported vs unknown areas | MF-21, MF-22 | G2 | No | Tables and plots by ward and by area unit, with and without pump-site records; written as descriptive, not causal. |
 | MF-31 | S3 | M2 | 3 | Review | Area evidence map and QGIS project | MF-21 | None | No | Map and .qgz file; areas without reports labelled unknown, not dry. |
 | MF-32 | S3 | M2 | 3 | To do | One-command rebuild from raw to derived | MF-21 | None | No | A single script rebuilds all outputs and checks every record still traces to its source row. |
