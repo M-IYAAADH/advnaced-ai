@@ -12,23 +12,10 @@ From the project root, Python 3.12:
 python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python scripts/build_road_flood_inventory.py
-python scripts/match_road_flood_records.py
-python scripts/review_unnamed_segments.py
-python scripts/check_landmark_positions.py
-python scripts/build_incident_rainfall_table.py
-python scripts/build_ward_map.py
-python scripts/summarise_ward_evidence.py
-python scripts/build_analysis_grid.py
-python scripts/attach_evidence_to_grid.py
-python scripts/compute_grid_attributes.py
-python scripts/define_spatial_blocks.py
-MPLCONFIGDIR=/tmp/male-matplotlib python scripts/compare_reported_unknown.py
-MPLCONFIGDIR=/tmp/male-matplotlib python scripts/build_area_evidence_map.py
-MPLCONFIGDIR=/tmp/male-matplotlib LOKY_MAX_CPU_COUNT=2 python scripts/explore_daily_flood.py
-MPLCONFIGDIR=/tmp/male-matplotlib python scripts/extended_daily_analysis.py
-python scripts/build_dashboard.py
+python scripts/rebuild_all.py
 python -m http.server 8765 --bind 127.0.0.1
 ```
+
+On Windows, activate with `.venv\Scripts\activate` instead. `scripts/rebuild_all.py` runs the 16 build scripts in order (the step list is at its top), stops at the first failure, then checks that every record still traces to its source row and lists any tracked output that changed. `python scripts/rebuild_all.py --check-only` runs only the checks. On Windows or Linux the rebuild is not byte-identical to the committed outputs, which were built on macOS. The CSVs differ only in the last floating-point digit (at most 5e-15). Maps render with DejaVu Sans because Gill Sans is a macOS font. Model pickles and PDFs differ only in metadata.
 
 Open <http://127.0.0.1:8765/derived/extended_analysis/dashboard.html>. The dashboard is also a self-contained HTML file; serving from the root keeps its local report link working. Stop the server with Ctrl+C. Rebuilding rewrites derived outputs, never raw inputs. Pickled preliminary models should only be loaded from trusted sources and compatible Python environments. File-specific licences and attribution are recorded in `Male_Flood_Data_Starter_Pack/README.md`.
