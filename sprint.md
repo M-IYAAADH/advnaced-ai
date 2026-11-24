@@ -73,12 +73,12 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-27 | S2 | M2 | 1 | In progress | Imagery check: Rah Dhebai Magu match and OSM segment 1528883097 | MF-14, MF-15 | C1, F3 | No | Both checked on imagery; checked_on_imagery set in road_match_review.csv and unnamed_segment_review.csv. Follow-up from the MF-14/MF-15 review. |
 | MF-30 | S3 | M1 | 5 | Review | Compare reported vs unknown areas | MF-21, MF-22 | G2 | No | Tables and plots by ward and by area unit, with and without pump-site records; written as descriptive, not causal. |
 | MF-31 | S3 | M2 | 3 | Review | Area evidence map and QGIS project | MF-21 | None | No | Map and .qgz file; areas without reports labelled unknown, not dry. |
-| MF-32 | S3 | M2 | 3 | Review | One-command rebuild from raw to derived | MF-21 | None | No | A single script rebuilds all outputs and checks every record still traces to its source row. |
+| MF-32 | S3 | M2 | 3 | Done | One-command rebuild from raw to derived | MF-21 | None | No | A single script rebuilds all outputs and checks every record still traces to its source row. |
 | MF-33 | S3 | M3 | 5 | To do | Reading matrix: appraise the remaining articles | MF-25 | None | No | At least 15 journal articles fully appraised. |
 | MF-34 | S3 | M3 | 1 | To do | Wording check on exploratory outputs | MF-30 | G1, G4 | No | Says 'reported', treats unknown as unknown, and states no rainfall thresholds. |
 | MF-40 | S4 | M3 | 2 | Review | Set up the review in the coursework IJCAI template | None | I4 | No | The coursework .doc template opens with the title, authors and section skeleton in place. |
 | MF-41 | S4 | M3 | 3 | In progress | Literature review outline by theme | MF-33 | None | No | Themes, article-to-section mapping and a page budget. |
-| MF-42 | S4 | M2 | 2 | Review | Peer-review Iyaadh's attribute and exploratory code | MF-30 | None | No | Findings logged and resolved. |
+| MF-42 | S4 | M2 | 2 | Done | Peer-review Iyaadh's attribute and exploratory code | MF-30 | None | No | Findings logged and resolved. |
 | MF-43 | S4 | M1 | 2 | To do | Peer-review Aslan's area units and evidence join | MF-21, MF-32 | None | No | Findings logged and resolved. |
 | MF-44 | S4 | M1 | 2 | Review | Descriptive rainfall table for reported incidents | None | C3, D6, G4 | No | Units, accumulation periods and contradictions kept; no threshold claims. |
 | MF-45 | S4 | M2 | 3 | To do | Follow up agency requests and load any data received | MF-23 | H1, H2, H3, H4 | No | Response log updated; received data stored raw with provenance. |
