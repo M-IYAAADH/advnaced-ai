@@ -18,7 +18,8 @@ Rules applied, in order (the reason column says which one decided):
      bearing and with one end on it. An access or crossing connector.
   Anything else would be marked for manual review (none at present).
 
-Decisions use OSM geometry only; nothing here was checked on imagery.
+Decisions use OSM geometry. Segments later checked by eye on imagery (MF-27) are listed in IMAGERY with
+the result; checked_on_imagery is "yes" only for those.
 Run from the project root, after match_road_flood_records.py.
 """
 from __future__ import annotations
@@ -38,6 +39,13 @@ COVER_TOL_M, COVER_FRAC = 3.0, 0.5  # same overlap test as match_road_flood_reco
 DUP_TOL_M, DUP_MIN_M = 2.0, 40.0
 STUB_MAX_M, STUB_MIN_ANGLE = 10.0, 60.0
 PEDESTRIAN = {"footway", "steps", "path", "pedestrian"}
+# Manual imagery checks (MF-27): Esri World Imagery, 60 cm, captured 31 Mar 2026, viewed 24 Nov 2026 with OSM overlaid.
+IMAGERY = {
+    "1528883097": "Imagery (MF-27): the east-west leg lies inside the Majeedhee Magu street corridor, a few metres north "
+                  "of the OSM centreline, with no separate parallel carriageway visible, so it duplicates the named road. "
+                  "The northward leg crosses the roof of the building with the rooftop pool; no street is visible there "
+                  "(at most a narrow private gap to its west). Exclusion confirmed.",
+}
 
 
 def bearing(L):
@@ -104,6 +112,8 @@ def main():
                 part, rule, reason = "needs_manual_review", "none", "No rule applies."
             if s["fclass"] in PEDESTRIAN and s["len_m"] < STUB_MAX_M and ang > STUB_MIN_ANGLE:
                 reason += " Also a short perpendicular stub."
+            if s["osm_id"] in IMAGERY:
+                reason = reason.replace(" Confirm on imagery.", "") + " " + IMAGERY[s["osm_id"]]
 
             rows.append(dict(
                 osm_id=s["osm_id"], beside_road=road, osm_road_name=osm_name, fclass=s["fclass"],
@@ -115,7 +125,7 @@ def main():
                 touches=";".join(touching),
                 centre_lat=round(c[1] / KY + LAT0, 6), centre_lon=round(c[0] / KX + LON0, 6),
                 part_of_named_road=part, rule=rule, reason=reason,
-                checked_on_imagery="no"))
+                checked_on_imagery="yes" if s["osm_id"] in IMAGERY else "no"))
 
     rows.sort(key=lambda r: (ROADS.index(r["beside_road"]), r["osm_id"]))
     with open(OUT, "w", newline="", encoding="utf-8") as fh:

@@ -70,7 +70,7 @@ Dates are YYYY-MM-DD. Deadline (confirmed with the lecturer): 30 May 2027, 12:00
 | MF-24 | S2 | M3 | 2 | To do | Data dictionary for the area-unit table | MF-21, MF-22 | None | No | Every column has units, source, licence and a known-limitations note. |
 | MF-25 | S2 | M3 | 5 | To do | Reading matrix: appraise the first 8 articles | MF-19 | None | No | Task, data, resolution, labels, validation and limitations recorded for each article. |
 | MF-26 | S2 | M1 | 2 | Review | Define spatial blocks and grouping rules | MF-20 | G3 | No | Blocks of neighbouring area units chosen (wards or groups of tiles); records at one landmark kept in one block. |
-| MF-27 | S2 | M2 | 1 | In progress | Imagery check: Rah Dhebai Magu match and OSM segment 1528883097 | MF-14, MF-15 | C1, F3 | No | Both checked on imagery; checked_on_imagery set in road_match_review.csv and unnamed_segment_review.csv. Follow-up from the MF-14/MF-15 review. |
+| MF-27 | S2 | M2 | 1 | Review | Imagery check: Rah Dhebai Magu match and OSM segment 1528883097 | MF-14, MF-15 | C1, F3 | No | Both checked on imagery; checked_on_imagery set in road_match_review.csv and unnamed_segment_review.csv. Follow-up from the MF-14/MF-15 review. |
 | MF-30 | S3 | M1 | 5 | Review | Compare reported vs unknown areas | MF-21, MF-22 | G2 | No | Tables and plots by ward and by area unit, with and without pump-site records; written as descriptive, not causal. |
 | MF-31 | S3 | M2 | 3 | Review | Area evidence map and QGIS project | MF-21 | None | No | Map and .qgz file; areas without reports labelled unknown, not dry. |
 | MF-32 | S3 | M2 | 3 | Review | One-command rebuild from raw to derived | MF-21 | None | No | A single script rebuilds all outputs and checks every record still traces to its source row. |

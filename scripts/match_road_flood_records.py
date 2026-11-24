@@ -185,7 +185,7 @@ def main():
                    inventory_record_ids=";".join(rids), n_incidents_in_inventory=n_inc,
                    match_status="", osm_ids="", osm_names="", n_osm_segments=0,
                    matched_length_m="", compiler_geometry_agreement="", candidate_nearby_roads="",
-                   match_method="", notes="")
+                   match_method="", notes="", checked_on_imagery="no")
         base = name.split(",")[0]
         if island != "Malé":
             row.update(match_status="out_of_study_area", match_method="island field",
@@ -216,7 +216,11 @@ def main():
                                  "are the nearest crossings of Majeedhee on either side of that section (west to east: Chaandhanee, "
                                  "Nikagas, Dhanburuh, Rah Dhebai Magu). Rah Dhebai Hingun is its southern continuation and does not "
                                  "reach Majeedhee (about 300 m), and both articles say 'Magu'. Evidence is a council repair-list "
-                                 "designation, not a dated flood report. Not checked on imagery.")
+                                 "designation, not a dated flood report. Imagery (MF-27; Esri World Imagery, 60 cm, captured "
+                                 "31 Mar 2026, viewed 24 Nov 2026): a continuous NNE street corridor runs along both OSM segments "
+                                 "(306840956, 649440524) and crosses Majeedhee Magu east of Dhanburuh Magu, so the OSM geometry is "
+                                 "confirmed; imagery cannot confirm the street name.",
+                           checked_on_imagery="yes")
             else:
                 row.update(match_status="confident_whole_road_name", match_method=method,
                            notes="Report names the road without a section: road-level evidence only; do not label every segment flooded.")
