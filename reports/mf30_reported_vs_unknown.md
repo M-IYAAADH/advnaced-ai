@@ -13,7 +13,7 @@ Four versions, always unknown as the comparison group:
 - V1 stated flooding vs unknown.
 - V2 stated + pumping-only vs unknown.
 - V3 stated, excluding the 6 construction-confounded cells (RF071 only, issue E5); confounded cells left out of both groups.
-- V4 V1 without the two routine pump-site cells (IGMH, West Park/STO).
+- V4 V1 without the 2 routine pump-site cells (IGMH, West Park/STO).
 Per group: n, median, IQR, min, max, difference in medians, and the share of reported cells whose value lies inside the unknown group's IQR. The groups are biased samples (reports cluster at arterials and landmarks), so differences describe these cells only.
 
 ## 4. Key tables (main cell set)
@@ -34,7 +34,7 @@ No-cutoff sensitivity: V1 12 / 57; V2 17 / 57; V3 6 / 57; V4 10 / 57 (reported /
 | fabdem_p10_m | 1.56 / 4.18 (n 10/36) | 1.26 / 4.18 (n 5/36) | 1.86 / 4.18 (n 8/36) |
 | building_coverage_google075 | 0.296 / 0.314 (n 11/40) | 0.28 / 0.314 (n 6/40) | 0.296 / 0.314 (n 9/40) |
 | worldcover_builtup_share | 0.574 / 0.527 (n 11/40) | 0.577 / 0.527 (n 6/40) | 0.574 / 0.527 (n 9/40) |
-| road_density_vehicular_m_per_km2 | 3.09e+04 / 3.13e+04 (n 11/40) | 2.8e+04 / 3.13e+04 (n 6/40) | 3.14e+04 / 3.13e+04 (n 9/40) |
+| road_density_vehicular_m_per_km2 | 2.91e+04 / 3.13e+04 (n 11/40) | 2.8e+04 / 3.13e+04 (n 6/40) | 2.94e+04 / 3.13e+04 (n 9/40) |
 | dist_land_centroid_to_coast_m | 70.9 / 228 (n 11/40) | 75.9 / 228 (n 6/40) | 70.9 / 228 (n 9/40) |
 
 ### Overlap: share of V1 reported cells inside the unknown IQR
@@ -44,7 +44,7 @@ No-cutoff sensitivity: V1 12 / 57; V2 17 / 57; V3 6 / 57; V4 10 / 57 (reported /
 | fabdem_p10_m | 0.50 | 0.60 | 0.46 to 6.07 | 0.45 to 6.36 |
 | building_coverage_google075 | 0.55 | 0.33 | 0.146 to 0.419 | 0.118 to 0.441 |
 | worldcover_builtup_share | 0.73 | 0.67 | 0.292 to 0.837 | 0.297 to 0.779 |
-| road_density_vehicular_m_per_km2 | 0.64 | 0.67 | 2.13e+04 to 4.39e+04 | 1.15e+04 to 4.2e+04 |
+| road_density_vehicular_m_per_km2 | 0.64 | 0.67 | 2.13e+04 to 3.51e+04 | 1.15e+04 to 4.19e+04 |
 | dist_land_centroid_to_coast_m | 0.18 | 0.17 | 22.2 to 422 | 11.9 to 511 |
 
 ### Wards (main set; not a ranking)
@@ -59,13 +59,13 @@ Ward medians are in `ward_table.csv`.
 
 ## 5. What the figures show
 `strip_<attribute>.png` plots each cell as a dot, reported vs unknown (no report), for V1 (left) and V3 (right), with boxes for median and IQR. `scatter_elev_coast.png` plots FABDEM 10th percentile elevation against distance to coast, with marker shapes for status, rings for confounded cells and crosses for routine pump sites.
-In words, for V1 the reported cells have median fabdem_mean_m 5.46 against 5.35; fabdem_p10_m 1.56 against 4.18; building_coverage_google075 0.296 against 0.314; worldcover_builtup_share 0.574 against 0.527; road_density_vehicular_m_per_km2 3.09e+04 against 3.13e+04; dist_land_centroid_to_coast_m 70.9 against 228. For V3 the reported-cell medians are fabdem_mean_m 3.22 against 5.35; fabdem_p10_m 1.26 against 4.18; building_coverage_google075 0.28 against 0.314; worldcover_builtup_share 0.577 against 0.527; road_density_vehicular_m_per_km2 2.8e+04 against 3.13e+04; dist_land_centroid_to_coast_m 75.9 against 228. Where the share inside the unknown IQR is high (table above) the groups overlap on that attribute; where it is low they separate in these cells.
+In words, for V1 the reported cells have median fabdem_mean_m 5.46 against 5.35; fabdem_p10_m 1.56 against 4.18; building_coverage_google075 0.296 against 0.314; worldcover_builtup_share 0.574 against 0.527; road_density_vehicular_m_per_km2 2.91e+04 against 3.13e+04; dist_land_centroid_to_coast_m 70.9 against 228. For V3 the reported-cell medians are fabdem_mean_m 3.22 against 5.35; fabdem_p10_m 1.26 against 4.18; building_coverage_google075 0.28 against 0.314; worldcover_builtup_share 0.577 against 0.527; road_density_vehicular_m_per_km2 2.8e+04 against 3.13e+04; dist_land_centroid_to_coast_m 75.9 against 228. Where the share inside the unknown IQR is high (table above) the groups overlap on that attribute; where it is low they separate in these cells.
 
 ## 6. Limits
 - Positive-only evidence: unknown cells include cells that flooded without a report, so differences may be understated or biased.
 - Reporting favours arterials and landmarks, so reported cells are not a random sample.
 - Pump sites: pumping-only and routine pump-site records reflect where pumps are stationed (V2 and V4 show the effect).
-- Six cells are confounded: their only stated flooding is RF071 (30 Jul 2026, blamed on pumps not yet commissioned, E5). V3 therefore has 6 reported cells in the main set (5 with FABDEM), so medians are very unstable.
+- 6 cells are confounded: their only stated flooding is RF071 (30 Jul 2026, blamed on pumps not yet commissioned, E5). V3 therefore has 6 reported cells in the main set (5 with FABDEM), so medians are very unstable.
 - FABDEM is relative only, not surveyed, with known bias; exact zeros are likely sea mask. WorldCover built-up share is near saturation on land, so it separates little. Building coverage is one source (Google, confidence >= 0.75).
 - The four OSM wards are not checked against a Council map; ward rows describe small n and are not comparable by size.
 - Differences are descriptive and not tested for any population.

@@ -78,7 +78,7 @@ for a in ATTRS:
         ax.set_xticks([0, 1]); ax.set_xticklabels(["reported", "unknown\n(no report)"])
         ax.set_title("V1: stated reports" if vn == "V1_stated" else "V3: stated, excl. construction-confounded", fontsize=10, pad=18)
     axs[0].set_ylabel(LAB[a])
-    fig.suptitle(f"{LAB[a]}: cells with reports vs unknown (no report)\n(each dot = one 200 m cell; 57-cell main set; unknown is not dry)", fontsize=10)
+    fig.suptitle(f"{LAB[a]}: cells with reports vs unknown (no report)\n(each dot = one 200 m cell; {int(d.main.sum())}-cell main set; unknown is not dry)", fontsize=10)
     fig.tight_layout(); fig.savefig(f"{OUT}/strip_{a}.png", dpi=200); plt.close(fig)
 
 fig, ax = plt.subplots(figsize=(7.5, 5.5))
@@ -97,12 +97,13 @@ ax.legend(fontsize=8); fig.tight_layout(); fig.savefig(f"{OUT}/scatter_elev_coas
 # self-checks
 for vn, (r, u) in V.items():
     assert not (r & u).any(), vn
-    assert (d.loc[r, "status"] != "unknown").all()
-    assert (d.loc[d.main & r, "status"] != "unknown").all() and (d.loc[u, "status"] == "unknown").all()
+    assert (d.loc[r, "status"] != "unknown").all() and (d.loc[u, "status"] == "unknown").all()
     for sn, sm in SETS.items():
-        for a in ATTRS[2:]:
-            g = gs[(gs.cell_set == sn) & (gs.version == vn) & (gs.attribute == a)].iloc[0]
-            assert g.reported_n == (sm & r & d[a].notna()).sum() and g.unknown_n == (sm & u & d[a].notna()).sum()
+        for a in ATTRS:
+            for flt in (["excl_zero_share_gt_0.1", "all_cells"] if a in FAB else ["all_cells"]):
+                k = sm & d[a].notna() & ((d.fabdem_zero_share <= 0.1) if flt.startswith("excl") else True)
+                g = gs[(gs.cell_set == sn) & (gs.version == vn) & (gs.attribute == a) & (gs.fabdem_filter == flt)]
+                assert len(g) == 1 and g.iloc[0].reported_n == (k & r).sum() and g.iloc[0].unknown_n == (k & u).sum(), (sn, vn, a, flt)
 assert not (V["V3_stated_excl_confounded"][0] & conf).any() and not (V["V3_stated_excl_confounded"][1] & conf).any()
 assert not (V["V4_V1_excl_routine_pump_sites"][0] & pump).any()
 for a in ATTRS: assert os.path.exists(f"{OUT}/strip_{a}.png")
@@ -121,7 +122,7 @@ L.append("## 1. Purpose\nDescribe how cells of the 200 m Malé grid that have a 
 L.append(f"## 2. Data and cell set\nInputs: `grid_evidence.csv`, `grid_attributes.csv`, `grid_blocks.csv`, `ward_evidence_summary.csv`. Main cell set: land fraction >= 0.25 plus the MF-26 exception cell {EXC} = **{int(d.main.sum())} of {len(d)} cells** (sensitivity: no cutoff, all {len(d)}). FABDEM comparisons leave out cells with exact-zero pixel share > 0.1 (likely the inherited sea mask); this drops "
          + ", ".join(f"{vn.split('_')[0]} {a} reported / {b} unknown" for vn, (a, b) in dropped.items()) + " cells. Results with those cells kept are in `group_summary.csv` (fabdem_filter = all_cells). "
          f"The designated cell ({des.cell_id}, {des.ward}) is kept out of both groups in every version.\n")
-L.append("## 3. Method\nFour versions, always unknown as the comparison group:\n- V1 stated flooding vs unknown.\n- V2 stated + pumping-only vs unknown.\n- V3 stated, excluding the 6 construction-confounded cells (RF071 only, issue E5); confounded cells left out of both groups.\n- V4 V1 without the two routine pump-site cells (IGMH, West Park/STO).\n"
+L.append(f"## 3. Method\nFour versions, always unknown as the comparison group:\n- V1 stated flooding vs unknown.\n- V2 stated + pumping-only vs unknown.\n- V3 stated, excluding the {int(conf.sum())} construction-confounded cells (RF071 only, issue E5); confounded cells left out of both groups.\n- V4 V1 without the {int(pump.sum())} routine pump-site cells (IGMH, West Park/STO).\n"
          "Per group: n, median, IQR, min, max, difference in medians, and the share of reported cells whose value lies inside the unknown group's IQR. The groups are biased samples (reports cluster at arterials and landmarks), so differences describe these cells only.\n")
 L.append("## 4. Key tables (main cell set)\n### Cells per group\n| Version | Reported | Unknown |\n|---|---|---|")
 for vn in V: a, b = cnt(vn); L.append(f"| {vn} | {a} | {b} |")
@@ -146,7 +147,7 @@ L.append("## 5. What the figures show\n`strip_<attribute>.png` plots each cell a
          "For V3 the reported-cell medians are " + "; ".join(f"{a} {x3[a].reported_median:.3g} against {x3[a].unknown_median:.3g}" for a in ATTRS) + ". "
          "Where the share inside the unknown IQR is high (table above) the groups overlap on that attribute; where it is low they separate in these cells.\n")
 L.append("## 6. Limits\n- Positive-only evidence: unknown cells include cells that flooded without a report, so differences may be understated or biased.\n- Reporting favours arterials and landmarks, so reported cells are not a random sample.\n- Pump sites: pumping-only and routine pump-site records reflect where pumps are stationed (V2 and V4 show the effect).\n"
-         f"- Six cells are confounded: their only stated flooding is RF071 (30 Jul 2026, blamed on pumps not yet commissioned, E5). V3 therefore has {cnt('V3_stated_excl_confounded')[0]} reported cells in the main set ({g('V3_stated_excl_confounded','fabdem_p10_m').reported_n:.0f} with FABDEM), so medians are very unstable.\n"
+         f"- {int(conf.sum())} cells are confounded: their only stated flooding is RF071 (30 Jul 2026, blamed on pumps not yet commissioned, E5). V3 therefore has {cnt('V3_stated_excl_confounded')[0]} reported cells in the main set ({g('V3_stated_excl_confounded','fabdem_p10_m').reported_n:.0f} with FABDEM), so medians are very unstable.\n"
          "- FABDEM is relative only, not surveyed, with known bias; exact zeros are likely sea mask. WorldCover built-up share is near saturation on land, so it separates little. Building coverage is one source (Google, confidence >= 0.75).\n"
          "- The four OSM wards are not checked against a Council map; ward rows describe small n and are not comparable by size.\n- Differences are descriptive and not tested for any population.\n")
 L.append("## 7. For MF-50\nFacts only: see the overlap table for which attributes separate or overlap between the groups, and the V3 and V4 columns for how the picture changes when confounded cells or routine pump sites are removed. Use the MF-50 draft for any modelling decision.\n")

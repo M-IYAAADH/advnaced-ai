@@ -11,8 +11,11 @@ shortcut: area is sampled at 5 m, so shares are good to about 0.1-0.5 percentage
 to about 1/(land points); pixel areas inside the island are treated as equal (about 4 deg N). Use exact
 polygon overlay if shapely is added.
 shortcut: building coverage uses footprint outer rings only (no holes) and counts overlapping footprints once
-(point is inside any); roads are clipped to the whole cell square, not to land (road_density divides by land area,
-so edge cells with jetties/causeways are inflated); the coast distance uses the OneMap outer ring only.
+(point is inside any); the coast distance uses the OneMap outer ring only.
+shortcut: road length is measured by sampling each segment at <= 1 m and keeping samples inside both the cell
+square and the OneMap outer ring (so jetty/causeway length off land no longer inflates density, MF-42 R3); good to
+about 1-3 m per cell. Segments marked rule = duplicate_geometry in derived/unnamed_segment_review.csv (MF-15) are
+dropped so their length is not counted twice.
 
 Raster georeferencing (Pillow tags 33550 scale, 33922 tiepoint, 34735 GeoKeys key 1025):
   FABDEM RasterPixelIsPoint: tiepoint is the CENTRE of pixel (0,0); pixel i spans x0 + (i +- 0.5) * dx.
@@ -36,7 +39,7 @@ Columns
   building_coverage_google075        share of land points inside any Google Open Buildings v3 footprint with confidence >= 0.75
                                      (0-1; footprint area fraction, not counts; model detections, not survey; CC BY 4.0 / ODbL).
                                      File: mapping/male_google_buildings_conf075.geojson
-  road_length_m, road_density_m_per_km2        OSM road centreline length clipped to the cell square (m) and that divided by land area (m per km2). ODbL.
+  road_length_m, road_density_m_per_km2        OSM road centreline length inside the cell square and on OneMap land (m), and that divided by land area (m per km2). ODbL.
   road_length_vehicular_m, ..._density_...     same, fclass in primary, primary_link, secondary, tertiary, residential,
                                      service, living_street (footway, pedestrian, path, steps excluded). File: mapping/male_osm_roads.geojson
   dist_centre_to_coast_m             distance from the cell square's centre to the OneMap outer ring, m
@@ -59,6 +62,7 @@ FAB = PACK / "elevation/Male_FABDEM_30m_masked.tif"
 WC = PACK / "mapping/male_worldcover_2021_10m.tif"
 BLD = PACK / "mapping/male_google_buildings_conf075.geojson"
 ROADS = PACK / "mapping/male_osm_roads.geojson"
+SEG_REVIEW = FilePath("derived/unnamed_segment_review.csv")
 OUT = FilePath("derived/grid_attributes.csv")
 CELL, N = 200, 40
 VEHICULAR = {"primary", "primary_link", "secondary", "tertiary", "residential", "service", "living_street"}
@@ -106,23 +110,15 @@ def pixel_weights(pix):
     return ids, cnt / cnt.sum()
 
 
-def clip_len(p, q, x0, y0, x1, y1):
-    """Liang-Barsky: length of segment p->q inside the rectangle."""
-    dx, dy = q[0] - p[0], q[1] - p[1]
-    t0, t1 = 0.0, 1.0
-    for pk, qk in ((-dx, p[0] - x0), (dx, x1 - p[0]), (-dy, p[1] - y0), (dy, y1 - p[1])):
-        if pk == 0:
-            if qk < 0:
-                return 0.0
-        else:
-            r = qk / pk
-            if pk < 0:
-                t0 = max(t0, r)
-            else:
-                t1 = min(t1, r)
-            if t0 > t1:
-                return 0.0
-    return (t1 - t0) * np.hypot(dx, dy)
+def sample_line(xy):
+    """Midpoints of <= 1 m pieces along a polyline, with each piece's length: rows of (x, y, length_m)."""
+    out = []
+    for a, b in zip(xy[:-1], xy[1:]):
+        L = float(np.hypot(*(b - a)))
+        k = max(1, int(np.ceil(L)))
+        t = (np.arange(k) + 0.5) / k
+        out.append(np.column_stack([a[0] + t * (b[0] - a[0]), a[1] + t * (b[1] - a[1]), np.full(k, L / k)]))
+    return np.vstack(out) if out else np.empty((0, 3))
 
 
 def dist_to_ring(pt, ring):
@@ -157,12 +153,22 @@ def main():
             polys.append((xy.min(0), xy.max(0), Path(xy)))
     bmin = np.array([p[0] for p in polys]); bmax = np.array([p[1] for p in polys])
 
-    roads = []  # (is_vehicular, xy)
+    seg = pd.read_csv(SEG_REVIEW)
+    dup = set(seg.loc[seg.rule == "duplicate_geometry", "osm_id"].astype(str))
+    rs, rv, dropped = [], [], []  # road samples, is-vehicular flag per sample, dropped duplicate osm_ids
     for f in json.loads(ROADS.read_text(encoding="utf-8"))["features"]:
+        if str(f["properties"]["osm_id"]) in dup:
+            dropped.append(str(f["properties"]["osm_id"]))
+            continue
         g = f["geometry"]
         for line in (g["coordinates"] if g["type"] == "MultiLineString" else [g["coordinates"]]):
-            roads.append((f["properties"].get("fclass") in VEHICULAR, utm_xy(line)))
-    road_total = sum(np.hypot(*np.diff(xy, axis=0).T).sum() for _, xy in roads)
+            s = sample_line(utm_xy(line))
+            rs.append(s)
+            rv.append(np.full(len(s), f["properties"].get("fclass") in VEHICULAR))
+    assert set(dropped) == dup, (dup, dropped)
+    rs, rv = np.vstack(rs), np.concatenate(rv)
+    on_land = island.contains_points(rs[:, :2])
+    road_total, road_land = rs[:, 2].sum(), rs[on_land, 2].sum()
 
     off = (np.arange(N) + 0.5) * CELL / N
     gx, gy = np.meshgrid(off, off)
@@ -210,13 +216,8 @@ def main():
             inb |= polys[i][2].contains_points(land)
         row["building_coverage_google075"] = inb.mean()
         # roads
-        tot = veh = 0.0
-        for isv, xy in roads:
-            if xy[:, 0].max() < e or xy[:, 0].min() > e + CELL or xy[:, 1].max() < n or xy[:, 1].min() > n + CELL:
-                continue
-            L = sum(clip_len(a, b, e, n, e + CELL, n + CELL) for a, b in zip(xy[:-1], xy[1:]))
-            tot += L
-            veh += L * isv
+        s = on_land & (rs[:, 0] >= e) & (rs[:, 0] < e + CELL) & (rs[:, 1] >= n) & (rs[:, 1] < n + CELL)
+        tot, veh = float(rs[s, 2].sum()), float(rs[s & rv, 2].sum())
         km2 = row["land_area_m2"] / 1e6
         row.update(road_length_m=tot, road_density_m_per_km2=tot / km2, road_length_vehicular_m=veh,
                    road_density_vehicular_m_per_km2=veh / km2)
@@ -242,20 +243,14 @@ def main():
     assert np.abs(df.land_fraction.values - gl).max() < 0.02
     shares = [c for c in cols if c.endswith("_share") or c in ("land_fraction", "building_coverage_google075")]
     assert ((df[shares].fillna(0) >= 0) & (df[shares].fillna(0) <= 1 + 1e-9)).all().all()
-    s = df[["worldcover_builtup_share", "worldcover_tree_share", "worldcover_water_share", "worldcover_other_share"]].dropna().sum(1)
+    s = df[["worldcover_builtup_share", "worldcover_tree_share", "worldcover_water_share", "worldcover_other_share"]].dropna().sum(axis=1)
     assert (abs(s - 1) < 1e-6).all()
     d = df.dropna(subset=["fabdem_min_m"])
     assert (d.fabdem_min_m <= d.fabdem_p10_m + 1e-9).all()
-    xmin, ymin = ring.min(0); xmax, ymax = ring.max(0)
-    ex = [f["properties"] for f in grid]
-    gx0, gx1 = min(q["easting_min"] for q in ex), max(q["easting_min"] for q in ex) + CELL
-    gy0, gy1 = min(q["northing_min"] for q in ex), max(q["northing_min"] for q in ex) + CELL
-    indep = sum(np.hypot(*np.diff(np.clip(xy, [gx0, gy0], [gx1, gy1]), axis=0).T).sum() for _, xy in roads)  # clip-by-clamp: approx
-    print(f"road total {df.road_length_m.sum():.0f} m vs all OSM {road_total:.0f} m vs clamp-in-extent {indep:.0f} m")
-    assert abs(df.road_length_m.sum() - road_total) / road_total < 0.02 or abs(df.road_length_m.sum() - indep) / indep < 0.02
-
-    # ---- reports
-    print("grid extent roads outside grid (m):", round(road_total - df.road_length_m.sum()))
+    # every on-land road sample falls in exactly one cell (the grid covers the island), so the cell sums equal the on-land total
+    print(f"road on land {road_land:.0f} m of {road_total:.0f} m OSM (duplicates dropped: {sorted(dup)}); cell sum {df.road_length_m.sum():.0f} m")
+    assert abs(df.road_length_m.sum() - road_land) < 1, (df.road_length_m.sum(), road_land)
+    assert (df.road_length_vehicular_m <= df.road_length_m + 1e-9).all()
     land_w = df.land_area_m2
     print("island FABDEM land-weighted mean of cell means: %.2f m (QA median 5.04); built-up share over land: %.3f; google bldg cov: %.3f" % (
         np.average(d.fabdem_mean_m, weights=d.land_area_m2), np.average(df.worldcover_builtup_share.dropna(), weights=land_w[df.worldcover_builtup_share.notna()]),
