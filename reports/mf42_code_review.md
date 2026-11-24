@@ -25,3 +25,5 @@ The method matches its docstrings. After fixes R1 and R2, both scripts reproduce
 | R6 | Nit | `compute_grid_attributes.py` | A cell with no land would divide by zero (`ok.sum() / m`). It can't happen with the current grid (minimum land fraction 0.001). `.sum(1)` raises a Pandas4Warning. | Changed to `.sum(axis=1)`. The divide-by-zero case can't occur with this grid, so it is left as is. | Resolved |
 
 R3 to R6 were fixed by Aslan on 24 Nov 2026, at the student's request, without waiting for Iyaadh. Both scripts pass their self-checks, and `scripts/rebuild_all.py --check-only` passes. Iyaadh should confirm the R3 method change when moving MF-42 to Done. The new road-density numbers replace the old ones wherever MF-30 is quoted.
+
+**Confirmed by Iyaadh, 24 Nov 2026.** R3 method change accepted. Checked by reading the diff and running `scripts/rebuild_all.py` on macOS in a fresh clone: all 16 steps and the traceability checks pass. Every CSV and PNG matches the committed Windows build. The PDFs and the `.qgz` differ only in timestamps. MF-42 and MF-32 moved to Done.
